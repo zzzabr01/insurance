@@ -40,14 +40,10 @@ public class odmController {
     private static final String ODM = "/getCaculation";
 
     @PostMapping(value = ODM)
-    public ResponseEntity<InsuranceType> getCaculation(@Valid @RequestBody InsuranceType insuranceType)
+    public ResponseEntity<?> getCaculation(@Valid @RequestBody InsuranceType insuranceType)
             throws IOException {
 
-
-
-        odmServiceImpl.process(insuranceType);
-
-        return ResponseEntity.ok(insuranceType);
+        return odmServiceImpl.process(insuranceType);
     }
 
 

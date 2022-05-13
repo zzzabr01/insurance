@@ -15,7 +15,7 @@ import java.util.Date;
 
     private AddUpForProductNo10 addUpForProductNo10;
 
-    private InsuranceInfo userInsuranceInfo;
+    private InsuranceInfo insuranceInfo;
 
     private String accidentReason;
 
