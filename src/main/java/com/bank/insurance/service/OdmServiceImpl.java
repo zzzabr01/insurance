@@ -28,7 +28,7 @@ import java.util.Map;
 
 @Service
 public class OdmServiceImpl {
-    private static final String ODMURL = "http://nanchan.myds.me:9060/DecisionService/rest/LifeInsuranceProductNo10/1.0/ProductNo10WithDeathAndTotallyDisabilityBenefit/1.1";
+    private static final String ODMURL = "http://nanchan.myds.me:9060/DecisionService/rest/LifeInsuranceProductNo10/1.0/ProductNo10WithDeathAndTotallyDisabilityBenefit/1.4";
     private RestTemplate restTemplate;
 
     public ResponseEntity<?> process(InsuranceType insuranceType) throws IOException {
