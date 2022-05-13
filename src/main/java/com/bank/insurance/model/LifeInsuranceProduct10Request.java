@@ -13,9 +13,11 @@ public class LifeInsuranceProduct10Request {
 
     private AddUpForProductNo10 addUpForProductNo10;
 
-    private UserInsuranceInfo userInsuranceInfo;
+    private InsuranceInfo userInsuranceInfo;
 
     private String accidentReason;
 
     private Date caseAccidentDate;
+
+    private String productNo;
 }
