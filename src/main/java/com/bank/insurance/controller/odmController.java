@@ -20,7 +20,7 @@ public class odmController {
     @PostMapping(value = ODM)
     public ResponseEntity<InsuranceType> getCaculation(@Valid @RequestBody InsuranceType insuranceType)
             throws JsonProcessingException {
-        System.out.println(insuranceType);
+        System.out.println(insuranceType.toString());
         return ResponseEntity.ok(insuranceType);
     }
 
