@@ -222,7 +222,7 @@
         <div id="u18" class="ax_default label">
           <div id="u18_div" class=""></div>
           <div id="u18_text" class="text ">
-            <p><span>保單號碼</span></p>
+            <p><span>身分證字號</span></p>
           </div>
         </div>
 
@@ -234,13 +234,31 @@
       </div>
 
       <!-- Unnamed (Group) -->
-      <div id="u20" class="ax_default" data-left="329" data-top="105" data-width="203" data-height="50">
+<!--      <div id="u20" class="ax_default" data-left="329" data-top="105" data-width="203" data-height="50">-->
+
+        <!-- Unnamed (Rectangle) -->
+<!--        <div id="u21" class="ax_default label">-->
+<!--          <div id="u21_div" class=""></div>-->
+<!--          <div id="u21_text" class="text ">-->
+<!--            <p><span>出生年月日</span></p>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; Unnamed (Text Field) &ndash;&gt;-->
+<!--        <div id="u22" class="ax_default text_field">-->
+<!--          <div id="u22_div" class=""></div>-->
+<!--          <input id="u22_input" type="date" value="" class="u22_input" />-->
+<!--        </div>-->
+<!--      </div>-->
+
+      <!-- Unnamed (Group) -->
+      <div id="u20" class="ax_default" data-left="563" data-top="105" data-width="193" data-height="50">
 
         <!-- Unnamed (Rectangle) -->
         <div id="u21" class="ax_default label">
           <div id="u21_div" class=""></div>
           <div id="u21_text" class="text ">
-            <p><span>出生年月日</span></p>
+            <p><span>事故/死亡日期</span></p>
           </div>
         </div>
 
@@ -248,24 +266,6 @@
         <div id="u22" class="ax_default text_field">
           <div id="u22_div" class=""></div>
           <input id="u22_input" type="date" value="" class="u22_input" />
-        </div>
-      </div>
-
-      <!-- Unnamed (Group) -->
-      <div id="u23" class="ax_default" data-left="563" data-top="105" data-width="193" data-height="50">
-
-        <!-- Unnamed (Rectangle) -->
-        <div id="u24" class="ax_default label">
-          <div id="u24_div" class=""></div>
-          <div id="u24_text" class="text ">
-            <p><span>事故/死亡日期</span></p>
-          </div>
-        </div>
-
-        <!-- Unnamed (Text Field) -->
-        <div id="u25" class="ax_default text_field">
-          <div id="u25_div" class=""></div>
-          <input id="u25_input" type="date" value="" class="u25_input" />
         </div>
       </div>
     </div>
@@ -607,8 +607,8 @@
 
   function analyze() {
 
-    var insuranceNo = document.getElementById("u19_input").value;
-    var dieDate = document.getElementById("u25_input").value;
+    var id = document.getElementById("u19_input").value;
+    var dieDate = document.getElementById("u22_input").value;
     var dieInsurance = document.getElementById("u4_input").value;
     var reason = null;
     const application = [];
@@ -623,12 +623,12 @@
 
 
     if (document.getElementById('u73_input').checked)
-      reason = "illness";
+      reason = "疾病";
     else if (document.getElementById('u74_input').checked)
-      reason = "accident";
+      reason = "意外";
 
 
-    fetch('http://localhost:8080/odm/getCaculation',
+    fetch('http://localhost:8080/odm/getCalculation',
       {
         method: 'POST',
         headers: {
@@ -636,10 +636,10 @@
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          insuranceNo: insuranceNo,
-          dieDate: dieDate,
-          reason: reason,
-          application: application
+          id,
+          dieDate,
+          reason,
+          application,
         })
       })
       .then(function (response) {
