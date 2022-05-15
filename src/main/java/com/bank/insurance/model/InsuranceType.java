@@ -6,12 +6,12 @@ import lombok.*;
 import java.util.Date;
 import java.util.List;
 
-@Setter
-@Getter
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class InsuranceType {
 
-    private String insuranceNo;
+    private String id;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone="GMT+8")
     private Date dieDate;
