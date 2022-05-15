@@ -32,17 +32,16 @@ import java.util.Map;
 @Slf4j
 @RestController
 @RequestMapping("/odm")
-public class odmController {
+public class OdmController {
 
     @Autowired
     private OdmServiceImpl odmServiceImpl;
 
-    private static final String ODM = "/getCaculation";
+    private static final String ODM = "/getCalculation";
 
     @PostMapping(value = ODM)
-    public ResponseEntity<?> getCaculation(@Valid @RequestBody InsuranceType insuranceType)
+    public ResponseEntity<?> getCalculation(@Valid @RequestBody InsuranceType insuranceType)
             throws IOException {
-
         return odmServiceImpl.process(insuranceType);
     }
 
