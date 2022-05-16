@@ -22,4 +22,6 @@ import java.util.Date;
     private Date caseAccidentDate;
 
     private String productNo;
+
+    private String applyItem;
 }

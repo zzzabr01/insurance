@@ -34,6 +34,7 @@ public class OdmServiceImpl {
         Date caseAccidentDate = insuranceType.getDieDate();
         String accidentReason = insuranceType.getReason();
         List<String> application = insuranceType.getApplication();
+        String applyItem = application.get(0);
         List<InsuranceInfo> insuranceInfo = userInsuranceInfo().getINSU_LIST();
         InsuranceInfo insuranceInfoParam = insuranceInfo.get(0);
         // 取得保單號碼的前兩碼作為商品代號
@@ -42,7 +43,7 @@ public class OdmServiceImpl {
 
         try {
             LifeInsuranceProduct10Request lifeInsuranceProduct10Request = LifeInsuranceProduct10Request.builder()
-                    .productNo(productNo).caseAccidentDate(caseAccidentDate)
+                    .productNo(productNo).caseAccidentDate(caseAccidentDate).applyItem(applyItem)
                     .accidentReason(accidentReason).addUpForProductNo10(addUpForProductNo10()).insuranceInfo(insuranceInfoParam).build();
             StringEntity stringEntity = new StringEntity(new ObjectMapper().writeValueAsString(lifeInsuranceProduct10Request),
                     ContentType.APPLICATION_JSON);
