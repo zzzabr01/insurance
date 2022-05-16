@@ -9,8 +9,8 @@
             "lipi_LO_MK": "NO",
             "lipi_ST": "正常",
             "lipi_ST_DATE": "20220512",
-            "lipi_PREM_YEAR": "20",
-            "lipi_MAIN_AMT": "1000000"
+            "lipi_PREM_YEAR": 20,
+            "lipi_MAIN_AMT": 1000000
         }
     ]
 }

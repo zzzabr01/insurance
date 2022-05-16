@@ -32,8 +32,8 @@ public class InsuranceInfo {
     private String lipi_ST_DATE;
 
     @JsonProperty("lipi_PREM_YEAR")
-    private String lipi_PREM_YEAR;
+    private Integer lipi_PREM_YEAR;
 
     @JsonProperty("lipi_MAIN_AMT")
-    private String lipi_MAIN_AMT;
+    private Integer lipi_MAIN_AMT;
 }
