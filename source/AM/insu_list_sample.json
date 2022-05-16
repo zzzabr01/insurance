@@ -1,0 +1,16 @@
+{
+    "ID": "A123456789",
+    "INSU_LIST": [
+        {
+            "lipi_INSU_NO": "10123456789-01",
+            "lipi_BIRTH": "19750813",
+            "lipi_INSU_BEG_DATE": "20040101",
+            "lipi_INSU_END_DATE": "20201231",
+            "lipi_LO_MK": "NO",
+            "lipi_ST": "正常",
+            "lipi_ST_DATE": "20220512",
+            "lipi_PREM_YEAR": 20,
+            "lipi_MAIN_AMT": 1000000
+        }
+    ]
+}
