@@ -2,9 +2,9 @@
     "ID": "A123456789",
     "INSU_LIST": [
         {
-            "lipi_INSU_NO": "10123456789-01",
+            "lipi_INSU_NO": "AM123456789-01",
             "lipi_BIRTH": "19750813",
-            "lipi_INSU_BEG_DATE": "19990101",
+            "lipi_INSU_BEG_DATE": "20060101",
             "lipi_INSU_END_DATE": "20201231",
             "lipi_LO_MK": "NO",
             "lipi_ST": "正常",
