@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.ruleflow:RuleFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.ruleflow="http://ilog.rules.studio/model/ruleflow.ecore">
+  <name>HospitalInsuranceForOverseasSuddenIllness</name>
+  <uuid>9dda7eed-4945-4948-8701-ff75f3484d67</uuid>
+  <locale>zh_TW</locale>
+  <categories>any</categories>
+  <rfModel>
+<Ruleflow xmlns="http://schemas.ilog.com/Rules/7.0/Ruleflow">
+  <Body>
+    <TaskList>
+      <StartTask Identifier="task_0"/>
+      <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="task_1" Ordering="Default">
+        <FinalActions Language="bal"><![CDATA[設定 '給付金額'為 entrance.receivceFromIBM( '傷害險給付金額參數'  , '計算類別' , '計算編號' ) ;]]></FinalActions>
+        <RuleList>
+          <Rule Uuid="4f9a0fff-530f-4fa1-a104-372030e800db"/>
+        </RuleList>
+      </RuleTask>
+      <StopTask Identifier="task_2"/>
+    </TaskList>
+    <NodeList>
+      <TaskNode Identifier="node_0" Task="task_0"/>
+      <TaskNode Identifier="node_1" Task="task_1"/>
+      <TaskNode Identifier="node_2" Task="task_2"/>
+    </NodeList>
+    <TransitionList>
+      <Transition Identifier="transition_0" Source="node_0" Target="node_1"/>
+      <Transition Identifier="transition_1" Source="node_1" Target="node_2"/>
+    </TransitionList>
+  </Body>
+  <Resources>
+    <ResourceSet Locale="zh_TW">
+      <Data Name="node_1#height">40.0</Data>
+      <Data Name="node_0#height">21.0</Data>
+      <Data Name="node_1#name">node_1</Data>
+      <Data Name="node_2#name">node_2</Data>
+      <Data Name="node_1#label">海外突發疾病住院醫療保險金</Data>
+      <Data Name="node_1#width">102.0</Data>
+      <Data Name="node_0#name">node_0</Data>
+      <Data Name="node_0#width">21.0</Data>
+      <Data Name="node_0#x">-388.0</Data>
+      <Data Name="node_0#y">-176.0</Data>
+      <Data Name="node_1#x">-375.0</Data>
+      <Data Name="node_1#y">-108.0</Data>
+      <Data Name="node_2#x">-389.0</Data>
+      <Data Name="node_2#y">-3.0</Data>
+    </ResourceSet>
+  </Resources>
+  <Properties/>
+</Ruleflow>
+</rfModel>
+</ilog.rules.studio.model.ruleflow:RuleFlow>

@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
+  <name>Cancer</name>
+  <uuid>6ff92e16-2c97-4658-afb3-47fd543a1170</uuid>
+  <locale>zh_TW</locale>
+  <definition>
+<DT Version="7.0" xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable">
+  <Body>
+    <Structure>
+      <ConditionDefinitions>
+        <ConditionDefinition Id="C0">
+          <ExpressionDefinition>
+            <Text><![CDATA['綜合型保險'  的商品代號是<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C1">
+          <ExpressionDefinition>
+            <Text><![CDATA['綜合型保險'的保單投保日等於或晚於<一個 日期> ,並且等於或早於<一個 日期>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C2">
+          <ExpressionDefinition>
+            <Text><![CDATA['綜合型保險' 的保險年齡 是<一個 數字>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C3">
+          <ExpressionDefinition>
+            <Text><![CDATA['綜合型保險' 的實際年齡  是<一個 數字>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C4">
+          <ExpressionDefinition>
+            <Text><![CDATA['綜合型保險' 的事故原因 是<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C5">
+          <ExpressionDefinition>
+            <Text><![CDATA['綜合型保險' 的保單年度 是<一個 數字>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C6">
+          <ExpressionDefinition>
+            <Text><![CDATA['綜合型保險' 的符合罹癌條件 是<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+      </ConditionDefinitions>
+      <ActionDefinitions>
+        <ActionDefinition Id="A0">
+          <ExpressionDefinition>
+            <Text><![CDATA[設定'規則編碼'  為<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A1">
+          <ExpressionDefinition>
+            <Text><![CDATA[設定'給付項目'    為<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A2">
+          <ExpressionDefinition>
+            <Text><![CDATA[設定'給付名稱' 為<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A6">
+          <ExpressionDefinition>
+            <Text><![CDATA[設定'綜合險給付金額參數' 的這保額倍數為<一個 數字>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A3">
+          <ExpressionDefinition>
+            <Text><![CDATA[設定'綜合險給付金額參數' 的這年繳保險費總額倍數為<一個 數字>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A4">
+          <ExpressionDefinition>
+            <Text><![CDATA[設定'計算類別'  為<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A5">
+          <ExpressionDefinition>
+            <Text><![CDATA[設定'計算編號'  為<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+      </ActionDefinitions>
+    </Structure>
+    <Contents>
+      <Partition DefId="C0">
+        <Condition>
+          <Expression>
+            <Param><![CDATA["EM"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2015-09-18]]></Param>
+                <Param><![CDATA[2019-01-01]]></Param>
+              </Expression>
+              <Partition DefId="C5">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>等於<一個 數字>]]></Text>
+                    <Param><![CDATA[1]]></Param>
+                  </Expression>
+                  <Partition DefId="C6">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA["低侵襲性"]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["EM3501"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["罹患癌症保險金"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression>
+                            <Param><![CDATA["初次罹患低侵襲性癌症保險金"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A6">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression>
+                            <Param><![CDATA[1.06]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A4">
+                          <Expression>
+                            <Param><![CDATA["01"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A5">
+                          <Expression>
+                            <Param><![CDATA["IA1"]]></Param>
+                          </Expression>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA["侵襲性"]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["EM3503"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["罹患癌症保險金"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression>
+                            <Param><![CDATA["初次罹患低侵襲性癌症保險金"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A6">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression>
+                            <Param><![CDATA[1.06]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A4">
+                          <Expression>
+                            <Param><![CDATA["01"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A5">
+                          <Expression>
+                            <Param><![CDATA["IA1"]]></Param>
+                          </Expression>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                  </Expression>
+                  <Partition DefId="C6">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA["低侵襲性"]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["EM3502"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["罹患癌症保險金"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression>
+                            <Param><![CDATA["初次罹患侵襲性癌症保險金"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A6">
+                          <Expression>
+                            <Param><![CDATA[0.2]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A4">
+                          <Expression>
+                            <Param><![CDATA["01"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A5">
+                          <Expression>
+                            <Param><![CDATA["AA1"]]></Param>
+                          </Expression>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA["侵襲性"]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["EM3504"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["罹患癌症保險金"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression>
+                            <Param><![CDATA["初次罹患侵襲性癌症保險金"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A6">
+                          <Expression>
+                            <Param><![CDATA[1]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A4">
+                          <Expression>
+                            <Param><![CDATA["01"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A5">
+                          <Expression>
+                            <Param><![CDATA["AA1"]]></Param>
+                          </Expression>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA["特定癌症"]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["EM3505"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["罹患癌症保險金"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression>
+                            <Param><![CDATA["初次罹患特定癌症保險金"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A6">
+                          <Expression>
+                            <Param><![CDATA[0.7]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A4">
+                          <Expression>
+                            <Param><![CDATA["01"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A5">
+                          <Expression>
+                            <Param><![CDATA["AA1"]]></Param>
+                          </Expression>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+            <Action DefId="A6">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A4">
+              <Expression/>
+            </Action>
+            <Action DefId="A5">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+            <Action DefId="A6">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A4">
+              <Expression/>
+            </Action>
+            <Action DefId="A5">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+            <Action DefId="A6">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A4">
+              <Expression/>
+            </Action>
+            <Action DefId="A5">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+            <Action DefId="A6">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A4">
+              <Expression/>
+            </Action>
+            <Action DefId="A5">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+            <Action DefId="A6">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A4">
+              <Expression/>
+            </Action>
+            <Action DefId="A5">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+            <Action DefId="A6">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A4">
+              <Expression/>
+            </Action>
+            <Action DefId="A5">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+      </Partition>
+    </Contents>
+  </Body>
+  <Resources DefaultLocale="zh_TW">
+    <ResourceSet Locale="zh_TW">
+      <Data Name="Definitions(A0)#HeaderText"><![CDATA[規則編碼]]></Data>
+      <Data Name="Definitions(A0)#Width"><![CDATA[109]]></Data>
+      <Data Name="Definitions(A1)#HeaderText"><![CDATA[給付項目]]></Data>
+      <Data Name="Definitions(A1)#Width"><![CDATA[108]]></Data>
+      <Data Name="Definitions(A2)#HeaderText"><![CDATA[給付名稱]]></Data>
+      <Data Name="Definitions(A2)#Width"><![CDATA[89]]></Data>
+      <Data Name="Definitions(A3)#HeaderText"><![CDATA[年繳保費總和倍數]]></Data>
+      <Data Name="Definitions(A3)#Width"><![CDATA[112]]></Data>
+      <Data Name="Definitions(A4)#HeaderText"><![CDATA[計算類別]]></Data>
+      <Data Name="Definitions(A4)#Width"><![CDATA[78]]></Data>
+      <Data Name="Definitions(A5)#HeaderText"><![CDATA[計算編號]]></Data>
+      <Data Name="Definitions(A5)#Width"><![CDATA[78]]></Data>
+      <Data Name="Definitions(A6)#HeaderText"><![CDATA[保額倍數]]></Data>
+      <Data Name="Definitions(A6)#Width"><![CDATA[65]]></Data>
+      <Data Name="Definitions(C0)#HeaderText"><![CDATA[商品代號]]></Data>
+      <Data Name="Definitions(C0)#Width"><![CDATA[108]]></Data>
+      <Data Name="Definitions(C1)#HeaderText"><![CDATA[商品生效起迄日]]></Data>
+      <Data Name="Definitions(C1)#Width"><![CDATA[199]]></Data>
+      <Data Name="Definitions(C1)[0]#HeaderText"><![CDATA[商品生效起日]]></Data>
+      <Data Name="Definitions(C1)[1]#HeaderText"><![CDATA[商品生效迄日]]></Data>
+      <Data Name="Definitions(C2)#HeaderText"><![CDATA[保險年齡]]></Data>
+      <Data Name="Definitions(C2)#Width"><![CDATA[79]]></Data>
+      <Data Name="Definitions(C3)#HeaderText"><![CDATA[實際年齡]]></Data>
+      <Data Name="Definitions(C3)#Width"><![CDATA[65]]></Data>
+      <Data Name="Definitions(C4)#HeaderText"><![CDATA[事故原因]]></Data>
+      <Data Name="Definitions(C4)#Width"><![CDATA[67]]></Data>
+      <Data Name="Definitions(C5)#HeaderText"><![CDATA[保單年度]]></Data>
+      <Data Name="Definitions(C5)#Width"><![CDATA[96]]></Data>
+      <Data Name="Definitions(C6)#HeaderText"><![CDATA[符合罹癌條件]]></Data>
+      <Data Name="Definitions(C6)#Width"><![CDATA[114]]></Data>
+    </ResourceSet>
+  </Resources>
+</DT>
+</definition>
+</ilog.rules.studio.model.dt:DecisionTable>

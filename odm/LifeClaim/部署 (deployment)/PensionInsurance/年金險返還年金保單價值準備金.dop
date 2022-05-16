@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" xmlns:ilog.rules.studio.model.query.extractor="http://ilog.rules.studio/model/query/extractor.ecore" rulesetName="RefundNonForFeitureValue" usingRuleflow="true" ruleflowName="RefundNonForFeitureValue" targetRuleProjectName="LifeClaim">
+  <name>年金險返還年金保單價值準備金</name>
+  <uuid>fb159971-2fc0-42a3-8436-a44c01d3644c</uuid>
+  <referencedVariables variableName="pensionInsurance" variableSetName="LifeClaimVar">
+    <variableSet href="../../規則/LifeClaimVar.var#478a3bc5-b3a4-487a-be8a-abd7c0a78a7d"/>
+  </referencedVariables>
+  <referencedVariables variableName="pensionPaymentAmountModel" variableSetName="LifeClaimVar">
+    <variableSet href="../../規則/LifeClaimVar.var#478a3bc5-b3a4-487a-be8a-abd7c0a78a7d"/>
+  </referencedVariables>
+  <referencedVariables variableName="ruleCode" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <referencedVariables variableName="paymentItem" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <ruleflow href="../../規則/pensionInsurance/flow/RefundNonForFeitureValue.rfl#60d4803a-f4dc-43fc-9515-a799d89b915a"/>
+  <extractor xsi:type="ilog.rules.studio.model.query.extractor:QueryExtractor" name="PensionInsurance年金險返還年金保單價值準備金_extractor" validator="預設驗證器"/>
+  <targetRuleProject href="../../../LifeClaim#ceb82f07-c460-42f2-8539-a36ef6775de0"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

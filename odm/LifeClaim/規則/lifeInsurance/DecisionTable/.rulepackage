@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>DecisionTable</name>
+  <uuid>c8e531bb-9816-4519-9382-0d363d3f276a</uuid>
+  <orderedMembers>BurnAndScaldsDecisionTable</orderedMembers>
+  <orderedMembers>CriticalIllnessBenefitDecisionTable</orderedMembers>
+  <orderedMembers>ContractExtinguishDecisionTable</orderedMembers>
+  <orderedMembers>DeathBenefitDecisionTable</orderedMembers>
+  <orderedMembers>DisabilityBenefitDecisionTable</orderedMembers>
+  <orderedMembers>ElderlyHospitalizationDecisionTable</orderedMembers>
+  <orderedMembers>FuneralExpenseDecisionTable</orderedMembers>
+  <orderedMembers>IncrementalFeedbackFundDecisionTable</orderedMembers>
+  <orderedMembers>LifeSupportDecisionTable</orderedMembers>
+  <orderedMembers>PremiumWaiverDecisionTable</orderedMembers>
+  <orderedMembers>RefundAllPremiumsPaidDecisionTable</orderedMembers>
+  <orderedMembers>SurvivalInsuranceBenefitDecisionTable</orderedMembers>
+  <orderedMembers>TotallyDisabilityDecisionTable</orderedMembers>
+  <orderedMembers>TotallyDisabilityPensionDecisionTable</orderedMembers>
+</ilog.rules.studio.model.base:RulePackage>

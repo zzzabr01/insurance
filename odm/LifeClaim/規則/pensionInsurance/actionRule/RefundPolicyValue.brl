@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>RefundPolicyValue</name>
+  <uuid>ea57fc8c-c8ce-487f-b583-9cf36afaf83a</uuid>
+  <locale>zh_TW</locale>
+  <definition><![CDATA[ 如果   '給付項目' 是 "返還保單帳戶價值"
+   
+則  
+	設定 '給付金額' 為 取其大. 兩數取其大( '年金險給付金額參數'  的已繳保險費總額 , '年金險給付金額參數'  的保單價值準備金 ) ;  ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

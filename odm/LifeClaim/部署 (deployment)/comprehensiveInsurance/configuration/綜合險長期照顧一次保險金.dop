@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" xmlns:ilog.rules.studio.model.query.extractor="http://ilog.rules.studio/model/query/extractor.ecore" rulesetName="ComprehensiveLongTermCareLumpSum" usingRuleflow="true" ruleflowName="LongTermCareLumpSum" targetRuleProjectName="LifeClaim">
+  <name>綜合險長期照顧一次保險金</name>
+  <uuid>1e3d80bc-2496-4102-bb8e-4c9fe5edc274</uuid>
+  <description><![CDATA[長期照顧一次保險金]]></description>
+  <referencedVariables variableName="comprehensiveInsurance" variableSetName="ComprehensiveInsuranceVar">
+    <variableSet href="../../../規則/ComprehensiveInsuranceVar.var#4a50d411-6313-46d4-ba7d-b8e1f92a9643"/>
+  </referencedVariables>
+  <referencedVariables variableName="ruleCode" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <referencedVariables variableName="paymentItem" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <referencedVariables variableName="paymentName" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <referencedVariables variableName="paymentAmount" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <referencedVariables variableName="comprehensivePaymentAmountModel" variableSetName="ComprehensiveInsuranceVar">
+    <variableSet href="../../../規則/ComprehensiveInsuranceVar.var#4a50d411-6313-46d4-ba7d-b8e1f92a9643"/>
+  </referencedVariables>
+  <referencedVariables variableName="calculationType" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <referencedVariables variableName="calculationCode" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <ruleflow href="../../../規則/comprehensiveInsurance/flow/LongTermCareLumpSum.rfl#b2c9b69d-2b33-4d60-956a-656aab9c3155"/>
+  <extractor xsi:type="ilog.rules.studio.model.query.extractor:QueryExtractor" name="ComprehensiveLongTermCareLumpSum_extractor" validator="預設驗證器"/>
+  <targetRuleProject href="../../../../LifeClaim#ceb82f07-c460-42f2-8539-a36ef6775de0"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

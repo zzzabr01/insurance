@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>comprehensiveInsurance</name>
+  <uuid>a1286e69-beea-4f74-9c29-df676f49ac3c</uuid>
+</ilog.rules.studio.model.base:RulePackage>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>DeathBenefit</name>
+  <uuid>17983726-1dde-4979-bee6-88647e16089f</uuid>
+  <locale>zh_TW</locale>
+</ilog.rules.studio.model.brl:ActionRule>

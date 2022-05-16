@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
+  <name>LifeSupportDecisionTable</name>
+  <uuid>332879f2-fc62-466d-97da-b739e6f34439</uuid>
+  <documentation><![CDATA[生活扶助保險金]]></documentation>
+  <locale>zh_TW</locale>
+  <definition>
+<DT Version="7.0" xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable">
+  <Body>
+    <Structure>
+      <ConditionDefinitions>
+        <ConditionDefinition Id="C0">
+          <ExpressionDefinition>
+            <Text><![CDATA['壽險' 的商品代號  是<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C1">
+          <ExpressionDefinition>
+            <Text><![CDATA['壽險'  的保單投保日等於或晚於<一個 日期> ,並且等於或早於<一個 日期>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C8">
+          <ExpressionDefinition>
+            <Text><![CDATA['壽險'的保險年齡是<一個 數字>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C7">
+          <ExpressionDefinition>
+            <Text><![CDATA['壽險'的實際年齡是<一個 數字>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C6">
+          <ExpressionDefinition>
+            <Text><![CDATA['壽險' 的殘廢等級 是<一個 數字>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C5">
+          <ExpressionDefinition>
+            <Text><![CDATA['壽險' 的除外責任是<一個 布林類型>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C11">
+          <ExpressionDefinition>
+            <Text><![CDATA['壽險' 的領取生活扶助保險金 是<一個 布林類型>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C4">
+          <ExpressionDefinition>
+            <Text><![CDATA['壽險' 的事故原因 是<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C2">
+          <ExpressionDefinition>
+            <Text><![CDATA['壽險'的符合完全失能附表 是<一個 布林類型>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+      </ConditionDefinitions>
+      <ActionDefinitions>
+        <ActionDefinition Id="A0">
+          <ExpressionDefinition>
+            <Text><![CDATA[設定'規則編碼'為<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A1">
+          <ExpressionDefinition>
+            <Text><![CDATA[設定'給付項目'為<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A3">
+          <ExpressionDefinition>
+            <Text><![CDATA[設定'計算類別'  為<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A2">
+          <ExpressionDefinition>
+            <Text><![CDATA[設定'計算編號'  為<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+      </ActionDefinitions>
+    </Structure>
+    <Contents>
+      <Partition DefId="C0">
+        <Condition>
+          <Expression>
+            <Param><![CDATA["0A"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2004-04-01]]></Param>
+                <Param><![CDATA[2017-01-01]]></Param>
+              </Expression>
+              <Partition DefId="C6">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[3]]></Param>
+                  </Expression>
+                  <Partition DefId="C5">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["0A0901"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["生活扶助保險金"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression>
+                            <Param><![CDATA["01"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression>
+                            <Param><![CDATA["SA1"]]></Param>
+                          </Expression>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+                <Condition>
+                  <Expression/>
+                  <Partition DefId="C11">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["0A0902"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["生活扶助保險金"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression>
+                            <Param><![CDATA["01"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression>
+                            <Param><![CDATA["SR1"]]></Param>
+                          </Expression>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["46"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2003-05-08]]></Param>
+                <Param><![CDATA[2004-01-01]]></Param>
+              </Expression>
+              <Partition DefId="C6">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[3]]></Param>
+                  </Expression>
+                  <Partition DefId="C5">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["460901"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["生活扶助保險金"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression>
+                            <Param><![CDATA["01"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression>
+                            <Param><![CDATA["AA1"]]></Param>
+                          </Expression>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+                <Condition>
+                  <Expression/>
+                  <Partition DefId="C11">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[成立]]></Param>
+                      </Expression>
+                      <Partition DefId="C4">
+                        <Condition>
+                          <Expression>
+                            <Text><![CDATA[<一個 字串>不為空字串]]></Text>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA["460902"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A1">
+                              <Expression>
+                                <Param><![CDATA["生活扶助保險金"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A3">
+                              <Expression>
+                                <Param><![CDATA["01"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A2">
+                              <Expression>
+                                <Param><![CDATA["AR1"]]></Param>
+                              </Expression>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                        <Condition>
+                          <Expression/>
+                          <Partition DefId="C2">
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA[成立]]></Param>
+                              </Expression>
+                              <ActionSet>
+                                <Action DefId="A0">
+                                  <Expression>
+                                    <Param><![CDATA["460903"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A1">
+                                  <Expression>
+                                    <Param><![CDATA["生活扶助保險金"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A3">
+                                  <Expression>
+                                    <Param><![CDATA["01"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A2">
+                                  <Expression>
+                                    <Param><![CDATA["AR1"]]></Param>
+                                  </Expression>
+                                </Action>
+                              </ActionSet>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+      </Partition>
+    </Contents>
+  </Body>
+  <Resources DefaultLocale="zh_TW">
+    <ResourceSet Locale="zh_TW">
+      <Data Name="Definitions(A0)#HeaderText"><![CDATA[規則編碼]]></Data>
+      <Data Name="Definitions(A0)#Width"><![CDATA[149]]></Data>
+      <Data Name="Definitions(A1)#HeaderText"><![CDATA[給付項目]]></Data>
+      <Data Name="Definitions(A1)#Width"><![CDATA[116]]></Data>
+      <Data Name="Definitions(A2)#HeaderText"><![CDATA[計算編號]]></Data>
+      <Data Name="Definitions(A2)#Width"><![CDATA[93]]></Data>
+      <Data Name="Definitions(A3)#HeaderText"><![CDATA[計算類別]]></Data>
+      <Data Name="Definitions(A3)#Width"><![CDATA[93]]></Data>
+      <Data Name="Definitions(C0)#HeaderText"><![CDATA[商品代號]]></Data>
+      <Data Name="Definitions(C0)#Width"><![CDATA[161]]></Data>
+      <Data Name="Definitions(C1)#HeaderText"><![CDATA[商品生效起迄日]]></Data>
+      <Data Name="Definitions(C1)#Width"><![CDATA[161]]></Data>
+      <Data Name="Definitions(C1)[0]#HeaderText"><![CDATA[商品生效起日]]></Data>
+      <Data Name="Definitions(C1)[1]#HeaderText"><![CDATA[商品生效迄日]]></Data>
+      <Data Name="Definitions(C11)#HeaderText"><![CDATA[領取生活扶助保險金]]></Data>
+      <Data Name="Definitions(C11)#Width"><![CDATA[111]]></Data>
+      <Data Name="Definitions(C2)#HeaderText"><![CDATA[符合全殘廢附表]]></Data>
+      <Data Name="Definitions(C2)#Width"><![CDATA[158]]></Data>
+      <Data Name="Definitions(C4)#HeaderText"><![CDATA[事故原因]]></Data>
+      <Data Name="Definitions(C4)#Width"><![CDATA[151]]></Data>
+      <Data Name="Definitions(C5)#HeaderText"><![CDATA[除外責任]]></Data>
+      <Data Name="Definitions(C5)#Width"><![CDATA[111]]></Data>
+      <Data Name="Definitions(C6)#HeaderText"><![CDATA[殘廢等級]]></Data>
+      <Data Name="Definitions(C6)#Width"><![CDATA[123]]></Data>
+      <Data Name="Definitions(C7)#HeaderText"><![CDATA[實際年齡]]></Data>
+      <Data Name="Definitions(C7)#Width"><![CDATA[111]]></Data>
+      <Data Name="Definitions(C8)#HeaderText"><![CDATA[保險年齡]]></Data>
+      <Data Name="Definitions(C8)#Width"><![CDATA[111]]></Data>
+    </ResourceSet>
+  </Resources>
+</DT>
+</definition>
+</ilog.rules.studio.model.dt:DecisionTable>

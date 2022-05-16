@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>decisionTable</name>
+  <uuid>d3cb7ecb-c573-4146-909c-113042d9e31e</uuid>
+  <orderedMembers>FuneralExpense</orderedMembers>
+  <orderedMembers>DeathBenefit</orderedMembers>
+  <orderedMembers>IllnessDeath</orderedMembers>
+  <orderedMembers>AccidentHospitalInAllowance</orderedMembers>
+  <orderedMembers>AccidentMedicalReimbursementInsurance</orderedMembers>
+  <orderedMembers>OutpatientMedicalInsuranceForOverseasSuddenIllness</orderedMembers>
+  <orderedMembers>DisabilityInsurance</orderedMembers>
+  <orderedMembers>DiseaseHospitalInsurance</orderedMembers>
+  <orderedMembers>HospitalInsurance</orderedMembers>
+  <orderedMembers>OutpatientMedicalInsurance</orderedMembers>
+  <orderedMembers>BurnsAndScalds</orderedMembers>
+</ilog.rules.studio.model.base:RulePackage>

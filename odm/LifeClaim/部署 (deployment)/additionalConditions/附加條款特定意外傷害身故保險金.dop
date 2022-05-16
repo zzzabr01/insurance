@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" xmlns:ilog.rules.studio.model.query.extractor="http://ilog.rules.studio/model/query/extractor.ecore" rulesetName="SpecificAccidentalDeath" usingRuleflow="true" ruleflowName="SpecificAccidentalDeath" targetRuleProjectName="LifeClaim">
+  <name>附加條款特定意外傷害身故保險金</name>
+  <uuid>19477b52-7af2-4bd8-8089-30dcbd9dbd4a</uuid>
+  <referencedVariables variableName="additionalConditions" variableSetName="LifeClaimVar">
+    <variableSet href="../../規則/LifeClaimVar.var#478a3bc5-b3a4-487a-be8a-abd7c0a78a7d"/>
+  </referencedVariables>
+  <referencedVariables variableName="ruleCode" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <referencedVariables variableName="paymentItem" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <referencedVariables variableName="paymentAmount" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <referencedVariables variableName="calculationType" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <referencedVariables variableName="calculationCode" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <referencedVariables variableName="additionalPaymentAmountModel" variableSetName="LifeClaimVar">
+    <variableSet href="../../規則/LifeClaimVar.var#478a3bc5-b3a4-487a-be8a-abd7c0a78a7d"/>
+  </referencedVariables>
+  <ruleflow href="../../規則/additionalCondition/flow/SpecificAccidentalDeath.rfl#904b72d7-6d0d-41cd-a13e-1185c7c53a3f"/>
+  <extractor xsi:type="ilog.rules.studio.model.query.extractor:QueryExtractor" name="additionalConditionsSpecificAccidentalDeath_extractor" validator="預設驗證器"/>
+  <targetRuleProject href="../../../LifeClaim#ceb82f07-c460-42f2-8539-a36ef6775de0"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

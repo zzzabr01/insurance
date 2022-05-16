@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:VariableSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>LifeClaimVar</name>
+  <uuid>478a3bc5-b3a4-487a-be8a-abd7c0a78a7d</uuid>
+  <variables name="investmentInsurance" type="main.model.InvestmentInsurance" initialValue="" verbalization="投資型保險"/>
+  <variables name="additionalConditions" type="main.model.AdditionalConditions" initialValue="" verbalization="附加條款"/>
+  <variables name="LifePaymentAmountModel" type="main.model.payment.LifePaymentAmountModel" initialValue="" verbalization="壽險給付金額參數"/>
+  <variables name="injuryInsurance" type="main.model.InjuryInsurance" initialValue="" verbalization="傷害險"/>
+  <variables name="injuryPaymentAmountModel" type="main.model.payment.InjuryPaymentAmountModel" initialValue="" verbalization="傷害險給付金額參數"/>
+  <variables name="PaymentModel" type="main.model.payment.PaymentAmountModel" initialValue="" verbalization="給付金額參數"/>
+  <variables name="additionalPaymentAmountModel" type="main.model.payment.AdditionalPaymentAmountModel" initialValue="" verbalization="附加條款給付金額參數"/>
+  <variables name="investmentPaymentAmountModel" type="main.model.payment.InvestmentPaymentAmountModel" initialValue="" verbalization="投資型保險給付金額參數"/>
+  <variables name="pensionInsurance" type="main.model.PensionInsurance" initialValue="" verbalization="年金險"/>
+  <variables name="pensionPaymentAmountModel" type="main.model.payment.PensionPaymentAmountModel" initialValue="" verbalization="年金險給付金額參數"/>
+  <variables name="addUpForProductNo10" type="main.model.sit.AddUpForProductNo10" initialValue="" verbalization="壽險代號10所需給付金額計算參數"/>
+  <variables name="insuranceInfo" type="main.model.sit.InsuranceInfo" initialValue="" verbalization="使用者保單資訊"/>
+  <variables name="lifeInsurance" type="main.model.LifeInsurance" initialValue="" verbalization="壽險"/>
+</ilog.rules.studio.model.base:VariableSet>

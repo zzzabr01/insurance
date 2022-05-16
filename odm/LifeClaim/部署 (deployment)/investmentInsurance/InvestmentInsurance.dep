@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Deployment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" ruleAppName="InvestmentInsurance" managingXom="true">
+  <name>InvestmentInsurance</name>
+  <uuid>413e9746-6581-4a61-bd6d-6706345cbc14</uuid>
+  <targets label="rule_execution_server"/>
+  <operations operationName="投資型身故保險金">
+    <operation href="投資型身故保險金.dop#cd7c3ab7-be96-4b50-a942-6c30fa969881"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="投資型年金">
+    <operation href="投資型年金.dop#9563a01d-878d-49ea-9c7f-5ea25bb66f73"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="投資型完全失能保險金">
+    <operation href="投資型完全失能保險金.dop#526978ff-e72e-4915-827d-ccd2b32a2beb"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="投資型返還保單帳戶價值">
+    <operation href="投資型返還保單帳戶價值.dop#0996ee8d-a43c-410a-8f9c-717161a263fa"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="投資型契約消滅">
+    <operation href="投資型契約消滅.dop#1fdb104b-927a-49a6-bbe0-36de65652fe8"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <versionPolicies label="增量次要版本號碼" ruleset="INCREMENT_MINOR" default="true" recurrent="true">
+    <description><![CDATA[更新每一個規則集的次要版本。提供新版本，但仍保留舊版本。]]></description>
+  </versionPolicies>
+  <versionPolicies label="使用基礎版本號碼" recurrent="true">
+    <description><![CDATA[使用部署配置中提供的號碼。以這個版本取代每一個規則集的最新版本。用於緊急修復程式或開發。]]></description>
+  </versionPolicies>
+  <versionPolicies label="使用者可以定義版本號碼" ruleset="MANUAL" recurrent="true">
+    <description><![CDATA[可讓您輸入自己的版本號碼。用於舊版的緊急修復程式或更新項目。]]></description>
+  </versionPolicies>
+</com.ibm.rules.studio.model.decisionservice:Deployment>

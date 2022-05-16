@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:VariableSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>PensionVar</name>
+  <uuid>19c2625e-cd7d-4f7b-b17d-4c81e1d7a182</uuid>
+  <variables name="isExtinguish" type="java.lang.String" initialValue="&quot;N&quot;" verbalization="是否契約消滅"/>
+</ilog.rules.studio.model.base:VariableSet>

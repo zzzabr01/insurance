@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Deployment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" ruleAppName="LifeInsuranceProductNo10" managingXom="true">
+  <name>壽險商品代號10身故與完全失能理賠部署</name>
+  <uuid>702ca5de-f718-42e8-95df-9674b1e6e3a5</uuid>
+  <targets label="rule_execution_server"/>
+  <operations operationName="壽險商品代號10身故與完全失能理賠">
+    <operation href="壽險商品代號10身故與完全失能理賠.dop#28d40f36-e211-42f4-af35-609e73e78076"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <versionPolicies label="增量次要版本號碼" ruleset="INCREMENT_MINOR" default="true" recurrent="true">
+    <description><![CDATA[更新每一個規則集的次要版本。提供新版本，但仍保留舊版本。]]></description>
+  </versionPolicies>
+  <versionPolicies label="使用基礎版本號碼" recurrent="true">
+    <description><![CDATA[使用部署配置中提供的號碼。以這個版本取代每一個規則集的最新版本。用於緊急修復程式或開發。]]></description>
+  </versionPolicies>
+  <versionPolicies label="使用者可以定義版本號碼" ruleset="MANUAL" recurrent="true">
+    <description><![CDATA[可讓您輸入自己的版本號碼。用於舊版的緊急修復程式或更新項目。]]></description>
+  </versionPolicies>
+</com.ibm.rules.studio.model.decisionservice:Deployment>

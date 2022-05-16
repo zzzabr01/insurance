@@ -1,0 +1,2090 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
+  <name>PremiumWaiverDecisionTable</name>
+  <uuid>a028bfab-61cf-4a0a-bd34-363d186a0e3b</uuid>
+  <documentation><![CDATA[保費豁免]]></documentation>
+  <locale>zh_TW</locale>
+  <definition>
+<DT Version="7.0" xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable">
+  <Body>
+    <Structure>
+      <ConditionDefinitions>
+        <ConditionDefinition Id="C0">
+          <ExpressionDefinition>
+            <Text><![CDATA['壽險'  的商品代號  是<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C1">
+          <ExpressionDefinition>
+            <Text><![CDATA['壽險'   的保單投保日等於或晚於<一個 日期> ,並且等於或早於<一個 日期>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C4">
+          <ExpressionDefinition>
+            <Text><![CDATA['壽險'的保險年齡是<一個 數字>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C3">
+          <ExpressionDefinition>
+            <Text><![CDATA['壽險'的實際年齡是<一個 數字>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C2">
+          <ExpressionDefinition>
+            <Text><![CDATA['壽險'的事故原因是<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C6">
+          <ExpressionDefinition>
+            <Text><![CDATA['壽險' 的符合永久半殘廢附表 是<一個 布林類型>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C7">
+          <ExpressionDefinition>
+            <Text><![CDATA['壽險' 的殘廢等級 是<一個 數字>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C8">
+          <ExpressionDefinition>
+            <Text><![CDATA['壽險' 的除外責任是<一個 布林類型>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C5">
+          <ExpressionDefinition>
+            <Text><![CDATA['壽險' 的已給付項目是<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C9">
+          <ExpressionDefinition>
+            <Text><![CDATA['壽險' 的契況 是<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+      </ConditionDefinitions>
+      <ActionDefinitions>
+        <ActionDefinition Id="A1">
+          <ExpressionDefinition>
+            <Text><![CDATA[設定'規則編碼'為<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A0">
+          <ExpressionDefinition>
+            <Text><![CDATA[設定'給付項目'為<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A3">
+          <ExpressionDefinition>
+            <Text><![CDATA[設定'計算類別'  為<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A2">
+          <ExpressionDefinition>
+            <Text><![CDATA[設定'計算編號'  為<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+      </ActionDefinitions>
+    </Structure>
+    <Contents>
+      <Partition DefId="C0">
+        <Condition>
+          <Expression>
+            <Param><![CDATA["10"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[1950-01-01]]></Param>
+                <Param><![CDATA[1999-01-01]]></Param>
+              </Expression>
+              <Partition DefId="C3">
+                <Condition>
+                  <Expression>
+                    <Param/>
+                  </Expression>
+                  <Partition DefId="C2">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA["意外"]]></Param>
+                      </Expression>
+                      <Partition DefId="C6">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA[成立]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A1">
+                              <Expression>
+                                <Param><![CDATA["101001"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA["豁免保險費"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A3">
+                              <Expression/>
+                            </Action>
+                            <Action DefId="A2">
+                              <Expression/>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["11"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[1950-01-01]]></Param>
+                <Param><![CDATA[1989-01-01]]></Param>
+              </Expression>
+              <Partition DefId="C2">
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA["意外"]]></Param>
+                  </Expression>
+                  <Partition DefId="C6">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["111001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["30"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[1994-04-01]]></Param>
+                <Param><![CDATA[2004-01-01]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[3]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["301001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["31"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[1994-04-05]]></Param>
+                <Param><![CDATA[2003-01-01]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[3]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["311001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["33"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[1994-09-01]]></Param>
+                <Param><![CDATA[2001-01-01]]></Param>
+              </Expression>
+              <Partition DefId="C5">
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA["給付重大疾病保險金"]]></Param>
+                  </Expression>
+                  <ActionSet>
+                    <Action DefId="A1">
+                      <Expression>
+                        <Param><![CDATA["331001"]]></Param>
+                      </Expression>
+                    </Action>
+                    <Action DefId="A0">
+                      <Expression>
+                        <Param><![CDATA["豁免保險費"]]></Param>
+                      </Expression>
+                    </Action>
+                    <Action DefId="A3">
+                      <Expression/>
+                    </Action>
+                    <Action DefId="A2">
+                      <Expression/>
+                    </Action>
+                  </ActionSet>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["34"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[1994-09-01]]></Param>
+                <Param><![CDATA[2004-01-01]]></Param>
+              </Expression>
+              <Partition DefId="C5">
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA["給付重大疾病保險金"]]></Param>
+                  </Expression>
+                  <ActionSet>
+                    <Action DefId="A1">
+                      <Expression>
+                        <Param><![CDATA["341001"]]></Param>
+                      </Expression>
+                    </Action>
+                    <Action DefId="A0">
+                      <Expression>
+                        <Param><![CDATA["豁免保險費"]]></Param>
+                      </Expression>
+                    </Action>
+                    <Action DefId="A3">
+                      <Expression/>
+                    </Action>
+                    <Action DefId="A2">
+                      <Expression/>
+                    </Action>
+                  </ActionSet>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["35"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[1996-06-21]]></Param>
+                <Param><![CDATA[1999-02-01]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[3]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["351001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["36"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[1997-01-20]]></Param>
+                <Param><![CDATA[2004-01-01]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[3]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["361001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["37"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[1997-07-03]]></Param>
+                <Param><![CDATA[2004-01-01]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[3]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["371001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["42"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2000-09-29]]></Param>
+                <Param><![CDATA[2004-01-01]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[3]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <Partition DefId="C9">
+                        <Condition>
+                          <Expression>
+                            <Text><![CDATA[<一個 物件>不是<一個 物件>]]></Text>
+                            <Param><![CDATA["展期"]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A1">
+                              <Expression>
+                                <Param><![CDATA["421001"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA["豁免保險費"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A3">
+                              <Expression/>
+                            </Action>
+                            <Action DefId="A2">
+                              <Expression/>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["43"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2001-01-01]]></Param>
+                <Param><![CDATA[2004-01-01]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[3]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["431001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["46"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2003-05-08]]></Param>
+                <Param><![CDATA[2004-01-01]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[3]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <Partition DefId="C9">
+                        <Condition>
+                          <Expression>
+                            <Text><![CDATA[<一個 物件>不是<一個 物件>]]></Text>
+                            <Param><![CDATA["展期"]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A1">
+                              <Expression>
+                                <Param><![CDATA["461001"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA["豁免保險費"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A3">
+                              <Expression/>
+                            </Action>
+                            <Action DefId="A2">
+                              <Expression/>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["1B"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[1996-06-21]]></Param>
+                <Param><![CDATA[2004-01-01]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[3]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["1B1001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["AC"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2003-07-09]]></Param>
+                <Param><![CDATA[2004-01-01]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[3]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["AC1001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["AD"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2003-06-25]]></Param>
+                <Param><![CDATA[2004-01-01]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[3]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["AD1001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["AF"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2004-01-01]]></Param>
+                <Param><![CDATA[2005-08-31]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[3]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["AF1001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["AJ"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2004-01-01]]></Param>
+                <Param><![CDATA[2005-12-31]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[6]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["AJ1001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["AK"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2004-01-01]]></Param>
+                <Param><![CDATA[2005-12-31]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[3]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["AK1001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["AM"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2005-07-18]]></Param>
+                <Param><![CDATA[2007-07-01]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[3]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <Partition DefId="C9">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["正常"]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A1">
+                              <Expression>
+                                <Param><![CDATA["AM1001"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA["豁免保險費"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A3">
+                              <Expression/>
+                            </Action>
+                            <Action DefId="A2">
+                              <Expression/>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["AN"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2005-07-18]]></Param>
+                <Param><![CDATA[2007-07-01]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[3]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <Partition DefId="C9">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["正常"]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A1">
+                              <Expression>
+                                <Param><![CDATA["AN1001"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA["豁免保險費"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A3">
+                              <Expression/>
+                            </Action>
+                            <Action DefId="A2">
+                              <Expression/>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["AP"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2004-04-01]]></Param>
+                <Param><![CDATA[2012-06-30]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[6]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["AP1001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["AX"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2004-06-24]]></Param>
+                <Param><![CDATA[2004-11-30]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[3]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["AX1001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["AY"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2004-10-20]]></Param>
+                <Param><![CDATA[2006-09-30]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[3]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <Partition DefId="C9">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["正常"]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A1">
+                              <Expression>
+                                <Param><![CDATA["AY1001"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA["豁免保險費"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A3">
+                              <Expression/>
+                            </Action>
+                            <Action DefId="A2">
+                              <Expression/>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["AZ"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2004-10-20]]></Param>
+                <Param><![CDATA[2006-09-30]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[3]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <Partition DefId="C9">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["正常"]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A1">
+                              <Expression>
+                                <Param><![CDATA["AZ1001"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA["豁免保險費"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A3">
+                              <Expression/>
+                            </Action>
+                            <Action DefId="A2">
+                              <Expression/>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["BA"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2005-06-13]]></Param>
+                <Param><![CDATA[2005-12-31]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[3]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <Partition DefId="C9">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["正常"]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A1">
+                              <Expression>
+                                <Param><![CDATA["BA1001"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA["豁免保險費"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A3">
+                              <Expression/>
+                            </Action>
+                            <Action DefId="A2">
+                              <Expression/>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["BF"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2006-01-01]]></Param>
+                <Param><![CDATA[2009-06-14]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[6]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["BF1001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["BG"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2006-01-01]]></Param>
+                <Param><![CDATA[2009-07-02]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[6]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["BG1001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["BH"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2006-01-01]]></Param>
+                <Param><![CDATA[2009-06-24]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[6]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["BH1001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["CF"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2009-06-15]]></Param>
+                <Param><![CDATA[2012-06-30]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[6]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["CF1001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["CG"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2009-07-03]]></Param>
+                <Param><![CDATA[2011-04-17]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[6]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["CG1001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["CH"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2009-06-28]]></Param>
+                <Param><![CDATA[2012-07-31]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[6]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["CH1001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["CX"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2011-04-18]]></Param>
+                <Param><![CDATA[2012-07-01]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[6]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["CX1001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["DF"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2012-07-01]]></Param>
+                <Param><![CDATA[2020-06-30]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[6]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["DF1001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["DP"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2012-07-01]]></Param>
+                <Param><![CDATA[2016-09-01]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[6]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["DP1001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["EA"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2013-08-01]]></Param>
+                <Param><![CDATA[2017-01-01]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[6]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["EA1001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["EB"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2013-10-09]]></Param>
+                <Param><![CDATA[2016-09-01]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[6]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["EB1001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["ED"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2014-07-16]]></Param>
+                <Param><![CDATA[2014-09-15]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[6]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["ED1001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["FJ"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2018-10-31]]></Param>
+                <Param><![CDATA[2019-12-31]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[6]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["FJ1001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["FX"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2020-01-01]]></Param>
+                <Param><![CDATA[2020-07-01]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[6]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["FX1001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["TN"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2014-06-17]]></Param>
+                <Param><![CDATA[2017-01-01]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[6]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["TN1001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["TX"]]></Param>
+          </Expression>
+          <Partition DefId="C1">
+            <Condition>
+              <Expression>
+                <Text><![CDATA[<一個 日期>等於或晚於<一個 日期>]]></Text>
+                <Param><![CDATA[2020-10-30]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>小於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[2]]></Param>
+                    <Param><![CDATA[6]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[不成立]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["TX1001"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["豁免保險費"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression/>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+      </Partition>
+    </Contents>
+  </Body>
+  <Resources DefaultLocale="zh_TW">
+    <ResourceSet Locale="zh_TW">
+      <Data Name="Definitions(A0)#HeaderText"><![CDATA[給付項目]]></Data>
+      <Data Name="Definitions(A0)#Width"><![CDATA[100]]></Data>
+      <Data Name="Definitions(A1)#HeaderText"><![CDATA[規則編碼]]></Data>
+      <Data Name="Definitions(A1)#Width"><![CDATA[99]]></Data>
+      <Data Name="Definitions(A2)#HeaderText"><![CDATA[計算編號]]></Data>
+      <Data Name="Definitions(A2)#Width"><![CDATA[71]]></Data>
+      <Data Name="Definitions(A3)#HeaderText"><![CDATA[計算類別]]></Data>
+      <Data Name="Definitions(A3)#Width"><![CDATA[72]]></Data>
+      <Data Name="Definitions(C0)#HeaderText"><![CDATA[商品代號]]></Data>
+      <Data Name="Definitions(C0)#Width"><![CDATA[107]]></Data>
+      <Data Name="Definitions(C1)#HeaderText"><![CDATA[商品生效起迄日]]></Data>
+      <Data Name="Definitions(C1)#Width"><![CDATA[157]]></Data>
+      <Data Name="Definitions(C1)[0]#HeaderText"><![CDATA[商品生效起日]]></Data>
+      <Data Name="Definitions(C1)[1]#HeaderText"><![CDATA[商品生效迄日]]></Data>
+      <Data Name="Definitions(C2)#HeaderText"><![CDATA[事故原因]]></Data>
+      <Data Name="Definitions(C2)#Width"><![CDATA[107]]></Data>
+      <Data Name="Definitions(C3)#HeaderText"><![CDATA[實際年齡]]></Data>
+      <Data Name="Definitions(C3)#Width"><![CDATA[105]]></Data>
+      <Data Name="Definitions(C4)#HeaderText"><![CDATA[保險年齡]]></Data>
+      <Data Name="Definitions(C4)#Width"><![CDATA[104]]></Data>
+      <Data Name="Definitions(C5)#HeaderText"><![CDATA[已給付項目]]></Data>
+      <Data Name="Definitions(C5)#Width"><![CDATA[81]]></Data>
+      <Data Name="Definitions(C6)#HeaderText"><![CDATA[符合列永久半殘廢附表]]></Data>
+      <Data Name="Definitions(C6)#Width"><![CDATA[106]]></Data>
+      <Data Name="Definitions(C7)#HeaderText"><![CDATA[殘廢等級]]></Data>
+      <Data Name="Definitions(C7)#Width"><![CDATA[103]]></Data>
+      <Data Name="Definitions(C8)#HeaderText"><![CDATA[除外責任]]></Data>
+      <Data Name="Definitions(C8)#Width"><![CDATA[101]]></Data>
+      <Data Name="Definitions(C9)#HeaderText"><![CDATA[契況]]></Data>
+      <Data Name="Definitions(C9)#Width"><![CDATA[102]]></Data>
+    </ResourceSet>
+  </Resources>
+</DT>
+</definition>
+</ilog.rules.studio.model.dt:DecisionTable>

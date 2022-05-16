@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>lifeInsurance</name>
+  <uuid>b2230610-6cff-4352-a15c-62d3e85a9146</uuid>
+</ilog.rules.studio.model.base:RulePackage>

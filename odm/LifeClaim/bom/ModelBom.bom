@@ -1,0 +1,1025 @@
+
+property loadGetterSetterAsProperties "true"
+property origin "xom:/LifeClaim//ModelXom"
+property uuid "641986eb-ed40-4fc1-918d-e043f958e734"
+package main.controller;
+
+
+public class AddUpEntrance
+{
+    public AddUpEntrance();
+    public static java.lang.Integer addUpAllValues(java.lang.Integer arg1, main.model.sit.AddUpForProductNo10 arg2);
+}
+
+public class AdditionalEntrance
+{
+    public AdditionalEntrance();
+    public static void main(java.lang.String[] arg);
+    public static java.math.BigDecimal receivceFromIBM(main.model.payment.AdditionalPaymentAmountModel arg1, string arg2, string arg3);
+}
+
+public class Entrance
+{
+    public Entrance();
+    public static void main(java.lang.String[] arg)
+                throws java.text.ParseException;
+    public static java.math.BigDecimal receivceFromIBM(main.model.payment.PaymentAmountModel arg1, string arg2, string arg3);
+}
+
+package main.model;
+
+
+public class AdditionalConditions
+        extends main.model.CommonModel
+{
+    public boolean ICU;
+    public string accidentItem;
+    public boolean burnAndScaldsDegreeTable;
+    public boolean burnWard;
+    public boolean burnsAndScalds;
+    public string causeOfAccident;
+    public boolean contractAnnihilation;
+    public boolean daysDuringTheOccurrenceOrProveCausality;
+    public boolean death;
+    public boolean declarationOfGuardian;
+    public boolean disability;
+    public boolean emergencyMedicalTreatment;
+    public string fractureStatus;
+    public string hospitalizeWithInsuredStatus;
+    public boolean hospitalized;
+    public string itemAlreadyReceive;
+    public boolean matchDaysDuringHospitalizedAndDischarged;
+    public boolean outpatient;
+    public boolean outpatientSurgery;
+    public boolean sameAccident;
+    public boolean specificInjury;
+    public boolean totallyDisability;
+    public AdditionalConditions(string arg1, 
+        string arg2, 
+        string arg3, 
+        string arg4, 
+        string arg5, 
+        string arg6, 
+        string arg7, 
+        string arg8, 
+        string arg9, 
+        string arg10, 
+        string arg11, 
+        string arg12, 
+        string arg13, 
+        string arg14, 
+        string arg15, 
+        string arg16, 
+        string arg17, 
+        string arg18, 
+        string arg19, 
+        string arg20, 
+        java.lang.Double arg21, 
+        java.lang.Double arg22, 
+        java.lang.Double arg23, 
+        java.lang.Integer arg24, 
+        java.lang.Integer arg25, 
+        java.lang.Integer arg26, 
+        java.lang.Double arg27, 
+        java.lang.Double arg28, 
+        java.lang.Integer arg29, 
+        java.lang.Double arg30, 
+        java.lang.Double arg31, 
+        java.lang.Integer arg32, 
+        java.lang.Double arg33, 
+        string arg34)
+                property deprecated "true";
+    public AdditionalConditions();
+}
+
+public class CommonModel
+{
+    public java.lang.Integer actualAge;
+    public java.util.Date caseAccidentDate;
+    public java.lang.Integer insuranceAge;
+    public java.util.Date policyEffectiveDate;
+    public java.util.Date policySuspensionDate;
+    public java.util.Date productEffectiveDate;
+    public string productNo;
+    public CommonModel(string arg1, java.util.Date arg2, java.lang.Integer arg3, java.lang.Integer arg4, java.util.Date arg5, java.util.Date arg6, java.util.Date arg7);
+    public CommonModel();
+    public void setPolicyEffectiveDate(java.util.Date arg)
+                property deprecated "true";
+    public string toString();
+}
+
+public class ComprehensiveInsurance
+        extends main.model.CommonModel
+{
+    public string accidentItem;
+    public boolean accumulatedPayReachMaxAmount;
+    public boolean accumulativeTotalA;
+    public boolean accumulativeTotalB;
+    public boolean accumulativeTotalC;
+    public boolean accumulativeTotalD;
+    public boolean burnWard;
+    public boolean burnsAndScalds;
+    public boolean cancerInSitu;
+    public string causeOfAccident;
+    public boolean complianceMajorSurgery;
+    public boolean complianceSpecificTreatment;
+    public java.lang.Integer continuouslyOfInsurance;
+    public boolean criticalIllness;
+    public boolean criticalIllnessFirstTime;
+    public java.lang.Double daysBetweenDeathAndPolicyEffect;
+    public boolean daysDuringTheOccurrenceOrProveCausality;
+    public boolean death;
+    public boolean declarationOfGuardian;
+    public boolean disability;
+    public java.lang.Integer disabilityLevel;
+    public boolean dischargeFromTheHospital;
+    public boolean emergencyMedicalTransfer;
+    public boolean emergencyMedicalTreatment;
+    public boolean exclusion;
+    public boolean exemptionPeriodExpires;
+    public string fractureStatus;
+    public boolean haveBeenInICUAndBurnAndScalds;
+    public boolean hospice;
+    public boolean hospitalized;
+    public boolean iCU;
+    public java.lang.Double inpatientDays;
+    public boolean insuranceAmountList;
+    public string isCancerRequirement;
+    public string itemAlreadyReceive;
+    public boolean longTermCare;
+    public boolean matchDaysDuringHospitalizedAndDischarged;
+    public string maximumAccumulativeBenefit;
+    public boolean mentalIllness;
+    public string mentalIllnessORschizophrenia;
+    public boolean noClaimsHistoryDuringThePeriod;
+    public java.lang.Integer noClaimsRecordYear;
+    public boolean organTransplant;
+    public boolean outpatient;
+    public string paymentMethod;
+    public string paymentStatus;
+    public java.lang.Integer policyYear;
+    public boolean receiveCriticalIllnessInsuranceAmount;
+    public boolean receiveLifeSupportAmt;
+    public boolean regularApply;
+    public java.lang.Integer reinstatementDate;
+    public boolean sameAccident;
+    public boolean surgery;
+    public boolean totalDisabilityInTheSameAccident;
+    public boolean totallyDisability;
+    public boolean withoutHealthInsurancePayment;
+    public ComprehensiveInsurance(string arg1, java.util.Date arg2, java.lang.Integer arg3, java.lang.Integer arg4, java.util.Date arg5, java.util.Date arg6, java.util.Date arg7)
+                property deprecated "true";
+    public ComprehensiveInsurance();
+}
+
+public class HealthInsurance
+        extends main.model.CommonModel
+{
+    public boolean boneMarrowTransplant;
+    public boolean breastReconstruction;
+    public boolean burnAndScalds;
+    public boolean burnWard;
+    public boolean cancerAfterDead;
+    public boolean cancerInSitu;
+    public boolean cancerInWaitingPeriod;
+    public string causeOfAccident;
+    public boolean chemotherapy;
+    public boolean complianceMajorSurgery;
+    public boolean complianceSpecialSurgery;
+    public java.lang.Integer continuouslyOfInsurance;
+    public boolean death;
+    public boolean declarationOfGuardian;
+    public boolean dentureInstallation;
+    public boolean diagnosedWithCancer;
+    public boolean disability;
+    public java.lang.Integer disabilityLevel;
+    public boolean dischargeFromTheHospital;
+    public string duringHospitalization;
+    public boolean emergency;
+    public boolean emergencyMedicalTransfer;
+    public boolean exemptionPeriodExpire;
+    public string fractureStatus;
+    public boolean generalSurgery;
+    public boolean haveBeenInICUAndBurnAndScalds;
+    public boolean hospitalization;
+    public boolean hospitalized;
+    public boolean iCU;
+    public string illnessDegree;
+    public boolean inAndOutHospitalDays;
+    public boolean insuranceAmountList;
+    public string isPaymentList;
+    public string itemAlreadyReceive;
+    public boolean longTermCare;
+    public boolean majorDisease;
+    public string maximumAccumulativeBenefit;
+    public boolean maximumAccumulativeBenefitForEachInsuranceItemTypeA;
+    public boolean maximumAccumulativeBenefitForEachInsuranceItemTypeB;
+    public boolean maximumAccumulativeBenefitForEachInsuranceItemTypeC;
+    public boolean maximumAccumulativeBenefitForEachInsuranceItemTypeD;
+    public java.lang.Integer noClaimsRecordYear;
+    public boolean outpatient;
+    public boolean outpatientTreatment;
+    public string paymentStatus;
+    public boolean prostheticInstallation;
+    public boolean radiationTherapy;
+    public boolean regularCare;
+    public boolean surgery;
+    public boolean surgicalTreatment;
+    public boolean totallyDisability;
+    public boolean withoutHealthInsurancePayment;
+    public HealthInsurance();
+}
+
+public class InjuryInsurance
+        extends main.model.CommonModel
+{
+    public string accidentItem;
+    public string amountOfDisability;
+    public boolean burnsAndScalds;
+    public string causeOfAccident;
+    public boolean contractAnnihilation;
+    public boolean death;
+    public boolean declarationOfGuardian;
+    public boolean disability;
+    public boolean emergencyMedicalTreatment;
+    public string fractureStatus;
+    public string hospitalizeWithInsuredStatus;
+    public boolean hospitalized;
+    public boolean inICUOrBurnWard;
+    public string insurancePolicyCurrency;
+    public string itemAlreadyReceive;
+    public boolean massPoisoning;
+    public boolean militaryDisasterOrOtherRiot;
+    public boolean occurredOverseas;
+    public boolean outpatient;
+    public boolean suddenIllness;
+    public InjuryInsurance(string arg1, java.util.Date arg2, java.lang.Integer arg3, java.lang.Integer arg4, java.util.Date arg5, java.util.Date arg6, java.util.Date arg7);
+    public InjuryInsurance(string arg1, 
+        string arg2, 
+        string arg3, 
+        string arg4, 
+        string arg5, 
+        string arg6, 
+        string arg7, 
+        string arg8, 
+        string arg9, 
+        string arg10, 
+        string arg11, 
+        string arg12, 
+        string arg13, 
+        string arg14, 
+        string arg15, 
+        string arg16, 
+        string arg17, 
+        string arg18, 
+        string arg19)
+                property deprecated "true";
+    public InjuryInsurance();
+}
+
+public class InvestmentInsurance
+        extends main.model.CommonModel
+{
+    public boolean contractAnnihilation;
+    public boolean death;
+    public string guaranteePeriod;
+    public string investmentDateType;
+    public string itemAlreadyReceive;
+    public string pensionEffectiveDate;
+    public string policyType;
+    public boolean totallyDisability;
+    public InvestmentInsurance(string arg1, string arg2, string arg3, string arg4, string arg5, string arg6, string arg7, java.lang.Double arg8, java.lang.Double arg9, java.lang.Double arg10, java.lang.Double arg11, java.lang.Double arg12, java.lang.Double arg13, java.lang.Double arg14, string arg15)
+                property deprecated "true";
+    public InvestmentInsurance();
+}
+
+public class LifeInsurance
+        extends main.model.CommonModel
+{
+    public boolean burnsAndScalds;
+    public string causeOfAccident;
+    public boolean contractAnnihilation;
+    public string contractStatus;
+    public java.lang.Integer dateBetweenCaseAccidentAndPolicyEffect;
+    public java.lang.Integer dateBetweenCaseAccidentAndPolicyReinstate;
+    public boolean death;
+    public boolean declarationOfGuardian;
+    public boolean disability;
+    public java.lang.Integer disabilityLevel;
+    public boolean exclusion;
+    public string itemAlreadyReceive;
+    public string modeOfSatisfaction;
+    public string paymentStatus;
+    public boolean permanentHalfDisability;
+    public java.lang.Integer policyEffectiveDay;
+    public java.lang.Integer policyEffectiveDays;
+    public java.lang.Integer policyReinstatementDate;
+    public java.lang.Integer policyYear;
+    public boolean receiveMajorDiseasesAmt;
+    public boolean receivedLifeSupportAmount;
+    public java.lang.Integer reinstatementDate;
+    public boolean totallyDisability;
+    public LifeInsurance(string arg1, 
+        boolean arg2, 
+        string arg3, 
+        string arg4, 
+        java.lang.Integer arg5, 
+        boolean arg6, 
+        java.lang.Integer arg7, 
+        java.lang.Integer arg8, 
+        boolean arg9, 
+        java.lang.Integer arg10, 
+        boolean arg11, 
+        string arg12, 
+        boolean arg13, 
+        java.lang.Integer arg14, 
+        java.lang.Integer arg15, 
+        java.lang.Integer arg16, 
+        java.lang.Integer arg17, 
+        boolean arg18, 
+        boolean arg19, 
+        string arg20, 
+        boolean arg21, 
+        boolean arg22, 
+        boolean arg23, 
+        string arg24)
+                property deprecated "true";
+    public LifeInsurance();
+}
+
+public class PensionInsurance
+        extends main.model.CommonModel
+{
+    public boolean death;
+    public string guaranteePeriod;
+    public string itemAlreadyReceive;
+    public string paymentCurrency;
+    public string pensionEffectiveDate;
+    public PensionInsurance(string arg1, boolean arg2, string arg3, string arg4, string arg5);
+    public PensionInsurance();
+}
+
+package main.model.payment;
+
+
+public class AdditionalPaymentAmountModel
+        extends main.model.payment.PaymentAmountModel
+{
+    public java.lang.Double actualMedicalExpenseMultiple;
+    public java.lang.Double dailyAmountOfBurnAndScaldWard;
+    public java.lang.Double dailyAmountOfICU;
+    public java.lang.Double exactMedicalExpensesOfEmergency;
+    public java.lang.Double hospitalIncome;
+    public java.lang.Double inpatientDays;
+    public java.lang.Integer inpatientDaysForBurnAndScald;
+    public java.lang.Integer inpatientDaysForICU;
+    public java.lang.Double insuranceAmount;
+    public java.lang.Double insuredAmountForOutpatientBeforeAndAfterTheHospitalization;
+    public java.lang.Double medicalExpensesOfOutpatientSurgery;
+    public java.lang.Double multiple;
+    public java.lang.Integer numberOfDaysSetByFracture;
+    public java.lang.Double numberOfDaysSetByFractureMultiple;
+    public java.lang.Integer outpatientDays;
+    public java.lang.Double paymentRatio;
+    public AdditionalPaymentAmountModel();
+    public java.lang.Class obtainClassType();
+    public string obtainPaymentModelName();
+}
+
+public class ComprehensivePaymentAmountModel
+        extends main.model.payment.PaymentAmountModel
+{
+    public java.lang.Double annualTotalInsurancePremium;
+    public java.lang.Double annualTotalPremiumPaidMultiple;
+    public java.lang.Double basicInsuranceAmount;
+    public java.lang.Integer burnWardDays;
+    public java.lang.Double cashSurrenderValueForHealthAndInjuryInsurance;
+    public java.lang.Double cashSurrenderValueForInjuryInsurance;
+    public java.lang.Double currentYearInsuranceAmt;
+    public java.lang.Double currentYearInsuranceAmtMultiple;
+    public java.lang.Double dailyUnitIncome;
+    public java.lang.Double dailyUnitMultiple;
+    public java.lang.Double disabledPayRatio;
+    public java.lang.Double discountRate;
+    public java.lang.Double durationOfPayment;
+    public java.lang.Integer hospiceDays;
+    public java.lang.Double hospitalIncome;
+    public java.lang.Double hospitalIncomeMultiple;
+    public java.lang.Integer icuDays;
+    public java.lang.Double incrementRatioOfNoClaimRecord;
+    public java.lang.Double inpatientDays;
+    public java.lang.Double insuranceAmount;
+    public java.lang.Double interest;
+    public java.lang.Double multiple;
+    public java.lang.Double multipleOfFractureDay;
+    public java.lang.Double oneToSixDisabilityPensionAlreadyReceive;
+    public java.lang.Integer outpatientDays;
+    public java.lang.Double paidDisabilityInsuranceAmt;
+    public java.lang.Double paidTotalPremium;
+    public java.lang.Double paymentAmountOfApplyThisTime;
+    public java.lang.Double paymentAnnualRate;
+    public java.lang.Double paymentExpireRate;
+    public java.lang.Double policyValueAmount;
+    public java.lang.Double receiveTotalSurvivalInsurance;
+    public java.lang.Double singlePremiumMultiple;
+    public java.lang.Double specificTreatmentMultiple;
+    public java.lang.Double surgeryPaymentMultiple;
+    public java.lang.Double totalAmountEachInsuranceAmount;
+    public java.lang.Double totalIncreaseInsuranceAmount;
+    public java.lang.Double totalPremiumsPaidMultiple;
+    public java.lang.Double totallyDisabilitySupportMultiple;
+    public java.lang.Double unearnedPremium;
+    public ComprehensivePaymentAmountModel();
+    public java.lang.Class obtainClassType();
+    public string obtainPaymentModelName();
+}
+
+public class HealthPaymentAmountModel
+        extends main.model.payment.PaymentAmountModel
+{
+    public java.lang.Double actualEmergencyCost;
+    public java.lang.Double actualEmergencyTransportAmount;
+    public java.lang.Double actualMedicalCost;
+    public java.lang.Double actualOutpatientSurgeryCost;
+    public java.lang.Double actualSurgeryCost;
+    public java.lang.Double actualWardCost;
+    public java.lang.Double agreementInsuredUnits;
+    public java.lang.Double agreementInsuredUnitsOfSpecialSurgeryAmount;
+    public java.lang.Double amountPerUnit;
+    public java.lang.Double burnWardDays;
+    public java.lang.Double cumulativelyPaidInsuranceAmount;
+    public java.lang.Double currentUnexpiredPremiums;
+    public java.lang.Double daysOfRecuperationAtHome;
+    public java.lang.Double disabilityEquipmentPurchaseInsurance;
+    public java.lang.Double haveCancerInsuranceAmount;
+    public java.lang.Double heathInsuranceBenefitsMultiple;
+    public java.lang.Double hospitalIncome;
+    public java.lang.Double hospitalIncomeMultiple;
+    public java.lang.Double iCUDays;
+    public java.lang.Double inpatientDays;
+    public java.lang.Double insuranceAmount;
+    public java.lang.Double insuranceAmountOfmainAndAccessoryContractBeforeExempted;
+    public java.lang.Double insuranceLevelOfSurgicalCostLimitRatio;
+    public java.lang.Double interest;
+    public java.lang.Double multiple;
+    public java.lang.Double numberOfInHospital;
+    public java.lang.Double numberOfOutpatient;
+    public java.lang.Double numberOfOutpatientChemotherapy;
+    public java.lang.Double numberOfOutpatientRadiation;
+    public java.lang.Double numberOfOutpatientSurgery;
+    public java.lang.Double numberOfSurgicalOperations;
+    public java.lang.Double numberOfTreatmentInHospital;
+    public java.lang.Double outpatientDays;
+    public java.lang.Double paidMildCriticalIllnessInsuranceAmount;
+    public java.lang.Double paymentRatio;
+    public java.lang.Double receivedInsuranceAmount;
+    public java.lang.Double shouldBeExemptedInsuranceAmount;
+    public java.lang.Double totalAmountEachInsuranceAmount;
+    public HealthPaymentAmountModel();
+    public java.lang.Class obtainClassType();
+    public string obtainPaymentModelName();
+}
+
+public class InjuryPaymentAmountModel
+        extends main.model.payment.PaymentAmountModel
+{
+    public java.lang.Double accidentHealthIndemnify;
+    public java.lang.Double actualEmergencyTransportAmount;
+    public java.lang.Double actualHospitalBenefit;
+    public java.lang.Double actualMedicalExpense;
+    public java.lang.Double actualMedicalExpenseMultiple;
+    public java.lang.Double actualOutpatientBenefit;
+    public java.lang.Double additionInsAmtMultiple;
+    public java.lang.Double agreementInsuredUnits;
+    public java.lang.Double amountPerUnit;
+    public java.lang.Double dailyHospitalBenefit;
+    public java.lang.Double dailyOutpatientBenefit;
+    public java.lang.Double dayOfFractureType;
+    public java.lang.Double disabledPaymentRatio;
+    public java.lang.Double expenseLoading;
+    public java.lang.Double fixedPaymentAmount;
+    public java.lang.Double injuryInsuranceDailyMultiple;
+    public java.lang.Double injuryInsuranceLimitMultiple;
+    public java.lang.Double inpatientDays;
+    public java.lang.Double inpatientDaysInICU;
+    public java.lang.Double inpatientDaysInWard;
+    public java.lang.Double insuranceAmount;
+    public java.lang.Double medicalReimbursement;
+    public java.lang.Double multiple;
+    public java.lang.Double multipleOfFractureDay;
+    public java.lang.Double outpatientDays;
+    public InjuryPaymentAmountModel();
+    public java.lang.Class obtainClassType();
+    public string obtainPaymentModelName();
+}
+
+public class InvestmentPaymentAmountModel
+        extends main.model.payment.PaymentAmountModel
+{
+    public string currency;
+    public java.lang.Double deathOverflowInsuranceCost;
+    public java.lang.Double deductUnearnedPremiumByDays;
+    public java.lang.Double insuranceAmount;
+    public java.lang.Double multiple;
+    public java.lang.Double policyAccountValue;
+    public java.lang.Double policyValueAmount;
+    public java.lang.Double totallyDisabilityOverflowInsuranceCost;
+    public java.lang.Double unpaidPensionBalance;
+    public InvestmentPaymentAmountModel();
+    public java.lang.Class obtainClassType();
+    public string obtainPaymentModelName();
+}
+
+public class LifePaymentAmountModel
+        extends main.model.payment.PaymentAmountModel
+{
+    public java.lang.Double accelerationProfitHospitalizationDailyAmount;
+    public java.lang.Double annualTotalInsurancePremium;
+    public java.lang.Double assumedInterestRate;
+    public java.lang.Double cashSurrenderValue;
+    public java.lang.Double currentYearInsuranceAmt;
+    public java.util.Date dateOfDeath;
+    public java.lang.Double disabledPayRatio;
+    public java.lang.Double increaseInsuranceForPayOff;
+    public java.lang.Double increaseValueAmt;
+    public java.lang.Double increaseValueInsuranceAmt;
+    public java.lang.Double inpatientDays;
+    public java.lang.Double insuranceAmount;
+    public java.lang.Double insuredCoefficient;
+    public java.lang.Integer lastReceiveSurvivalInsuranceAge;
+    public java.util.Date lastSurvivalPaymentDate;
+    public java.lang.Double mainInsuranceAmount;
+    public java.lang.Double multiple;
+    public java.util.Date nextSurvivalPaymentDate;
+    public java.lang.Double paidDisabilityInsuranceAmt;
+    public java.lang.Double paidTotalPremiumA;
+    public java.lang.Double paidTotalPremiumB;
+    public java.lang.Double paymentAnnualRate;
+    public java.lang.Double paymentExpireRate;
+    public java.lang.Double policyValueAmount;
+    public java.lang.Integer policyYear;
+    public java.lang.Integer premiumPaymentTerm;
+    public java.lang.Double receiveAccelerationProfitHospitalizationAmt;
+    public java.lang.Double receiveTotalSurvivalInsurance;
+    public java.lang.Double receivedMonth;
+    public java.lang.Double reducedPaidAmt;
+    public java.lang.Double rolloverInsuranceAmt;
+    public java.lang.Double singlePremium;
+    public java.lang.Double singlePremiumInterest;
+    public java.lang.Double singlePremiumMultiple;
+    public java.lang.Double specialUnderwritingPremium;
+    public java.lang.Double survivalAmountOfActualSurvivalDays;
+    public java.lang.Double survivalInsurance;
+    public java.lang.Double totalPremiumInterest;
+    public java.lang.Double totalPremiumsPaidMultiple;
+    public java.lang.Double unearnedPremium;
+    public java.lang.Double yearPremiumsPaidMultiple;
+    public LifePaymentAmountModel();
+    public static main.model.payment.LifePaymentAmountModel initLifePaymentAmountModel();
+    public java.lang.Class obtainClassType();
+    public string obtainPaymentModelName();
+}
+
+public abstract class PaymentAmountModel
+{
+    public PaymentAmountModel();
+    public abstract java.lang.Class obtainClassType();
+    public abstract string obtainPaymentModelName();
+}
+
+public final class PaymentModelType
+        extends java.lang.Enum
+{
+    domain {static LIFE, static INJURY, static HEALTH, static COMPREHENSIVE, static ADDITIONAL, static INVESTMENT, static PENSION}
+    public static final readonly main.model.payment.PaymentModelType ADDITIONAL;
+    public static final readonly main.model.payment.PaymentModelType COMPREHENSIVE;
+    public static final readonly main.model.payment.PaymentModelType HEALTH;
+    public static final readonly main.model.payment.PaymentModelType INJURY;
+    public static final readonly main.model.payment.PaymentModelType INVESTMENT;
+    public static final readonly main.model.payment.PaymentModelType LIFE;
+    public static final readonly main.model.payment.PaymentModelType PENSION;
+    public final readonly string label;
+    public static main.model.payment.PaymentModelType valueOf(string arg);
+    public static main.model.payment.PaymentModelType[] values();
+}
+
+public class PensionPaymentAmountModel
+        extends main.model.payment.PaymentAmountModel
+{
+    public java.lang.Double pension;
+    public java.lang.Double policyValueAmount;
+    public java.lang.Double totalPremiumsPaid;
+    public java.lang.Double unpaidPensionBalance;
+    public PensionPaymentAmountModel();
+    public java.lang.Class obtainClassType();
+    public string obtainPaymentModelName();
+}
+
+package main.model.sit;
+
+
+public class AddUpForProductNo10
+{
+    public java.lang.Integer CAS1_BONF_AMT;
+    public java.lang.Integer CAS1_CHECK_AMT;
+    public java.lang.Integer CAS1_DELA_INT;
+    public java.lang.Integer CAS1_DELA_PREM;
+    public java.lang.Integer CAS1_DTPE_AMT;
+    public java.lang.Integer CAS1_INVE_PREM;
+    public java.lang.Integer CAS1_LI12_AMT_2;
+    public java.lang.Integer CAS1_LI_LO_BAL;
+    public java.lang.Integer CAS1_LOMS_AMT;
+    public java.lang.Integer CAS1_PAIN_INT_AMT;
+    public java.lang.Integer CAS1_PREM_DISCOUNT;
+    public java.lang.Integer CAS1_RIPD_AMT;
+    public java.lang.Integer CAS2_4_DELA_INT;
+    public java.lang.Integer CAS2_4_OVER_INT;
+    public java.lang.Integer CAS2_4_OVER_PREM;
+    public java.lang.Integer PAY_AMT_RTN;
+    public java.lang.Integer TML_2_HI;
+    public java.lang.Integer TML_TAX;
+    public AddUpForProductNo10();
+}
+
+public class InsuranceInfo
+{
+    public string LIPI_BIRTH;
+    public string LIPI_INSU_BEG_DATE;
+    public string LIPI_INSU_END_DATE;
+    public string LIPI_INSU_NO;
+    public string LIPI_LO_MK;
+    public string LIPI_MAIN_AMT;
+    public string LIPI_PREM_YEAR;
+    public string LIPI_ST;
+    public string LIPI_ST_DATE;
+    public InsuranceInfo();
+}
+
+public class PackageLifeInsurance
+{
+    public PackageLifeInsurance();
+    public static main.model.LifeInsurance fromRequest(string arg1, string arg2, java.util.Date arg3, main.model.sit.InsuranceInfo arg4)
+                throws java.text.ParseException;
+}
+
+package main.service.additionalMethod;
+
+
+public class Amethod
+{
+    public Amethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.AdditionalPaymentAmountModel arg1, string arg2);
+}
+
+public class Tmethod
+{
+    public Tmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.AdditionalPaymentAmountModel arg1, string arg2);
+}
+
+package main.service.comprehensiveMethod;
+
+
+public class Amethod
+{
+    public Amethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.ComprehensivePaymentAmountModel arg1, string arg2);
+}
+
+public class Bmethod
+{
+    public Bmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.ComprehensivePaymentAmountModel arg1, string arg2);
+}
+
+public class Dmethod
+{
+    public Dmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.ComprehensivePaymentAmountModel arg1, string arg2);
+}
+
+public class Emethod
+{
+    public Emethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.ComprehensivePaymentAmountModel arg1, string arg2);
+}
+
+public class Mmethod
+{
+    public Mmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.ComprehensivePaymentAmountModel arg1, string arg2);
+}
+
+public class Smethod
+{
+    public Smethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.ComprehensivePaymentAmountModel arg1, string arg2);
+}
+
+public class Wmethod
+{
+    public Wmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.ComprehensivePaymentAmountModel arg1, string arg2);
+}
+
+public class Xmethod
+{
+    public Xmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.ComprehensivePaymentAmountModel arg1, string arg2);
+}
+
+public class Ymethod
+{
+    public Ymethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.ComprehensivePaymentAmountModel arg1, string arg2);
+}
+
+package main.service.healthMethod;
+
+
+public class Amethod
+{
+    public Amethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.HealthPaymentAmountModel arg1, string arg2);
+}
+
+public class Bmethod
+{
+    public Bmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.HealthPaymentAmountModel arg1, string arg2);
+}
+
+public class Dmethod
+{
+    public Dmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.HealthPaymentAmountModel arg1, string arg2);
+}
+
+public class Smethod
+{
+    public Smethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.HealthPaymentAmountModel arg1, string arg2);
+}
+
+package main.service.injuryMethod;
+
+
+public class Amethod
+{
+    public Amethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.InjuryPaymentAmountModel arg1, string arg2);
+}
+
+public class Lmethod
+{
+    public Lmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.InjuryPaymentAmountModel arg1, string arg2);
+}
+
+public class Smethod
+{
+    public Smethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.InjuryPaymentAmountModel arg1, string arg2);
+}
+
+public class Tmethod
+{
+    public Tmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.InjuryPaymentAmountModel arg1, string arg2);
+}
+
+public class Umethod
+{
+    public Umethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.InjuryPaymentAmountModel arg1, string arg2);
+}
+
+package main.service.investmentMethod;
+
+
+public class Amethod
+{
+    public Amethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.InvestmentPaymentAmountModel arg1, string arg2);
+}
+
+public class Bmethod
+{
+    public Bmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.InvestmentPaymentAmountModel arg1, string arg2);
+}
+
+public class Mmethod
+{
+    public Mmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.InvestmentPaymentAmountModel arg1, string arg2);
+}
+
+package main.service.lifeMethod;
+
+
+public class Amethod
+{
+    public Amethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.LifePaymentAmountModel arg1, string arg2);
+}
+
+public class Bmethod
+{
+    public Bmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.LifePaymentAmountModel arg1, string arg2);
+}
+
+public class Cmethod
+{
+    public Cmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.LifePaymentAmountModel arg1, string arg2);
+}
+
+public class Dmethod
+{
+    public Dmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.LifePaymentAmountModel arg1, string arg2);
+}
+
+public class Emethod
+{
+    public Emethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.LifePaymentAmountModel arg1, string arg2);
+}
+
+public class Fmethod
+{
+    public Fmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.LifePaymentAmountModel arg1, string arg2);
+}
+
+public class Gmethod
+{
+    public Gmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.LifePaymentAmountModel arg1, string arg2);
+}
+
+public class Hmethod
+{
+    public Hmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.LifePaymentAmountModel arg1, string arg2);
+}
+
+public class Imethod
+{
+    public Imethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.LifePaymentAmountModel arg1, string arg2);
+}
+
+public class Jmethod
+{
+    public Jmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.LifePaymentAmountModel arg1, string arg2);
+}
+
+public class Kmethod
+{
+    public Kmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.LifePaymentAmountModel arg1, string arg2);
+}
+
+public class Lmethod
+{
+    public Lmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.LifePaymentAmountModel arg1, string arg2);
+}
+
+public class Mmethod
+{
+    public Mmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.LifePaymentAmountModel arg1, string arg2);
+}
+
+public class Nmethod
+{
+    public Nmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.LifePaymentAmountModel arg1, string arg2);
+}
+
+public class Omethod
+{
+    public Omethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.LifePaymentAmountModel arg1, string arg2);
+}
+
+public class Pmethod
+{
+    public Pmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.LifePaymentAmountModel arg1, string arg2);
+}
+
+public class Qmethod
+{
+    public Qmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.LifePaymentAmountModel arg1, string arg2);
+}
+
+public class Rmethod
+{
+    public Rmethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.LifePaymentAmountModel arg1, string arg2);
+}
+
+package main.service.pensionMethod;
+
+
+public class Amethod
+{
+    public Amethod();
+    public static java.math.BigDecimal totalNum(main.model.payment.PensionPaymentAmountModel arg1, string arg2);
+}
+
+package main.utilities;
+
+
+public class CalculateA
+{
+    public CalculateA();
+    public static double a01(double arg1, double arg2);
+    public static java.lang.Double a02(java.lang.Double arg1, double arg2, double arg3);
+    public static java.lang.Double a03(java.lang.Double arg1, double arg2, double arg3);
+    public static java.lang.Double a04(double arg1, double arg2, double arg3, double arg4);
+    public static java.lang.Double a05(double arg1, double arg2, double arg3, double arg4, double arg5, double arg6, double arg7);
+    public static java.lang.Double a06(double arg1, double arg2, double arg3, double arg4);
+    public static java.lang.Double a07(double arg1, double arg2, double arg3, double arg4);
+    public static java.lang.Double a08(double arg1, double arg2, double arg3);
+    public static java.lang.Double a09(double arg1, double arg2, double arg3, double arg4);
+    public static java.lang.Double a10(double arg1, double arg2);
+    public static void main(java.lang.String[] arg);
+}
+
+public class CalculateUtil
+{
+    public CalculateUtil();
+    public static java.math.BigDecimal finalCalculatingA(double arg1, double arg2);
+    public static java.math.BigDecimal finalCalculatingB(double arg1, double arg2);
+    public static java.math.BigDecimal finalCalculatingC(double arg1, double arg2);
+    public static java.math.BigDecimal finalCalculatingD(double arg1, double arg2, double arg3);
+    public static java.math.BigDecimal finalCalculatingE(double arg1, double arg2, double arg3);
+    public static java.math.BigDecimal finalCalculatingF(double arg1, double arg2, double arg3, double arg4);
+    public static java.math.BigDecimal finalCalculatingG(double arg1, double arg2, double arg3, double arg4, double arg5, double arg6, double arg7);
+    public static java.math.BigDecimal finalCalculatingH(double arg1, double arg2, double arg3, double arg4);
+    public static java.math.BigDecimal finalCalculatingI(double arg1, double arg2, double arg3, double arg4);
+    public static java.math.BigDecimal finalCalculatingJ(double arg1, double arg2, double arg3);
+    public static java.math.BigDecimal finalCalculatingK(double arg1, double arg2, double arg3, double arg4);
+    public static java.math.BigDecimal finalCalculatingL(double arg1, double arg2, double arg3, double arg4);
+    public static java.math.BigDecimal finalCalculatingM(double arg1, double arg2, double arg3);
+    public static java.math.BigDecimal finalCalculatingN(double arg1, double arg2, double arg3, double arg4);
+    public static java.math.BigDecimal finalCalculatingO(double arg1, double arg2, double arg3);
+    public static java.math.BigDecimal finalCalculatingP(double arg1, double arg2, double arg3, double arg4);
+    public static java.math.BigDecimal finalCalculatingQ(double arg1, double arg2, double arg3);
+    public static java.math.BigDecimal finalCalculatingR(double arg1, double arg2, double arg3, double arg4, double arg5, double arg6, double arg7);
+    public static java.math.BigDecimal finalCalculatingS(double arg1, double arg2, double arg3);
+    public static java.math.BigDecimal finalCalculatingT(double arg1, double arg2, double arg3, double arg4, double arg5);
+    public static java.math.BigDecimal finalCalculatingU(double arg1, double arg2, double arg3, double arg4, double arg5, double arg6);
+    public static java.math.BigDecimal finalCalculatingW(double arg1, double arg2, double arg3, double arg4);
+    public static java.math.BigDecimal finalCalculatingX(double arg1, double arg2, double arg3, double arg4);
+    public static java.math.BigDecimal finalCalculatingY(double arg1, double arg2, double arg3);
+}
+
+public class CompareThenReturn
+{
+    public CompareThenReturn();
+    public static double compareTwoValues(double arg1, double arg2);
+}
+
+package main.utils;
+
+
+public class Calculate
+{
+    public Calculate();
+    public static java.lang.Double amountOfInsuranceAndInterest(string arg1, java.lang.Integer arg2, java.lang.Integer arg3, java.lang.Double arg4, java.lang.Double arg5, java.util.Date arg6, java.util.Date arg7, java.util.Date arg8);
+    public static java.lang.Double amountOfSinglePaymentAndInterest(java.lang.Integer arg1, java.util.Date arg2, java.lang.Double arg3, java.util.Date arg4, java.util.Date arg5);
+    public static java.math.BigDecimal survivorInsurance(java.lang.Double arg1, java.lang.Double arg2, java.util.Date arg3, java.util.Date arg4, java.util.Date arg5);
+    public static java.lang.Double unexpiredPremiumWithAccident(java.lang.Double arg1, string arg2, java.util.Date arg3, java.util.Date arg4, java.util.Date arg5, java.util.Date arg6, java.util.Date arg7);
+    public static java.lang.Double unexpiredPremiumWithDeath(java.lang.Double arg1, string arg2, java.util.Date arg3, java.util.Date arg4, java.util.Date arg5, java.util.Date arg6, java.util.Date arg7);
+}
+
+public class DataUtil
+        property deprecated "true"
+{
+    public DataUtil();
+    public static java.lang.Integer parseInteger(java.lang.Integer arg);
+    public static string parseString(string arg);
+}
+
+public class DateUtils
+        property deprecated "true"
+{
+    public DateUtils();
+    public static java.util.Date dateCalculate(java.lang.Integer arg1, java.lang.Integer arg2, java.util.Date arg3);
+    public static java.lang.Integer getMonthOfYear(java.util.Date arg);
+    public static java.lang.Integer getTotalDayOfYear(java.util.Date arg);
+    public static java.lang.Integer getYear(java.util.Date arg);
+    public static java.util.Date parse(string arg);
+    public static long periodOfDay(java.util.Date arg1, java.util.Date arg2);
+    public static long periodOfYear(java.util.Date arg1, java.util.Date arg2);
+}
+

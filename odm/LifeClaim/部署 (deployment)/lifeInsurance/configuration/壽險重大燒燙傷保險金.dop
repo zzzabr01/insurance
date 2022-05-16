@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" xmlns:ilog.rules.studio.model.query.extractor="http://ilog.rules.studio/model/query/extractor.ecore" rulesetName="LifeBurnAndScalds" usingRuleflow="true" ruleflowName="BurnAndScaldsFlow" targetRuleProjectName="LifeClaim">
+  <name>壽險重大燒燙傷保險金</name>
+  <uuid>88a314f6-9873-4b47-874a-2e38afe79ff2</uuid>
+  <referencedVariables variableName="lifeInsurance" variableSetName="LifeClaimVar">
+    <variableSet href="../../../規則/LifeClaimVar.var#478a3bc5-b3a4-487a-be8a-abd7c0a78a7d"/>
+  </referencedVariables>
+  <referencedVariables variableName="ruleCode" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <referencedVariables variableName="paymentItem" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <referencedVariables variableName="calculationType" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <referencedVariables variableName="calculationCode" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <referencedVariables variableName="paymentAmount" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <referencedVariables variableName="LifePaymentAmountModel" variableSetName="LifeClaimVar">
+    <variableSet href="../../../規則/LifeClaimVar.var#478a3bc5-b3a4-487a-be8a-abd7c0a78a7d"/>
+  </referencedVariables>
+  <ruleflow href="../../../規則/lifeInsurance/Flow/BurnAndScaldsFlow.rfl#27ac51d1-3681-4c72-a867-14412370fe27"/>
+  <extractor xsi:type="ilog.rules.studio.model.query.extractor:QueryExtractor" name="BurnAndScalds_extractor" validator="預設驗證器"/>
+  <targetRuleProject href="../../../../LifeClaim#ceb82f07-c460-42f2-8539-a36ef6775de0"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

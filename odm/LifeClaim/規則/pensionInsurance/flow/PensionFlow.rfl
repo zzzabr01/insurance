@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.ruleflow:RuleFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.ruleflow="http://ilog.rules.studio/model/ruleflow.ecore">
+  <name>PensionFlow</name>
+  <uuid>6cecab71-a11a-48c2-9174-1b256912ffce</uuid>
+  <locale>zh_TW</locale>
+  <categories>any</categories>
+  <rfModel>
+<Ruleflow xmlns="http://schemas.ilog.com/Rules/7.0/Ruleflow">
+  <Body>
+    <TaskList>
+      <StartTask Identifier="task_0">
+        <Actions/>
+      </StartTask>
+      <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="task_1" Ordering="Default">
+        <InitialActions Language="bal"><![CDATA[ 列印 '給付項目' ;]]></InitialActions>
+        <FinalActions Language="bal"><![CDATA[ 列印 '給付項目'; 列印 '規則編碼' ;]]></FinalActions>
+        <RuleList>
+          <Package Name="pensionInsurance.DecisionTable"/>
+        </RuleList>
+      </RuleTask>
+      <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="task_3" Ordering="Default">
+        <RuleList>
+          <Rule Uuid="04210810-43e3-48c4-9864-2dac983d23d7"/>
+          <Rule Uuid="ea57fc8c-c8ce-487f-b583-9cf36afaf83a"/>
+          <Rule Uuid="668885a2-1ea3-4f0c-b10e-8424228df2bb"/>
+          <Rule Uuid="e5d1493c-9e3d-48e0-aeaa-c121c4a7d111"/>
+        </RuleList>
+      </RuleTask>
+      <ActionTask Identifier="task_5">
+        <Actions Language="bal"><![CDATA[  設定 '保單效力' 為 不成立 ; ]]></Actions>
+      </ActionTask>
+      <StopTask Identifier="task_2"/>
+    </TaskList>
+    <NodeList>
+      <TaskNode Identifier="node_0" Task="task_0"/>
+      <TaskNode Identifier="node_1" Task="task_1"/>
+      <TaskNode Identifier="node_2" Task="task_2"/>
+      <TaskNode Identifier="node_3" Task="task_3"/>
+      <BranchNode Identifier="node_4"/>
+      <TaskNode Identifier="node_6" Task="task_5"/>
+    </NodeList>
+    <TransitionList>
+      <Transition Identifier="transition_0" Source="node_0" Target="node_1"/>
+      <Transition Identifier="transition_1" Source="node_3" Target="node_2"/>
+      <Transition Identifier="transition_2" Source="node_1" Target="node_4"/>
+      <Transition Identifier="transition_3" Source="node_4" Target="node_3">
+        <Conditions Language="bal"><![CDATA[  下列的所有條件都成立： 
+
+		- '給付項目' 不為空 ]]></Conditions>
+      </Transition>
+      <Transition Identifier="transition_6" Source="node_4" Target="node_6"/>
+      <Transition Identifier="transition_7" Source="node_6" Target="node_2"/>
+    </TransitionList>
+  </Body>
+  <Resources>
+    <ResourceSet Locale="zh_TW">
+      <Data Name="node_2#height">23.0</Data>
+      <Data Name="node_4#width">36.414185</Data>
+      <Data Name="node_1#height">40.0</Data>
+      <Data Name="node_3#height">40.0</Data>
+      <Data Name="node_0#height">21.0</Data>
+      <Data Name="node_4#height">36.4142</Data>
+      <Data Name="node_2#name">node_2</Data>
+      <Data Name="node_0#documentation"><![CDATA[ 設定 '年金險' 的這死亡 為 成立 ; 
+
+ 設定 '年金險' 的這年金開始給付日為 "年金給付開始日後";
+
+  設定 '年金險' 的這保證期間為 "期間內";
+
+ 設定 '年金險' 的這商品代號為 "32";
+
+  設定 '年金險' 的這保單投保日為 2002-02-24　12:12:50;
+
+  設定 '年金險給付金額參數' 的這未支領之年金餘額為 100000;
+
+列印 "!!!!!";]]></Data>
+      <Data Name="node_6#height">40.0</Data>
+      <Data Name="node_1#label">年金險</Data>
+      <Data Name="node_6#label">無效保單</Data>
+      <Data Name="node_3#label">給付金額確認</Data>
+      <Data Name="node_2#width">23.000015</Data>
+      <Data Name="node_0#width">21.0</Data>
+      <Data Name="node_3#y">38.0</Data>
+      <Data Name="node_4#x">-403.99994</Data>
+      <Data Name="node_4#y">-57.999992</Data>
+      <Data Name="node_6#x">-532.0</Data>
+      <Data Name="node_6#y">34.0</Data>
+      <Data Name="node_0#x">-324.0</Data>
+      <Data Name="node_0#y">-135.0</Data>
+      <Data Name="node_1#x">-276.0</Data>
+      <Data Name="node_1#y">-56.0</Data>
+      <Data Name="node_2#x">-247.0</Data>
+      <Data Name="node_2#y">167.0</Data>
+      <Data Name="node_3#x">-322.0</Data>
+      <Data Name="node_1#name">node_1</Data>
+      <Data Name="node_3#width">114.0</Data>
+      <Data Name="node_4#name">node_6</Data>
+      <Data Name="node_1#width">102.0</Data>
+      <Data Name="node_6#name">node_3</Data>
+      <Data Name="node_0#name">node_0</Data>
+      <Data Name="node_6#width">102.0</Data>
+      <Data Name="node_3#name">node_1</Data>
+    </ResourceSet>
+  </Resources>
+  <Properties/>
+</Ruleflow>
+</rfModel>
+</ilog.rules.studio.model.ruleflow:RuleFlow>

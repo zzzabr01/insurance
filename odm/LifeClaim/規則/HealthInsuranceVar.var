@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:VariableSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>HealthInsuranceVar</name>
+  <uuid>de9b3523-1239-4870-bcc9-d0ddcb265b00</uuid>
+  <variables name="heathInsurance" type="main.model.HealthInsurance" initialValue="" verbalization="健康險"/>
+  <variables name="healthPaymentAmountModel" type="main.model.payment.HealthPaymentAmountModel" initialValue="" verbalization="健康險給付金額參數"/>
+</ilog.rules.studio.model.base:VariableSet>

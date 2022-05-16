@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.ruleflow:RuleFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.ruleflow="http://ilog.rules.studio/model/ruleflow.ecore">
+  <name>LifeInsuranceFlow</name>
+  <uuid>591d284a-c167-47ed-a755-7116cc3df9f2</uuid>
+  <locale>zh_TW</locale>
+  <categories>any</categories>
+  <rfModel>
+<Ruleflow xmlns="http://schemas.ilog.com/Rules/7.0/Ruleflow">
+  <Body>
+    <TaskList>
+      <StartTask Identifier="task_0"/>
+      <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="task_1" Ordering="Default">
+        <FinalActions Language="bal"><![CDATA[設定 '給付金額'為 entrance.receivceFromIBM( '壽險給付金額參數'  , '計算類別' , '計算編號' ) ;]]></FinalActions>
+        <Select Dynamic="true" Language="bal"><![CDATA[  ]]></Select>
+        <RuleList>
+          <Rule Uuid="b0e0603f-3a8a-41b3-8986-75bdf456296a"/>
+          <Rule Uuid="5101bd4c-4a72-433e-930c-6aa760136943"/>
+          <Rule Uuid="b2a44090-43bb-45b1-9ccf-c7201ee131e6"/>
+        </RuleList>
+      </RuleTask>
+      <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="保單效力檢查" Ordering="Default">
+        <RuleList>
+          <Rule Uuid="3c06705a-3b71-419c-a3c6-7995da568cb2"/>
+        </RuleList>
+      </RuleTask>
+      <ActionTask Identifier="無效保單">
+        <Actions Language="bal"><![CDATA[列印 "無效保單";]]></Actions>
+      </ActionTask>
+      <StopTask Identifier="task_2"/>
+    </TaskList>
+    <NodeList>
+      <TaskNode Identifier="node_0" Task="task_0"/>
+      <TaskNode Identifier="node_1" Task="task_1"/>
+      <TaskNode Identifier="node_2" Task="task_2"/>
+      <TaskNode Identifier="node_3" Task="保單效力檢查"/>
+      <BranchNode Identifier="node_6"/>
+      <TaskNode Identifier="node_8" Task="無效保單"/>
+    </NodeList>
+    <TransitionList>
+      <Transition Identifier="transition_0" Source="node_0" Target="node_3"/>
+      <Transition Identifier="transition_1" Source="node_1" Target="node_2"/>
+      <Transition Identifier="transition_6" Source="node_3" Target="node_6"/>
+      <Transition Identifier="transition_7" Source="node_6" Target="node_1">
+        <Conditions Language="bal"><![CDATA[  下列的所有條件都成立： 
+
+		- '保單效力' 是 成立 ]]></Conditions>
+      </Transition>
+      <Transition Identifier="transition_8" Source="node_6" Target="node_8"/>
+      <Transition Identifier="transition_9" Source="node_8" Target="node_2"/>
+    </TransitionList>
+  </Body>
+  <Resources>
+    <ResourceSet Locale="zh_TW">
+      <Data Name="node_2#height">23.000002</Data>
+      <Data Name="node_1#height">40.106506</Data>
+      <Data Name="node_3#height">40.0</Data>
+      <Data Name="node_0#height">21.0</Data>
+      <Data Name="node_8#x">-827.0</Data>
+      <Data Name="node_8#y">-149.0</Data>
+      <Data Name="node_2#name">node_2</Data>
+      <Data Name="node_1#label">壽險檢查表</Data>
+      <Data Name="node_8#height">40.0</Data>
+      <Data Name="node_2#width">23.0</Data>
+      <Data Name="node_0#width">21.0</Data>
+      <Data Name="node_3#y">-247.0</Data>
+      <Data Name="node_6#x">-746.0</Data>
+      <Data Name="node_6#y">-212.0</Data>
+      <Data Name="node_0#x">-677.3333</Data>
+      <Data Name="node_0#y">-331.16666</Data>
+      <Data Name="node_1#x">-618.6667</Data>
+      <Data Name="node_8#name">node_3</Data>
+      <Data Name="node_1#y">-152.28009</Data>
+      <Data Name="node_2#x">-581.1667</Data>
+      <Data Name="node_2#y">-24.0</Data>
+      <Data Name="node_3#x">-642.0</Data>
+      <Data Name="node_1#name">node_1</Data>
+      <Data Name="node_3#width">114.0</Data>
+      <Data Name="node_8#width">102.0</Data>
+      <Data Name="node_1#width">138.0</Data>
+      <Data Name="node_6#name">node_6</Data>
+      <Data Name="node_0#name">node_0</Data>
+      <Data Name="node_3#name">node_1</Data>
+    </ResourceSet>
+  </Resources>
+  <Properties/>
+</Ruleflow>
+</rfModel>
+</ilog.rules.studio.model.ruleflow:RuleFlow>

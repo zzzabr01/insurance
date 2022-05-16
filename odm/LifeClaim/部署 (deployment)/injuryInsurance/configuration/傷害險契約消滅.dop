@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" xmlns:ilog.rules.studio.model.query.extractor="http://ilog.rules.studio/model/query/extractor.ecore" rulesetName="ContractExtinguish" usingRuleflow="true" ruleflowName="ContractExtinguish" targetRuleProjectName="LifeClaim">
+  <name>傷害險契約消滅</name>
+  <uuid>561c2fb7-945b-4393-a84f-d30730b97c2c</uuid>
+  <referencedVariables variableName="injuryInsurance" variableSetName="LifeClaimVar">
+    <variableSet href="../../../規則/LifeClaimVar.var#478a3bc5-b3a4-487a-be8a-abd7c0a78a7d"/>
+  </referencedVariables>
+  <referencedVariables variableName="injuryPaymentAmountModel" variableSetName="LifeClaimVar">
+    <variableSet href="../../../規則/LifeClaimVar.var#478a3bc5-b3a4-487a-be8a-abd7c0a78a7d"/>
+  </referencedVariables>
+  <referencedVariables variableName="ruleCode" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <referencedVariables variableName="paymentItem" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <ruleflow href="../../../規則/injuryInsurance/flow/ContractExtinguish.rfl#830d131b-1222-4780-a22f-8047a9f510f3"/>
+  <extractor xsi:type="ilog.rules.studio.model.query.extractor:QueryExtractor" name="injuryContractExtinguish_extractor" validator="預設驗證器"/>
+  <targetRuleProject href="../../../../LifeClaim#ceb82f07-c460-42f2-8539-a36ef6775de0"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

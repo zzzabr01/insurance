@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Deployment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" ruleAppName="AdditionalConditions" managingXom="true">
+  <name>AdditionalConditions</name>
+  <uuid>6f618465-6b4e-48aa-a46f-a50fa5ff8140</uuid>
+  <targets label="rule_execution_server"/>
+  <operations operationName="附加條款航空大眾運輸意外傷害身故保險金.dop">
+    <operation href="附加條款航空大眾運輸意外傷害身故保險金.dop#52e2ab71-daab-4c44-932f-1c61d7e113bb"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="附加條款航空大眾運輸意外傷害失能保險金.dop">
+    <operation href="附加條款航空大眾運輸意外傷害失能保險金.dop#6c902a17-2924-4158-8068-61d465e2bc23"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="附加條款航空大眾運輸意外傷害喪葬費用保險金.dop">
+    <operation href="附加條款航空大眾運輸意外傷害喪葬費用保險金.dop#0babdb7d-c9ac-45f1-9b19-a1d263e54cd0"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="附加條款重大燒燙傷保險金.dop">
+    <operation href="附加條款重大燒燙傷保險金.dop#02ce2b4f-39e4-4a8b-a3aa-584425a19045"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="附加條款燒燙傷病房保險金.dop">
+    <operation href="附加條款燒燙傷病房保險金.dop#686dc7e9-f5d0-43c5-a77a-a7ca56ae4ec5"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="附加條款急診保險金.dop">
+    <operation href="附加條款急診保險金.dop#39ee59e9-ddba-4d9f-adaa-6bbe7874cb13"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="附加條款骨折未住院保險金.dop">
+    <operation href="附加條款骨折未住院保險金.dop#36c33956-041b-4a2f-b7a5-e8f14c03902b"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="附加條款加護病房保險金.dop">
+    <operation href="附加條款加護病房保險金.dop#f2bd4bc8-b1ce-48a9-a719-f599858e5d23"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="附加條款住院前後門診保險金.dop">
+    <operation href="附加條款住院前後門診保險金.dop#e3f31ec9-cc68-4701-bdce-0f6a1b294078"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="附加條款門診手術保險金.dop">
+    <operation href="附加條款門診手術保險金.dop#74b5041a-519b-4de1-acb0-325168e0ec54"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="附加條款特定意外傷害身故保險金.dop">
+    <operation href="附加條款特定意外傷害身故保險金.dop#19477b52-7af2-4bd8-8089-30dcbd9dbd4a"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="附加條款特定意外傷害喪葬費用保險金.dop">
+    <operation href="附加條款特定意外傷害喪葬費用保險金.dop#8c3d1aed-4c21-4aaf-9eb1-99a46e05316b"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="附加條款特定意外傷害完全失能保險金.dop">
+    <operation href="附加條款特定意外傷害完全失能保險金.dop#7b2eb744-a91d-43cb-9306-8780eb91b9a7"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="附加條款水陸大眾運輸意外傷害身故保險金.dop">
+    <operation href="附加條款水陸大眾運輸意外傷害身故保險金.dop#55f1de20-8fe0-46f3-b321-69a4970f7f5e"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="附加條款水陸大眾運輸意外傷害喪葬費用保險金.dop">
+    <operation href="附加條款水陸大眾運輸意外傷害喪葬費用保險金.dop#235fbf70-be33-45f3-9a9b-e63156deda95"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="附加條款水陸大眾運輸意外傷害完全失能保險金.dop">
+    <operation href="附加條款水陸大眾運輸意外傷害完全失能保險金.dop#9a41a306-1738-4ba9-962a-1073c2271826"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <versionPolicies label="增量次要版本號碼" ruleset="INCREMENT_MINOR" default="true" recurrent="true">
+    <description><![CDATA[更新每一個規則集的次要版本。提供新版本，但仍保留舊版本。]]></description>
+  </versionPolicies>
+  <versionPolicies label="使用基礎版本號碼" recurrent="true">
+    <description><![CDATA[使用部署配置中提供的號碼。以這個版本取代每一個規則集的最新版本。用於緊急修復程式或開發。]]></description>
+  </versionPolicies>
+  <versionPolicies label="使用者可以定義版本號碼" ruleset="MANUAL" recurrent="true">
+    <description><![CDATA[可讓您輸入自己的版本號碼。用於舊版的緊急修復程式或更新項目。]]></description>
+  </versionPolicies>
+</com.ibm.rules.studio.model.decisionservice:Deployment>

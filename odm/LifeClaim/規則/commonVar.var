@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:VariableSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>commonVar</name>
+  <uuid>3644afdf-d6c2-4629-b3b9-6cf326c5fbc0</uuid>
+  <variables name="productEffectiveDate" type="java.util.Date" initialValue="" verbalization="商品生效日"/>
+  <variables name="policyEffectiveDate" type="java.util.Date" initialValue="" verbalization="保單生效日"/>
+  <variables name="policySuspensionDate" type="java.util.Date" initialValue="" verbalization="保單停效日"/>
+  <variables name="insuranceAmount" type="java.lang.Double" initialValue="" verbalization="保險金額"/>
+  <variables name="isInsuranceValid" type="java.lang.Boolean" initialValue="true" verbalization="保單效力"/>
+  <variables name="actualAge" type="java.lang.Integer" initialValue="" verbalization="實際年齡"/>
+  <variables name="insuranceAge" type="java.lang.Integer" initialValue="" verbalization="保險年齡"/>
+  <variables name="caseAccidentDate" type="java.util.Date" initialValue="" verbalization="案件事故日"/>
+  <variables name="accidentReason" type="java.lang.String" initialValue="" verbalization="事故原因"/>
+  <variables name="productNo" type="java.lang.String" initialValue="" verbalization="商品代號"/>
+</ilog.rules.studio.model.base:VariableSet>

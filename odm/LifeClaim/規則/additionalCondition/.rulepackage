@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>additionalCondition</name>
+  <uuid>40965a3c-d8b4-4f52-bf80-d2e84d06c90a</uuid>
+</ilog.rules.studio.model.base:RulePackage>

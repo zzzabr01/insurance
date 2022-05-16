@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" xmlns:ilog.rules.studio.model.query.extractor="http://ilog.rules.studio/model/query/extractor.ecore" rulesetName="PensionInsurance" usingRuleflow="true" ruleflowName="PensionFlow" targetRuleProjectName="LifeClaim">
+  <name>PensionInsurance</name>
+  <uuid>728cc322-7e8e-47b3-8bbe-33848519792e</uuid>
+  <referencedVariables variableName="pensionInsurance" variableSetName="LifeClaimVar">
+    <variableSet href="../../規則/LifeClaimVar.var#478a3bc5-b3a4-487a-be8a-abd7c0a78a7d"/>
+  </referencedVariables>
+  <referencedVariables variableName="isExtinguish" variableSetName="PensionVar" direction="OUT">
+    <variableSet href="../../規則/PensionVar.var#19c2625e-cd7d-4f7b-b17d-4c81e1d7a182"/>
+  </referencedVariables>
+  <referencedVariables variableName="isInsuranceValid" variableSetName="commonVar" direction="OUT">
+    <variableSet href="../../規則/commonVar.var#3644afdf-d6c2-4629-b3b9-6cf326c5fbc0"/>
+  </referencedVariables>
+  <referencedVariables variableName="paymentAmount" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <referencedVariables variableName="pensionPaymentAmountModel" variableSetName="LifeClaimVar">
+    <variableSet href="../../規則/LifeClaimVar.var#478a3bc5-b3a4-487a-be8a-abd7c0a78a7d"/>
+  </referencedVariables>
+  <referencedVariables variableName="ruleCode" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <referencedVariables variableName="paymentItem" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <ruleflow href="../../規則/pensionInsurance/flow/PensionFlow.rfl#6cecab71-a11a-48c2-9174-1b256912ffce"/>
+  <extractor xsi:type="ilog.rules.studio.model.query.extractor:QueryExtractor" name="PensionInsuranceInvestmentDeathBenefit_extractor" validator="預設驗證器"/>
+  <targetRuleProject href="../../../LifeClaim#ceb82f07-c460-42f2-8539-a36ef6775de0"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

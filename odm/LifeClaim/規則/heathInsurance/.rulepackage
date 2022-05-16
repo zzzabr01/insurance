@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>heathInsurance</name>
+  <uuid>abe31204-eced-4706-83ff-b097ea133fa7</uuid>
+</ilog.rules.studio.model.base:RulePackage>

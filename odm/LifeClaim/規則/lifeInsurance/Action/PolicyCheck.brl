@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>PolicyCheck</name>
+  <uuid>3c06705a-3b71-419c-a3c6-7995da568cb2</uuid>
+  <locale>zh_TW</locale>
+  <definition><![CDATA[如果   
+  	'壽險' 的案件事故日  等於或晚於 '壽險' 的保單生效起日  , 並且等於或早於 '壽險' 的保單停效日期    
+則 
+     列印 "案件事故日 在 保單有效期間";
+     設定 '保單效力' 為 成立 ;
+否則 
+	列印 "案件事故日 不在 保單有效期間";
+	列印 "不予理賠";
+	設定 '保單效力' 為 不成立 ; ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

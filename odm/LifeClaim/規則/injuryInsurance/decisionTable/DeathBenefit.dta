@@ -1,0 +1,2433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
+  <name>DeathBenefit</name>
+  <uuid>3c3ac08c-b63a-4b4b-8aae-87736c181c23</uuid>
+  <locale>zh_TW</locale>
+  <definition>
+<DT Version="7.0" xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable">
+  <Body>
+    <Properties>
+      <Property Name="edit.Check.Expression" Type="xs:boolean"><![CDATA[true]]></Property>
+      <Property Name="edit.Check.Gap" Type="xs:boolean"><![CDATA[true]]></Property>
+      <Property Name="edit.Check.Overlap" Type="xs:boolean"><![CDATA[true]]></Property>
+      <Property Name="edit.Check.Symmetry" Type="xs:boolean"><![CDATA[false]]></Property>
+      <Property Name="tmpCheck.edit.Check.Expression" Type="xs:boolean"><![CDATA[true]]></Property>
+      <Property Name="tmpCheck.edit.Check.Gap" Type="xs:boolean"><![CDATA[true]]></Property>
+      <Property Name="tmpCheck.edit.Check.Overlap" Type="xs:boolean"><![CDATA[true]]></Property>
+      <Property Name="tmpCheck.edit.Check.Symmetry" Type="xs:boolean"><![CDATA[false]]></Property>
+    </Properties>
+    <Structure>
+      <ConditionDefinitions>
+        <ConditionDefinition Id="C0">
+          <ExpressionDefinition>
+            <Text><![CDATA['傷害險'的商品代號是<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C6">
+          <ExpressionDefinition>
+            <Text><![CDATA['傷害險' 的保單投保日等於或晚於<一個 日期> ,並且等於或早於<一個 日期>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C5">
+          <ExpressionDefinition>
+            <Text><![CDATA['傷害險' 的保險年齡是<一個 數字>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C4">
+          <ExpressionDefinition>
+            <Text><![CDATA['傷害險' 的實際年齡是<一個 數字>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C3">
+          <ExpressionDefinition>
+            <Text><![CDATA['傷害險'的死亡是<一個 布林類型>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C1">
+          <ExpressionDefinition>
+            <Text><![CDATA['傷害險'的事故原因 是<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C2">
+          <ExpressionDefinition>
+            <Text><![CDATA['傷害險' 的意外事故項目 是<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C9">
+          <ExpressionDefinition>
+            <Text><![CDATA['傷害險' 的兵災或其他暴動 是<一個 布林類型>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C8">
+          <ExpressionDefinition>
+            <Text><![CDATA['傷害險' 的受監護宣告尚未撤銷者 是<一個 布林類型>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+      </ConditionDefinitions>
+      <ActionDefinitions>
+        <ActionDefinition Id="A0">
+          <ExpressionDefinition>
+            <Text><![CDATA[設定'規則編碼'為<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A4">
+          <ExpressionDefinition>
+            <Text><![CDATA[設定'給付項目'為<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A2">
+          <ExpressionDefinition>
+            <Text><![CDATA[設定'傷害險給付金額參數' 的這保額倍數為<一個 數字>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A1">
+          <ExpressionDefinition>
+            <Text><![CDATA[設定'傷害險給付金額參數' 的這附加保額倍數為<一個 數字>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A3">
+          <ExpressionDefinition>
+            <Text><![CDATA[設定'傷害險給付金額參數' 的這每單位金額為<一個 數字>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A5">
+          <ExpressionDefinition>
+            <Text><![CDATA[設定'計算類別'  為<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A6">
+          <ExpressionDefinition>
+            <Text><![CDATA[設定'計算編號'  為<一個 字串>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+      </ActionDefinitions>
+    </Structure>
+    <Contents>
+      <Partition DefId="C0">
+        <Condition>
+          <Expression>
+            <Param><![CDATA["03"]]></Param>
+          </Expression>
+          <Partition DefId="C6">
+            <Condition>
+              <Expression>
+                <Text><![CDATA[<一個 日期>等於或晚於<一個 日期> ,並且早於<一個 日期>]]></Text>
+                <Param><![CDATA[1973-01-01]]></Param>
+                <Param><![CDATA[1982-05-01]]></Param>
+              </Expression>
+              <Partition DefId="C3">
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA[成立]]></Param>
+                  </Expression>
+                  <Partition DefId="C1">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA["意外"]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["030101"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A4">
+                          <Expression>
+                            <Param><![CDATA["身故保險金"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression>
+                            <Param><![CDATA[1]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A1">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression/>
+                        </Action>
+                        <Action DefId="A5">
+                          <Expression>
+                            <Param><![CDATA["01"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A6">
+                          <Expression>
+                            <Param><![CDATA["AA1"]]></Param>
+                          </Expression>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["04"]]></Param>
+          </Expression>
+          <Partition DefId="C6">
+            <Condition>
+              <Expression>
+                <Text><![CDATA[<一個 日期>等於或晚於<一個 日期> ,並且早於<一個 日期>]]></Text>
+                <Param><![CDATA[1973-01-01]]></Param>
+                <Param><![CDATA[2007-07-01]]></Param>
+              </Expression>
+              <Partition DefId="C4">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[14]]></Param>
+                  </Expression>
+                  <Partition DefId="C3">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[成立]]></Param>
+                      </Expression>
+                      <Partition DefId="C1">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["意外"]]></Param>
+                          </Expression>
+                          <Partition DefId="C2">
+                            <Condition>
+                              <Expression>
+                                <Param/>
+                              </Expression>
+                              <Partition DefId="C8">
+                                <Condition>
+                                  <Expression>
+                                    <Param><![CDATA[不成立]]></Param>
+                                  </Expression>
+                                  <ActionSet>
+                                    <Action DefId="A0">
+                                      <Expression>
+                                        <Param><![CDATA["040101"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A4">
+                                      <Expression>
+                                        <Param><![CDATA["身故保險金"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A2">
+                                      <Expression>
+                                        <Param><![CDATA[1]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A1">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A3">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A5">
+                                      <Expression>
+                                        <Param><![CDATA["01"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A6">
+                                      <Expression>
+                                        <Param><![CDATA["AA1"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                  </ActionSet>
+                                </Condition>
+                              </Partition>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["06"]]></Param>
+          </Expression>
+          <Partition DefId="C6">
+            <Condition>
+              <Expression>
+                <Text><![CDATA[<一個 日期>等於或晚於<一個 日期> ,並且早於<一個 日期>]]></Text>
+                <Param><![CDATA[1991-12-03]]></Param>
+                <Param><![CDATA[2010-3-8]]></Param>
+              </Expression>
+              <Partition DefId="C4">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[14]]></Param>
+                  </Expression>
+                  <Partition DefId="C3">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[成立]]></Param>
+                      </Expression>
+                      <Partition DefId="C1">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["意外"]]></Param>
+                          </Expression>
+                          <Partition DefId="C8">
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA[不成立]]></Param>
+                              </Expression>
+                              <ActionSet>
+                                <Action DefId="A0">
+                                  <Expression>
+                                    <Param><![CDATA["060101"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A4">
+                                  <Expression>
+                                    <Param><![CDATA["身故保險金"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A2">
+                                  <Expression>
+                                    <Param><![CDATA[1]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A1">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A3">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A5">
+                                  <Expression>
+                                    <Param><![CDATA["01"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A6">
+                                  <Expression>
+                                    <Param><![CDATA["AA1"]]></Param>
+                                  </Expression>
+                                </Action>
+                              </ActionSet>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["60"]]></Param>
+          </Expression>
+          <Partition DefId="C6">
+            <Condition>
+              <Expression>
+                <Text><![CDATA[<一個 日期>等於或晚於<一個 日期>]]></Text>
+                <Param><![CDATA[2001-04-06]]></Param>
+              </Expression>
+              <Partition DefId="C4">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[15]]></Param>
+                  </Expression>
+                  <Partition DefId="C3">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[成立]]></Param>
+                      </Expression>
+                      <Partition DefId="C1">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["意外"]]></Param>
+                          </Expression>
+                          <Partition DefId="C8">
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA[不成立]]></Param>
+                              </Expression>
+                              <ActionSet>
+                                <Action DefId="A0">
+                                  <Expression>
+                                    <Param><![CDATA["600101"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A4">
+                                  <Expression>
+                                    <Param><![CDATA["身故保險金"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A2">
+                                  <Expression>
+                                    <Param><![CDATA[1]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A1">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A3">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A5">
+                                  <Expression>
+                                    <Param><![CDATA["01"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A6">
+                                  <Expression>
+                                    <Param><![CDATA["AA1"]]></Param>
+                                  </Expression>
+                                </Action>
+                              </ActionSet>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["62"]]></Param>
+          </Expression>
+          <Partition DefId="C6">
+            <Condition>
+              <Expression>
+                <Text><![CDATA[<一個 日期>等於或晚於<一個 日期> ,並且早於<一個 日期>]]></Text>
+                <Param><![CDATA[1964-11-05]]></Param>
+                <Param><![CDATA[2021-08-13]]></Param>
+              </Expression>
+              <Partition DefId="C3">
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA[成立]]></Param>
+                  </Expression>
+                  <Partition DefId="C1">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA["意外"]]></Param>
+                      </Expression>
+                      <Partition DefId="C2">
+                        <Condition>
+                          <Expression>
+                            <Text><![CDATA[<一個 物件>不是<一個 物件>]]></Text>
+                            <Param><![CDATA["航空運輸意外傷害事故"]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA["620101"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A4">
+                              <Expression>
+                                <Param><![CDATA["身故保險金"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A2">
+                              <Expression>
+                                <Param><![CDATA[1]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A1">
+                              <Expression/>
+                            </Action>
+                            <Action DefId="A3">
+                              <Expression/>
+                            </Action>
+                            <Action DefId="A5">
+                              <Expression>
+                                <Param><![CDATA["01"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A6">
+                              <Expression>
+                                <Param><![CDATA["AA1"]]></Param>
+                              </Expression>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                        <Condition>
+                          <Expression>
+                            <Text><![CDATA[<一個 物件>是<一個 物件>]]></Text>
+                            <Param><![CDATA["航空運輸意外傷害事故"]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA["620102"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A4">
+                              <Expression>
+                                <Param><![CDATA["身故保險金"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A2">
+                              <Expression>
+                                <Param><![CDATA[1]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A1">
+                              <Expression/>
+                            </Action>
+                            <Action DefId="A3">
+                              <Expression/>
+                            </Action>
+                            <Action DefId="A5">
+                              <Expression>
+                                <Param><![CDATA["01"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A6">
+                              <Expression>
+                                <Param><![CDATA["AA1"]]></Param>
+                              </Expression>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                    <Condition>
+                      <Expression>
+                        <Param/>
+                      </Expression>
+                      <Partition DefId="C9">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA[成立]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA["620103"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A4">
+                              <Expression>
+                                <Param><![CDATA["身故保險金"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A2">
+                              <Expression>
+                                <Param><![CDATA[1]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A1">
+                              <Expression/>
+                            </Action>
+                            <Action DefId="A3">
+                              <Expression/>
+                            </Action>
+                            <Action DefId="A5">
+                              <Expression>
+                                <Param><![CDATA["01"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A6">
+                              <Expression>
+                                <Param><![CDATA["AA1"]]></Param>
+                              </Expression>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["63"]]></Param>
+          </Expression>
+          <Partition DefId="C6">
+            <Condition>
+              <Expression>
+                <Text><![CDATA[<一個 日期>等於或晚於<一個 日期> ,並且早於<一個 日期>]]></Text>
+                <Param><![CDATA[1969-11-10]]></Param>
+                <Param><![CDATA[2021-08-13]]></Param>
+              </Expression>
+              <Partition DefId="C3">
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA[成立]]></Param>
+                  </Expression>
+                  <Partition DefId="C1">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA["意外"]]></Param>
+                      </Expression>
+                      <Partition DefId="C2">
+                        <Condition>
+                          <Expression>
+                            <Text><![CDATA[<一個 物件>不是<一個 物件>]]></Text>
+                            <Param><![CDATA["航空運輸意外傷害事故"]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA["630101"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A4">
+                              <Expression>
+                                <Param><![CDATA["身故保險金"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A2">
+                              <Expression>
+                                <Param><![CDATA[1]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A1">
+                              <Expression/>
+                            </Action>
+                            <Action DefId="A3">
+                              <Expression/>
+                            </Action>
+                            <Action DefId="A5">
+                              <Expression>
+                                <Param><![CDATA["01"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A6">
+                              <Expression>
+                                <Param><![CDATA["AA1"]]></Param>
+                              </Expression>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["航空運輸意外傷害事故"]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA["630102"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A4">
+                              <Expression>
+                                <Param><![CDATA["身故保險金"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A2">
+                              <Expression>
+                                <Param><![CDATA[1]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A1">
+                              <Expression/>
+                            </Action>
+                            <Action DefId="A3">
+                              <Expression/>
+                            </Action>
+                            <Action DefId="A5">
+                              <Expression>
+                                <Param><![CDATA["01"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A6">
+                              <Expression>
+                                <Param><![CDATA["AA1"]]></Param>
+                              </Expression>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                    <Condition>
+                      <Expression/>
+                      <Partition DefId="C9">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA[成立]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA["630103"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A4">
+                              <Expression>
+                                <Param><![CDATA["身故保險金"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A2">
+                              <Expression>
+                                <Param><![CDATA[1]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A1">
+                              <Expression/>
+                            </Action>
+                            <Action DefId="A3">
+                              <Expression/>
+                            </Action>
+                            <Action DefId="A5">
+                              <Expression>
+                                <Param><![CDATA["01"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A6">
+                              <Expression>
+                                <Param><![CDATA["AA1"]]></Param>
+                              </Expression>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["65"]]></Param>
+          </Expression>
+          <Partition DefId="C6">
+            <Condition>
+              <Expression>
+                <Text><![CDATA[<一個 日期>等於或晚於<一個 日期>]]></Text>
+                <Param><![CDATA[1979-02-26]]></Param>
+              </Expression>
+              <Partition DefId="C4">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[15]]></Param>
+                  </Expression>
+                  <Partition DefId="C3">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[成立]]></Param>
+                      </Expression>
+                      <Partition DefId="C1">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["意外"]]></Param>
+                          </Expression>
+                          <Partition DefId="C8">
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA[不成立]]></Param>
+                              </Expression>
+                              <ActionSet>
+                                <Action DefId="A0">
+                                  <Expression>
+                                    <Param><![CDATA["650101"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A4">
+                                  <Expression>
+                                    <Param><![CDATA["身故保險金"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A2">
+                                  <Expression>
+                                    <Param><![CDATA[1]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A1">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A3">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A5">
+                                  <Expression>
+                                    <Param><![CDATA["01"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A6">
+                                  <Expression>
+                                    <Param><![CDATA["AA1"]]></Param>
+                                  </Expression>
+                                </Action>
+                              </ActionSet>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["66"]]></Param>
+          </Expression>
+          <Partition DefId="C6">
+            <Condition>
+              <Expression>
+                <Text><![CDATA[<一個 日期>等於或晚於<一個 日期> ,並且早於<一個 日期>]]></Text>
+                <Param><![CDATA[1981-10-12]]></Param>
+                <Param><![CDATA[2021-01-01]]></Param>
+              </Expression>
+              <Partition DefId="C4">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[15]]></Param>
+                  </Expression>
+                  <Partition DefId="C3">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[成立]]></Param>
+                      </Expression>
+                      <Partition DefId="C1">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["意外"]]></Param>
+                          </Expression>
+                          <Partition DefId="C2">
+                            <Condition>
+                              <Expression>
+                                <Text><![CDATA[<一個 物件>不是<一個 物件>]]></Text>
+                                <Param><![CDATA["航空運輸意外傷害事故"]]></Param>
+                              </Expression>
+                              <Partition DefId="C8">
+                                <Condition>
+                                  <Expression>
+                                    <Param><![CDATA[不成立]]></Param>
+                                  </Expression>
+                                  <ActionSet>
+                                    <Action DefId="A0">
+                                      <Expression>
+                                        <Param><![CDATA["660101"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A4">
+                                      <Expression>
+                                        <Param><![CDATA["身故保險金"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A2">
+                                      <Expression>
+                                        <Param><![CDATA[1]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A1">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A3">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A5">
+                                      <Expression>
+                                        <Param><![CDATA["01"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A6">
+                                      <Expression>
+                                        <Param><![CDATA["AA1"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                  </ActionSet>
+                                </Condition>
+                              </Partition>
+                            </Condition>
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA["航空運輸意外傷害事故"]]></Param>
+                              </Expression>
+                              <Partition DefId="C8">
+                                <Condition>
+                                  <Expression>
+                                    <Param><![CDATA[不成立]]></Param>
+                                  </Expression>
+                                  <ActionSet>
+                                    <Action DefId="A0">
+                                      <Expression>
+                                        <Param><![CDATA["660102"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A4">
+                                      <Expression>
+                                        <Param><![CDATA["身故保險金"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A2">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A1">
+                                      <Expression>
+                                        <Param><![CDATA[1]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A3">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A5">
+                                      <Expression>
+                                        <Param><![CDATA["01"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A6">
+                                      <Expression>
+                                        <Param><![CDATA["TA1"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                  </ActionSet>
+                                </Condition>
+                              </Partition>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["75"]]></Param>
+          </Expression>
+          <Partition DefId="C6">
+            <Condition>
+              <Expression>
+                <Text><![CDATA[<一個 日期>等於或晚於<一個 日期>]]></Text>
+                <Param><![CDATA[2010-05-20]]></Param>
+              </Expression>
+              <Partition DefId="C3">
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA[成立]]></Param>
+                  </Expression>
+                  <Partition DefId="C1">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA["意外"]]></Param>
+                      </Expression>
+                      <Partition DefId="C8">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA[不成立]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA["750101"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A4">
+                              <Expression>
+                                <Param><![CDATA["身故保險金"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A2">
+                              <Expression>
+                                <Param><![CDATA[1]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A1">
+                              <Expression/>
+                            </Action>
+                            <Action DefId="A3">
+                              <Expression/>
+                            </Action>
+                            <Action DefId="A5">
+                              <Expression>
+                                <Param><![CDATA["01"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A6">
+                              <Expression>
+                                <Param><![CDATA["AA1"]]></Param>
+                              </Expression>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["1L"]]></Param>
+          </Expression>
+          <Partition DefId="C6">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2006-12-01　00:00:00]]></Param>
+                <Param><![CDATA[2007-06-30　23:59:59]]></Param>
+              </Expression>
+              <Partition DefId="C4">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[14]]></Param>
+                  </Expression>
+                  <Partition DefId="C3">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[成立]]></Param>
+                      </Expression>
+                      <Partition DefId="C1">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["意外"]]></Param>
+                          </Expression>
+                          <Partition DefId="C2">
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA["航空運輸意外傷害事故"]]></Param>
+                              </Expression>
+                              <Partition DefId="C8">
+                                <Condition>
+                                  <Expression>
+                                    <Param><![CDATA[不成立]]></Param>
+                                  </Expression>
+                                  <ActionSet>
+                                    <Action DefId="A0">
+                                      <Expression>
+                                        <Param><![CDATA["1L0101"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A4">
+                                      <Expression>
+                                        <Param><![CDATA["身故保險金"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A2">
+                                      <Expression>
+                                        <Param><![CDATA[3]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A1">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A3">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A5">
+                                      <Expression>
+                                        <Param><![CDATA["01"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A6">
+                                      <Expression>
+                                        <Param><![CDATA["AA1"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                  </ActionSet>
+                                </Condition>
+                              </Partition>
+                            </Condition>
+                            <Condition>
+                              <Expression>
+                                <Text><![CDATA[<一個 物件>是<一些 物件>中的一個]]></Text>
+                                <Param><![CDATA[{ "海外意外傷害事故" , "公共場所火災意外傷害事故" , "廂型客用電梯意外傷害事故" , "海陸運輸意外傷害事故" }]]></Param>
+                              </Expression>
+                              <Partition DefId="C8">
+                                <Condition>
+                                  <Expression>
+                                    <Param><![CDATA[不成立]]></Param>
+                                  </Expression>
+                                  <ActionSet>
+                                    <Action DefId="A0">
+                                      <Expression>
+                                        <Param><![CDATA["1L0102"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A4">
+                                      <Expression>
+                                        <Param><![CDATA["身故保險金"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A2">
+                                      <Expression>
+                                        <Param><![CDATA[2]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A1">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A3">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A5">
+                                      <Expression>
+                                        <Param><![CDATA["01"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A6">
+                                      <Expression>
+                                        <Param><![CDATA["AA1"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                  </ActionSet>
+                                </Condition>
+                              </Partition>
+                            </Condition>
+                            <Condition>
+                              <Expression>
+                                <Text><![CDATA[<一個 物件>不是<一些 物件>中的一個]]></Text>
+                                <Param><![CDATA[{ "航空運輸意外傷害事故" , "海外意外傷害事故" , "公共場所火災意外傷害事故" , "廂型客用電梯意外傷害事故" , "海陸運輸意外傷害事故" }]]></Param>
+                              </Expression>
+                              <Partition DefId="C8">
+                                <Condition>
+                                  <Expression>
+                                    <Param><![CDATA[不成立]]></Param>
+                                  </Expression>
+                                  <ActionSet>
+                                    <Action DefId="A0">
+                                      <Expression>
+                                        <Param><![CDATA["1L0103"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A4">
+                                      <Expression>
+                                        <Param><![CDATA["身故保險金"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A2">
+                                      <Expression>
+                                        <Param><![CDATA[1]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A1">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A3">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A5">
+                                      <Expression>
+                                        <Param><![CDATA["01"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A6">
+                                      <Expression>
+                                        <Param><![CDATA["AA1"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                  </ActionSet>
+                                </Condition>
+                              </Partition>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2007-07-01　00:00:00]]></Param>
+                <Param><![CDATA[2008-01-01　23:59:59]]></Param>
+              </Expression>
+              <Partition DefId="C4">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[14]]></Param>
+                  </Expression>
+                  <Partition DefId="C3">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[成立]]></Param>
+                      </Expression>
+                      <Partition DefId="C1">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["意外"]]></Param>
+                          </Expression>
+                          <Partition DefId="C2">
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA["航空運輸意外傷害事故"]]></Param>
+                              </Expression>
+                              <Partition DefId="C8">
+                                <Condition>
+                                  <Expression>
+                                    <Param><![CDATA[不成立]]></Param>
+                                  </Expression>
+                                  <ActionSet>
+                                    <Action DefId="A0">
+                                      <Expression>
+                                        <Param><![CDATA["1L0104"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A4">
+                                      <Expression>
+                                        <Param><![CDATA["身故保險金"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A2">
+                                      <Expression>
+                                        <Param><![CDATA[3]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A1">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A3">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A5">
+                                      <Expression>
+                                        <Param><![CDATA["01"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A6">
+                                      <Expression>
+                                        <Param><![CDATA["AA1"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                  </ActionSet>
+                                </Condition>
+                              </Partition>
+                            </Condition>
+                            <Condition>
+                              <Expression>
+                                <Text><![CDATA[<一個 物件>是<一些 物件>中的一個]]></Text>
+                                <Param><![CDATA[{ "海外意外傷害事故" , "公共場所火災意外傷害事故" , "廂型客用電梯意外傷害事故" , "海陸運輸意外傷害事故" }]]></Param>
+                              </Expression>
+                              <Partition DefId="C8">
+                                <Condition>
+                                  <Expression>
+                                    <Param><![CDATA[不成立]]></Param>
+                                  </Expression>
+                                  <ActionSet>
+                                    <Action DefId="A0">
+                                      <Expression>
+                                        <Param><![CDATA["1L0105"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A4">
+                                      <Expression>
+                                        <Param><![CDATA["身故保險金"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A2">
+                                      <Expression>
+                                        <Param><![CDATA[2]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A1">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A3">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A5">
+                                      <Expression>
+                                        <Param><![CDATA["01"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A6">
+                                      <Expression>
+                                        <Param><![CDATA["AA1"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                  </ActionSet>
+                                </Condition>
+                              </Partition>
+                            </Condition>
+                            <Condition>
+                              <Expression>
+                                <Text><![CDATA[<一個 物件>不是<一些 物件>中的一個]]></Text>
+                                <Param><![CDATA[{ "航空運輸意外傷害事故" , "海外意外傷害事故" , "公共場所火災意外傷害事故" , "廂型客用電梯意外傷害事故" , "海陸運輸意外傷害事故" }]]></Param>
+                              </Expression>
+                              <Partition DefId="C8">
+                                <Condition>
+                                  <Expression>
+                                    <Param><![CDATA[不成立]]></Param>
+                                  </Expression>
+                                  <ActionSet>
+                                    <Action DefId="A0">
+                                      <Expression>
+                                        <Param><![CDATA["1L0106"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A4">
+                                      <Expression>
+                                        <Param><![CDATA["身故保險金"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A2">
+                                      <Expression>
+                                        <Param><![CDATA[1]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A1">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A3">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A5">
+                                      <Expression>
+                                        <Param><![CDATA["01"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A6">
+                                      <Expression>
+                                        <Param><![CDATA["AA1"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                  </ActionSet>
+                                </Condition>
+                              </Partition>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2008-01-02]]></Param>
+                <Param><![CDATA[2008-03-03　23:59:59]]></Param>
+              </Expression>
+              <Partition DefId="C4">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[14]]></Param>
+                  </Expression>
+                  <Partition DefId="C3">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[成立]]></Param>
+                      </Expression>
+                      <Partition DefId="C1">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["意外"]]></Param>
+                          </Expression>
+                          <Partition DefId="C2">
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA["航空運輸意外傷害事故"]]></Param>
+                              </Expression>
+                              <Partition DefId="C8">
+                                <Condition>
+                                  <Expression>
+                                    <Param><![CDATA[不成立]]></Param>
+                                  </Expression>
+                                  <ActionSet>
+                                    <Action DefId="A0">
+                                      <Expression>
+                                        <Param><![CDATA["1L0107"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A4">
+                                      <Expression>
+                                        <Param><![CDATA["身故保險金"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A2">
+                                      <Expression>
+                                        <Param><![CDATA[3]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A1">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A3">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A5">
+                                      <Expression>
+                                        <Param><![CDATA["01"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A6">
+                                      <Expression>
+                                        <Param><![CDATA["AA1"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                  </ActionSet>
+                                </Condition>
+                              </Partition>
+                            </Condition>
+                            <Condition>
+                              <Expression>
+                                <Text><![CDATA[<一個 物件>是<一些 物件>中的一個]]></Text>
+                                <Param><![CDATA[{ "海外意外傷害事故" , "公共場所火災意外傷害事故" , "廂型客用電梯意外傷害事故" , "海陸運輸意外傷害事故" }]]></Param>
+                              </Expression>
+                              <Partition DefId="C8">
+                                <Condition>
+                                  <Expression>
+                                    <Param><![CDATA[不成立]]></Param>
+                                  </Expression>
+                                  <ActionSet>
+                                    <Action DefId="A0">
+                                      <Expression>
+                                        <Param><![CDATA["1L0108"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A4">
+                                      <Expression>
+                                        <Param><![CDATA["身故保險金"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A2">
+                                      <Expression>
+                                        <Param><![CDATA[2]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A1">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A3">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A5">
+                                      <Expression>
+                                        <Param><![CDATA["01"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A6">
+                                      <Expression>
+                                        <Param><![CDATA["AA1"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                  </ActionSet>
+                                </Condition>
+                              </Partition>
+                            </Condition>
+                            <Condition>
+                              <Expression>
+                                <Text><![CDATA[<一個 物件>不是<一些 物件>中的一個]]></Text>
+                                <Param><![CDATA[{ "航空運輸意外傷害事故" , "海外意外傷害事故" , "公共場所火災意外傷害事故" , "廂型客用電梯意外傷害事故" , "海陸運輸意外傷害事故" }]]></Param>
+                              </Expression>
+                              <Partition DefId="C8">
+                                <Condition>
+                                  <Expression>
+                                    <Param><![CDATA[不成立]]></Param>
+                                  </Expression>
+                                  <ActionSet>
+                                    <Action DefId="A0">
+                                      <Expression>
+                                        <Param><![CDATA["1L0109"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A4">
+                                      <Expression>
+                                        <Param><![CDATA["身故保險金"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A2">
+                                      <Expression>
+                                        <Param><![CDATA[1]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A1">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A3">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A5">
+                                      <Expression>
+                                        <Param><![CDATA["01"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A6">
+                                      <Expression>
+                                        <Param><![CDATA["AA1"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                  </ActionSet>
+                                </Condition>
+                              </Partition>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2008-03-04]]></Param>
+                <Param><![CDATA[2010-02-02　23:59:59]]></Param>
+              </Expression>
+              <Partition DefId="C4">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[14]]></Param>
+                  </Expression>
+                  <Partition DefId="C3">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[成立]]></Param>
+                      </Expression>
+                      <Partition DefId="C1">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["意外"]]></Param>
+                          </Expression>
+                          <Partition DefId="C2">
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA["航空運輸意外傷害事故"]]></Param>
+                              </Expression>
+                              <Partition DefId="C8">
+                                <Condition>
+                                  <Expression>
+                                    <Param><![CDATA[不成立]]></Param>
+                                  </Expression>
+                                  <ActionSet>
+                                    <Action DefId="A0">
+                                      <Expression>
+                                        <Param><![CDATA["1L0110"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A4">
+                                      <Expression>
+                                        <Param><![CDATA["身故保險金"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A2">
+                                      <Expression>
+                                        <Param><![CDATA[3]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A1">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A3">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A5">
+                                      <Expression>
+                                        <Param><![CDATA["01"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A6">
+                                      <Expression>
+                                        <Param><![CDATA["AA1"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                  </ActionSet>
+                                </Condition>
+                              </Partition>
+                            </Condition>
+                            <Condition>
+                              <Expression>
+                                <Text><![CDATA[<一個 物件>是<一些 物件>中的一個]]></Text>
+                                <Param><![CDATA[{ "海外意外傷害事故" , "公共場所火災意外傷害事故" , "廂型客用電梯意外傷害事故" , "海陸運輸意外傷害事故" }]]></Param>
+                              </Expression>
+                              <Partition DefId="C8">
+                                <Condition>
+                                  <Expression>
+                                    <Param><![CDATA[不成立]]></Param>
+                                  </Expression>
+                                  <ActionSet>
+                                    <Action DefId="A0">
+                                      <Expression>
+                                        <Param><![CDATA["1L0111"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A4">
+                                      <Expression>
+                                        <Param><![CDATA["身故保險金"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A2">
+                                      <Expression>
+                                        <Param><![CDATA[2]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A1">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A3">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A5">
+                                      <Expression>
+                                        <Param><![CDATA["01"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A6">
+                                      <Expression>
+                                        <Param><![CDATA["AA1"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                  </ActionSet>
+                                </Condition>
+                              </Partition>
+                            </Condition>
+                            <Condition>
+                              <Expression>
+                                <Text><![CDATA[<一個 物件>不是<一些 物件>中的一個]]></Text>
+                                <Param><![CDATA[{ "航空運輸意外傷害事故" , "海外意外傷害事故" , "公共場所火災意外傷害事故" , "廂型客用電梯意外傷害事故" , "海陸運輸意外傷害事故" }]]></Param>
+                              </Expression>
+                              <Partition DefId="C8">
+                                <Condition>
+                                  <Expression>
+                                    <Param><![CDATA[不成立]]></Param>
+                                  </Expression>
+                                  <ActionSet>
+                                    <Action DefId="A0">
+                                      <Expression>
+                                        <Param><![CDATA["1L0112"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A4">
+                                      <Expression>
+                                        <Param><![CDATA["身故保險金"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A2">
+                                      <Expression>
+                                        <Param><![CDATA[1]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A1">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A3">
+                                      <Expression/>
+                                    </Action>
+                                    <Action DefId="A5">
+                                      <Expression>
+                                        <Param><![CDATA["01"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                    <Action DefId="A6">
+                                      <Expression>
+                                        <Param><![CDATA["AA1"]]></Param>
+                                      </Expression>
+                                    </Action>
+                                  </ActionSet>
+                                </Condition>
+                              </Partition>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+            <Condition>
+              <Expression>
+                <Text><![CDATA[<一個 日期>等於或晚於<一個 日期>]]></Text>
+                <Param><![CDATA[2010-02-03]]></Param>
+              </Expression>
+              <Partition DefId="C3">
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA[成立]]></Param>
+                  </Expression>
+                  <Partition DefId="C1">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA["意外"]]></Param>
+                      </Expression>
+                      <Partition DefId="C2">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["航空運輸意外傷害事故"]]></Param>
+                          </Expression>
+                          <Partition DefId="C8">
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA[不成立]]></Param>
+                              </Expression>
+                              <ActionSet>
+                                <Action DefId="A0">
+                                  <Expression>
+                                    <Param><![CDATA["1L0113"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A4">
+                                  <Expression>
+                                    <Param><![CDATA["身故保險金"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A2">
+                                  <Expression>
+                                    <Param><![CDATA[3]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A1">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A3">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A5">
+                                  <Expression>
+                                    <Param><![CDATA["01"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A6">
+                                  <Expression>
+                                    <Param><![CDATA["AA1"]]></Param>
+                                  </Expression>
+                                </Action>
+                              </ActionSet>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                        <Condition>
+                          <Expression>
+                            <Text><![CDATA[<一個 物件>是<一些 物件>中的一個]]></Text>
+                            <Param><![CDATA[{ "海外意外傷害事故" , "公共場所火災意外傷害事故" , "廂型客用電梯意外傷害事故" , "海陸運輸意外傷害事故" }]]></Param>
+                          </Expression>
+                          <Partition DefId="C8">
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA[不成立]]></Param>
+                              </Expression>
+                              <ActionSet>
+                                <Action DefId="A0">
+                                  <Expression>
+                                    <Param><![CDATA["1L0114"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A4">
+                                  <Expression>
+                                    <Param><![CDATA["身故保險金"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A2">
+                                  <Expression>
+                                    <Param><![CDATA[2]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A1">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A3">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A5">
+                                  <Expression>
+                                    <Param><![CDATA["01"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A6">
+                                  <Expression>
+                                    <Param><![CDATA["AA1"]]></Param>
+                                  </Expression>
+                                </Action>
+                              </ActionSet>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                        <Condition>
+                          <Expression>
+                            <Text><![CDATA[<一個 物件>不是<一些 物件>中的一個]]></Text>
+                            <Param><![CDATA[{ "航空運輸意外傷害事故" , "海外意外傷害事故" , "公共場所火災意外傷害事故" , "廂型客用電梯意外傷害事故" , "海陸運輸意外傷害事故" }]]></Param>
+                          </Expression>
+                          <Partition DefId="C8">
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA[不成立]]></Param>
+                              </Expression>
+                              <ActionSet>
+                                <Action DefId="A0">
+                                  <Expression>
+                                    <Param><![CDATA["1L0115"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A4">
+                                  <Expression>
+                                    <Param><![CDATA["身故保險金"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A2">
+                                  <Expression>
+                                    <Param><![CDATA[1]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A1">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A3">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A5">
+                                  <Expression>
+                                    <Param><![CDATA["01"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A6">
+                                  <Expression>
+                                    <Param><![CDATA["AA1"]]></Param>
+                                  </Expression>
+                                </Action>
+                              </ActionSet>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["1M"]]></Param>
+          </Expression>
+          <Partition DefId="C6">
+            <Condition>
+              <Expression>
+                <Param><![CDATA[2010-03-08]]></Param>
+                <Param><![CDATA[2018-09-13]]></Param>
+              </Expression>
+              <Partition DefId="C4">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[15]]></Param>
+                  </Expression>
+                  <Partition DefId="C3">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[成立]]></Param>
+                      </Expression>
+                      <Partition DefId="C1">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["意外"]]></Param>
+                          </Expression>
+                          <Partition DefId="C8">
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA[不成立]]></Param>
+                              </Expression>
+                              <ActionSet>
+                                <Action DefId="A0">
+                                  <Expression>
+                                    <Param><![CDATA["1M0101"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A4">
+                                  <Expression>
+                                    <Param><![CDATA["身故保險金"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A2">
+                                  <Expression>
+                                    <Param><![CDATA[1]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A1">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A3">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A5">
+                                  <Expression>
+                                    <Param><![CDATA["01"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A6">
+                                  <Expression>
+                                    <Param><![CDATA["AA1"]]></Param>
+                                  </Expression>
+                                </Action>
+                              </ActionSet>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["1T"]]></Param>
+          </Expression>
+          <Partition DefId="C6">
+            <Condition>
+              <Expression>
+                <Text><![CDATA[<一個 日期>等於或晚於<一個 日期>]]></Text>
+                <Param><![CDATA[2018-09-14]]></Param>
+              </Expression>
+              <Partition DefId="C4">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[15]]></Param>
+                  </Expression>
+                  <Partition DefId="C3">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[成立]]></Param>
+                      </Expression>
+                      <Partition DefId="C1">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["意外"]]></Param>
+                          </Expression>
+                          <Partition DefId="C8">
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA[不成立]]></Param>
+                              </Expression>
+                              <ActionSet>
+                                <Action DefId="A0">
+                                  <Expression>
+                                    <Param><![CDATA["1T0101"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A4">
+                                  <Expression>
+                                    <Param><![CDATA["身故保險金"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A2">
+                                  <Expression>
+                                    <Param><![CDATA[1]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A1">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A3">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A5">
+                                  <Expression>
+                                    <Param><![CDATA["01"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A6">
+                                  <Expression>
+                                    <Param><![CDATA["AA1"]]></Param>
+                                  </Expression>
+                                </Action>
+                              </ActionSet>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["1U"]]></Param>
+          </Expression>
+          <Partition DefId="C6">
+            <Condition>
+              <Expression>
+                <Text><![CDATA[<一個 日期>等於或晚於<一個 日期>]]></Text>
+                <Param><![CDATA[2020-05-29]]></Param>
+              </Expression>
+              <Partition DefId="C4">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[15]]></Param>
+                  </Expression>
+                  <Partition DefId="C3">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[成立]]></Param>
+                      </Expression>
+                      <Partition DefId="C1">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["意外"]]></Param>
+                          </Expression>
+                          <Partition DefId="C8">
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA[不成立]]></Param>
+                              </Expression>
+                              <ActionSet>
+                                <Action DefId="A0">
+                                  <Expression>
+                                    <Param><![CDATA["1U0101"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A4">
+                                  <Expression>
+                                    <Param><![CDATA["身故保險金"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A2">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A1">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A3">
+                                  <Expression>
+                                    <Param><![CDATA[300,000]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A5">
+                                  <Expression>
+                                    <Param><![CDATA["01"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A6">
+                                  <Expression>
+                                    <Param><![CDATA["UA1"]]></Param>
+                                  </Expression>
+                                </Action>
+                              </ActionSet>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["61"]]></Param>
+          </Expression>
+          <Partition DefId="C6">
+            <Condition>
+              <Expression>
+                <Text><![CDATA[<一個 日期>等於或晚於<一個 日期>]]></Text>
+                <Param><![CDATA[2021-07-01]]></Param>
+              </Expression>
+              <Partition DefId="C4">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[15]]></Param>
+                  </Expression>
+                  <Partition DefId="C3">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[成立]]></Param>
+                      </Expression>
+                      <Partition DefId="C1">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["意外"]]></Param>
+                          </Expression>
+                          <Partition DefId="C8">
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA[不成立]]></Param>
+                              </Expression>
+                              <ActionSet>
+                                <Action DefId="A0">
+                                  <Expression>
+                                    <Param><![CDATA["610101"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A4">
+                                  <Expression>
+                                    <Param><![CDATA["身故保險金"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A2">
+                                  <Expression>
+                                    <Param><![CDATA[1]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A1">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A3">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A5">
+                                  <Expression>
+                                    <Param><![CDATA["01"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A6">
+                                  <Expression>
+                                    <Param><![CDATA["AA1"]]></Param>
+                                  </Expression>
+                                </Action>
+                              </ActionSet>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>小於<一個 數字>]]></Text>
+                    <Param><![CDATA[15]]></Param>
+                  </Expression>
+                  <Partition DefId="C3">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[成立]]></Param>
+                      </Expression>
+                      <Partition DefId="C1">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["意外"]]></Param>
+                          </Expression>
+                          <Partition DefId="C8">
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA[不成立]]></Param>
+                              </Expression>
+                              <ActionSet>
+                                <Action DefId="A0">
+                                  <Expression>
+                                    <Param><![CDATA["610102"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A4">
+                                  <Expression>
+                                    <Param><![CDATA["身故保險金"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A2">
+                                  <Expression>
+                                    <Param><![CDATA[0]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A1">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A3">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A5">
+                                  <Expression>
+                                    <Param><![CDATA["01"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A6">
+                                  <Expression>
+                                    <Param><![CDATA["AA1"]]></Param>
+                                  </Expression>
+                                </Action>
+                              </ActionSet>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["69"]]></Param>
+          </Expression>
+          <Partition DefId="C6">
+            <Condition>
+              <Expression>
+                <Text><![CDATA[<一個 日期>等於或晚於<一個 日期>]]></Text>
+                <Param><![CDATA[2020-09-01]]></Param>
+              </Expression>
+              <Partition DefId="C4">
+                <Condition>
+                  <Expression>
+                    <Text><![CDATA[<一個 數字>大於等於<一個 數字>]]></Text>
+                    <Param><![CDATA[15]]></Param>
+                  </Expression>
+                  <Partition DefId="C3">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA[成立]]></Param>
+                      </Expression>
+                      <Partition DefId="C1">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["意外"]]></Param>
+                          </Expression>
+                          <Partition DefId="C8">
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA[不成立]]></Param>
+                              </Expression>
+                              <ActionSet>
+                                <Action DefId="A0">
+                                  <Expression>
+                                    <Param><![CDATA["690101"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A4">
+                                  <Expression>
+                                    <Param><![CDATA["身故保險金"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A2">
+                                  <Expression>
+                                    <Param><![CDATA[1]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A1">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A3">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A5">
+                                  <Expression>
+                                    <Param><![CDATA["01"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A6">
+                                  <Expression>
+                                    <Param><![CDATA["AA1"]]></Param>
+                                  </Expression>
+                                </Action>
+                              </ActionSet>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression>
+            <Param><![CDATA["76"]]></Param>
+          </Expression>
+          <Partition DefId="C6">
+            <Condition>
+              <Expression>
+                <Text><![CDATA[<一個 日期>等於或晚於<一個 日期>]]></Text>
+                <Param><![CDATA[2021-03-29]]></Param>
+              </Expression>
+              <Partition DefId="C3">
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA[成立]]></Param>
+                  </Expression>
+                  <Partition DefId="C1">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA["意外"]]></Param>
+                      </Expression>
+                      <Partition DefId="C8">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA[不成立]]></Param>
+                          </Expression>
+                          <ActionSet>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA["760101"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A4">
+                              <Expression>
+                                <Param><![CDATA["身故保險金"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A2">
+                              <Expression>
+                                <Param><![CDATA[1]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A1">
+                              <Expression/>
+                            </Action>
+                            <Action DefId="A3">
+                              <Expression/>
+                            </Action>
+                            <Action DefId="A5">
+                              <Expression>
+                                <Param><![CDATA["01"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A6">
+                              <Expression>
+                                <Param><![CDATA["AA1"]]></Param>
+                              </Expression>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+            <Action DefId="A4">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A5">
+              <Expression/>
+            </Action>
+            <Action DefId="A6">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+            <Action DefId="A4">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A5">
+              <Expression/>
+            </Action>
+            <Action DefId="A6">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+            <Action DefId="A4">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A5">
+              <Expression/>
+            </Action>
+            <Action DefId="A6">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+      </Partition>
+    </Contents>
+  </Body>
+  <Resources DefaultLocale="zh_TW">
+    <ResourceSet Locale="zh_TW">
+      <Data Name="Definitions(A0)#HeaderText"><![CDATA[規則編碼]]></Data>
+      <Data Name="Definitions(A0)#Width"><![CDATA[106]]></Data>
+      <Data Name="Definitions(A1)#HeaderText"><![CDATA[附加保額倍數]]></Data>
+      <Data Name="Definitions(A1)#Width"><![CDATA[79]]></Data>
+      <Data Name="Definitions(A2)#HeaderText"><![CDATA[保額倍數]]></Data>
+      <Data Name="Definitions(A2)#Width"><![CDATA[81]]></Data>
+      <Data Name="Definitions(A3)#HeaderText"><![CDATA[每單位金額]]></Data>
+      <Data Name="Definitions(A3)#Width"><![CDATA[80]]></Data>
+      <Data Name="Definitions(A4)#HeaderText"><![CDATA[給付項目]]></Data>
+      <Data Name="Definitions(A4)#Width"><![CDATA[79]]></Data>
+      <Data Name="Definitions(A5)#HeaderText"><![CDATA[計算類別]]></Data>
+      <Data Name="Definitions(A5)#Width"><![CDATA[78]]></Data>
+      <Data Name="Definitions(A6)#HeaderText"><![CDATA[計算編號]]></Data>
+      <Data Name="Definitions(A6)#Width"><![CDATA[77]]></Data>
+      <Data Name="Definitions(C0)#HeaderText"><![CDATA[商品代號]]></Data>
+      <Data Name="Definitions(C0)#Width"><![CDATA[112]]></Data>
+      <Data Name="Definitions(C1)#HeaderText"><![CDATA[事故原因]]></Data>
+      <Data Name="Definitions(C1)#Width"><![CDATA[111]]></Data>
+      <Data Name="Definitions(C2)#HeaderText"><![CDATA[意外事故項目]]></Data>
+      <Data Name="Definitions(C2)#Width"><![CDATA[106]]></Data>
+      <Data Name="Definitions(C3)#HeaderText"><![CDATA[死亡]]></Data>
+      <Data Name="Definitions(C3)#Width"><![CDATA[80]]></Data>
+      <Data Name="Definitions(C4)#HeaderText"><![CDATA[實際年齡]]></Data>
+      <Data Name="Definitions(C4)#Width"><![CDATA[80]]></Data>
+      <Data Name="Definitions(C5)#HeaderText"><![CDATA[保險年齡]]></Data>
+      <Data Name="Definitions(C5)#Width"><![CDATA[80]]></Data>
+      <Data Name="Definitions(C6)#HeaderText"><![CDATA[商品生肖起迄日]]></Data>
+      <Data Name="Definitions(C6)#Width"><![CDATA[116]]></Data>
+      <Data Name="Definitions(C6)[0]#HeaderText"><![CDATA[商品生效起日]]></Data>
+      <Data Name="Definitions(C6)[1]#HeaderText"><![CDATA[商品生效迄日]]></Data>
+      <Data Name="Definitions(C8)#HeaderText"><![CDATA[受監護宣告尚未撤銷者]]></Data>
+      <Data Name="Definitions(C8)#Width"><![CDATA[81]]></Data>
+      <Data Name="Definitions(C9)#HeaderText"><![CDATA[兵災或其他暴動]]></Data>
+      <Data Name="Definitions(C9)#Width"><![CDATA[81]]></Data>
+    </ResourceSet>
+  </Resources>
+</DT>
+</definition>
+</ilog.rules.studio.model.dt:DecisionTable>

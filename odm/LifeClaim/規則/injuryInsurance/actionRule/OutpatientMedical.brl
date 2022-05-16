@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>OutpatientMedical</name>
+  <uuid>19b79326-2668-4406-bde9-30ad46a96a6b</uuid>
+  <locale>zh_TW</locale>
+  <definition><![CDATA[ 如果
+	 '給付項目' 不為空 
+則  
+	設定 '給付金額' 為 '傷害險給付金額參數' 的門診天數 * '傷害險給付金額參數' 的每日門診醫療日額  ; 
+否則  
+	設定 '給付金額' 為 0;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

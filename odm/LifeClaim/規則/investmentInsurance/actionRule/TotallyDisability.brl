@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>TotallyDisability</name>
+  <uuid>803bc4a2-e7f7-4f4b-a00c-18a46a832a1e</uuid>
+  <locale>zh_TW</locale>
+  <definition><![CDATA[]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

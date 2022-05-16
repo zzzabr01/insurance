@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:VariableSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>ComprehensiveInsuranceVar</name>
+  <uuid>4a50d411-6313-46d4-ba7d-b8e1f92a9643</uuid>
+  <variables name="comprehensiveInsurance" type="main.model.ComprehensiveInsurance" initialValue="" verbalization="綜合型保險"/>
+  <variables name="comprehensivePaymentAmountModel" type="main.model.payment.ComprehensivePaymentAmountModel" initialValue="" verbalization="綜合險給付金額參數"/>
+</ilog.rules.studio.model.base:VariableSet>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" xmlns:ilog.rules.studio.model.query.extractor="http://ilog.rules.studio/model/query/extractor.ecore" rulesetName="CancerOutpatinentAndRadio" usingRuleflow="true" ruleflowName="CancerOutpatinentAndRadio" targetRuleProjectName="LifeClaim">
+  <name>健康險癌症門診放射線化療外科處理</name>
+  <uuid>2a4dfe9e-17bd-482b-9576-04d25df1638f</uuid>
+  <referencedVariables variableName="heathInsurance" variableSetName="HealthInsuranceVar">
+    <variableSet href="../../../規則/HealthInsuranceVar.var#de9b3523-1239-4870-bcc9-d0ddcb265b00"/>
+  </referencedVariables>
+  <referencedVariables variableName="ruleCode" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <referencedVariables variableName="paymentItem" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <referencedVariables variableName="paymentName" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <referencedVariables variableName="calculationType" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <referencedVariables variableName="calculationCode" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <referencedVariables variableName="healthPaymentAmountModel" variableSetName="HealthInsuranceVar">
+    <variableSet href="../../../規則/HealthInsuranceVar.var#de9b3523-1239-4870-bcc9-d0ddcb265b00"/>
+  </referencedVariables>
+  <referencedVariables variableName="paymentAmount" variableSetName="OutputVar" direction="OUT">
+    <variableSet href="../../../規則/OutputVar.var#bb110474-a654-4685-af11-65b15f1cd8be"/>
+  </referencedVariables>
+  <ruleflow href="../../../規則/heathInsurance/flow/CancerOutpatinentAndRadio.rfl#c1c50722-a131-4111-b4d5-c04636761e1d"/>
+  <extractor xsi:type="ilog.rules.studio.model.query.extractor:QueryExtractor" name="healthInsuranceconfigurationCancerOutpatinentAndRadio_extractor" validator="預設驗證器"/>
+  <targetRuleProject href="../../../../LifeClaim#ceb82f07-c460-42f2-8539-a36ef6775de0"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

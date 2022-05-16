@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Deployment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" ruleAppName="ComprehensiveInsurance" managingXom="true">
+  <name>ComprehensiveInsurance</name>
+  <uuid>29fcbcbf-99b0-4eae-900e-48df8f3c31e9</uuid>
+  <targets label="rule_execution_server"/>
+  <operations operationName="綜合險契約消滅.dop">
+    <operation href="configuration/綜合險契約消滅.dop#447bdd0e-c196-4052-87cb-d124af461e12"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險重大燒燙傷保險金.dop">
+    <operation href="configuration/綜合險重大燒燙傷保險金.dop#739f72d8-c6d3-44db-b119-426976ff9a07"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險燒燙傷病房保險金.dop">
+    <operation href="configuration/綜合險燒燙傷病房保險金.dop#e34aff03-e10e-4c27-92a6-bfed60d98803"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險罹患癌症保險金.dop">
+    <operation href="configuration/綜合險罹患癌症保險金.dop#81cd2ed5-c533-471d-a6e8-a91e297ba581"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險重大疾病保險金.dop">
+    <operation href="configuration/綜合險重大疾病保險金.dop#47655762-c39f-4377-93b7-ebb5d5e3279d"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險身故與意外身故保險金.dop">
+    <operation href="configuration/綜合險身故與意外身故保險金.dop#35890e6d-dd2b-4c41-bd69-d7abaa796a11"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險失能保險金.dop">
+    <operation href="configuration/綜合險失能保險金.dop#2ea7e7f3-83f5-4c9b-aba7-72153faa8c62"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險失能安養保險金.dop">
+    <operation href="configuration/綜合險失能安養保險金.dop#9d0ed729-5d98-488d-a836-a879053031ff"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險失能生活扶助保險金.dop">
+    <operation href="configuration/綜合險失能生活扶助保險金.dop#9214e55f-1647-4a4a-bc5e-9315485ce5ab"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險急診保險金.dop">
+    <operation href="configuration/綜合險急診保險金.dop#f936676c-5277-4a27-b92b-6d9d08cc7c80"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險緊急醫療轉送保險金.dop">
+    <operation href="configuration/綜合險緊急醫療轉送保險金.dop#86388a6f-0594-4566-b942-43bc9d23f524"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險喪葬費用保險金.dop">
+    <operation href="configuration/綜合險喪葬費用保險金.dop#4db8ff72-8b11-4d3d-81a8-f41c1df8e8e6"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險特定意外傷害喪葬費用保險金.dop">
+    <operation href="configuration/綜合險特定意外傷害喪葬費用保險金.dop#e5ede839-1f1e-4ac4-b573-40cff9f5a058"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險住出院療養保險金.dop">
+    <operation href="configuration/綜合險住出院療養保險金.dop#471ec37b-9586-441b-8c93-face8f3e8038"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險加護病房保險金.dop">
+    <operation href="configuration/綜合險加護病房保險金.dop#ba8a3cf2-5a9a-43a2-ab3e-58a713b4cbd0"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險住院醫療保險金.dop">
+    <operation href="configuration/綜合險住院醫療保險金.dop#d66906ce-7979-4b6e-9a6f-c563b202f3e5"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險住院手術醫療保險金.dop">
+    <operation href="configuration/綜合險住院手術醫療保險金.dop#924ab092-0ff2-408c-bba6-4a9e88fa02d1"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險保險金優惠與增值.dop">
+    <operation href="configuration/綜合險保險金優惠與增值.dop#60d3f94b-1e2a-46ff-8d3c-2d93bf6fcb82"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險長期照顧分期保險金.dop">
+    <operation href="configuration/綜合險長期照顧分期保險金.dop#92586bf6-faa0-4a50-8a8d-f545808258a6"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險長期照顧一次保險金.dop">
+    <operation href="configuration/綜合險長期照顧一次保險金.dop#1e3d80bc-2496-4102-bb8e-4c9fe5edc274"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險重大手術慰問保險金.dop">
+    <operation href="configuration/綜合險重大手術慰問保險金.dop#142ac8c7-2be2-4c9c-bc3f-be4458a5ecf7"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險住院前後門診保險金.dop">
+    <operation href="configuration/綜合險住院前後門診保險金.dop#d4ee8f98-621e-44f3-842a-5d0d16128154"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險門診手術保險金.dop">
+    <operation href="configuration/綜合險門診手術保險金.dop#1284b77e-8ae7-4965-9f75-0f5ed2f62e2e"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險保費豁免.dop">
+    <operation href="configuration/綜合險保費豁免.dop#9bdde770-cf9f-4319-9842-7034ff36dc6a"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險退還所繳保費.dop">
+    <operation href="configuration/綜合險退還所繳保費.dop#5f4ff16b-41d7-4d6a-85c6-6c6842904815"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險復健補償保險金.dop">
+    <operation href="configuration/綜合險復健補償保險金.dop#e0a5a80e-1bad-4a86-9578-380d7d9371fb"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險特定意外傷害身故保險金.dop">
+    <operation href="configuration/綜合險特定意外傷害身故保險金.dop#b0025893-6bfd-4310-9ae5-6b1448cf2249"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險特定處置保險金.dop">
+    <operation href="configuration/綜合險特定處置保險金.dop#cb0e519f-fd44-4d2d-a79b-45281d668138"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險手術醫療保險金.dop">
+    <operation href="configuration/綜合險手術醫療保險金.dop#19e51664-d17b-4196-8e80-4a866f510e91"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險完全失能保險金.dop">
+    <operation href="configuration/綜合險完全失能保險金.dop#84881fdd-f9af-4c27-888e-52c990dce064"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <operations operationName="綜合險完全失能扶助保險金.dop">
+    <operation href="configuration/綜合險完全失能扶助保險金.dop#6f176936-339e-4441-a847-5782bfa51372"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+  </operations>
+  <versionPolicies label="增量次要版本號碼" ruleset="INCREMENT_MINOR" default="true" recurrent="true">
+    <description><![CDATA[更新每一個規則集的次要版本。提供新版本，但仍保留舊版本。]]></description>
+  </versionPolicies>
+  <versionPolicies label="使用基礎版本號碼" recurrent="true">
+    <description><![CDATA[使用部署配置中提供的號碼。以這個版本取代每一個規則集的最新版本。用於緊急修復程式或開發。]]></description>
+  </versionPolicies>
+  <versionPolicies label="使用者可以定義版本號碼" ruleset="MANUAL" recurrent="true">
+    <description><![CDATA[可讓您輸入自己的版本號碼。用於舊版的緊急修復程式或更新項目。]]></description>
+  </versionPolicies>
+</com.ibm.rules.studio.model.decisionservice:Deployment>

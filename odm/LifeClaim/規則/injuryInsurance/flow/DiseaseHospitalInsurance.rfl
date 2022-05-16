@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.ruleflow:RuleFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.ruleflow="http://ilog.rules.studio/model/ruleflow.ecore">
+  <name>DiseaseHospitalInsurance</name>
+  <uuid>6f88038e-869c-4ce8-b860-3fa81c7a4544</uuid>
+  <locale>zh_TW</locale>
+  <categories>any</categories>
+  <rfModel>
+<Ruleflow xmlns="http://schemas.ilog.com/Rules/7.0/Ruleflow">
+  <Body>
+    <TaskList>
+      <StartTask Identifier="task_0"/>
+      <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="task_1" Ordering="Default">
+        <FinalActions Language="bal"><![CDATA[設定 '給付金額'為 entrance.receivceFromIBM( '傷害險給付金額參數'  , '計算類別' , '計算編號' ) ;]]></FinalActions>
+        <RuleList>
+          <Rule Uuid="c82bd21c-d4d3-4a51-9064-252743ddc7ce"/>
+        </RuleList>
+      </RuleTask>
+      <StopTask Identifier="task_2"/>
+    </TaskList>
+    <NodeList>
+      <TaskNode Identifier="node_0" Task="task_0"/>
+      <TaskNode Identifier="node_1" Task="task_1"/>
+      <TaskNode Identifier="node_2" Task="task_2"/>
+    </NodeList>
+    <TransitionList>
+      <Transition Identifier="transition_0" Source="node_0" Target="node_1"/>
+      <Transition Identifier="transition_1" Source="node_1" Target="node_2"/>
+    </TransitionList>
+  </Body>
+  <Resources>
+    <ResourceSet Locale="zh_TW">
+      <Data Name="node_0#name">node_0</Data>
+      <Data Name="node_1#name">node_1</Data>
+      <Data Name="node_2#name">node_2</Data>
+      <Data Name="node_0#x">-398.0</Data>
+      <Data Name="node_0#y">-117.0</Data>
+      <Data Name="node_1#x">-394.0</Data>
+      <Data Name="node_1#label">疾病住院醫療保險金</Data>
+      <Data Name="node_1#y">-55.0</Data>
+      <Data Name="node_2#x">-400.0</Data>
+      <Data Name="node_2#y">10.0</Data>
+    </ResourceSet>
+  </Resources>
+  <Properties/>
+</Ruleflow>
+</rfModel>
+</ilog.rules.studio.model.ruleflow:RuleFlow>

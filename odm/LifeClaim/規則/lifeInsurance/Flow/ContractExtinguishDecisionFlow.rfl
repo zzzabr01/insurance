@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.ruleflow:RuleFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.ruleflow="http://ilog.rules.studio/model/ruleflow.ecore">
+  <name>ContractExtinguishDecisionFlow</name>
+  <uuid>9693ddef-9e55-443f-b3c8-76b6d5490737</uuid>
+  <locale>zh_TW</locale>
+  <categories>any</categories>
+  <rfModel>
+<Ruleflow xmlns="http://schemas.ilog.com/Rules/7.0/Ruleflow">
+  <Body>
+    <TaskList>
+      <StartTask Identifier="task_0"/>
+      <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="task" Ordering="Default">
+        <RuleList>
+          <Rule Uuid="bf5f1013-893e-4c39-8d2c-6caae654041b"/>
+        </RuleList>
+      </RuleTask>
+      <StopTask Identifier="task_1">
+        <Actions Language="bal"><![CDATA[列印 "!!!";]]></Actions>
+      </StopTask>
+    </TaskList>
+    <NodeList>
+      <TaskNode Identifier="node_0" Task="task_0"/>
+      <TaskNode Identifier="node_1" Task="task_1"/>
+      <TaskNode Identifier="node_2" Task="task"/>
+    </NodeList>
+    <TransitionList>
+      <Transition Identifier="transition_2" Source="node_0" Target="node_2"/>
+      <Transition Identifier="transition_3" Source="node_2" Target="node_1"/>
+    </TransitionList>
+  </Body>
+  <Resources>
+    <ResourceSet Locale="zh_TW">
+      <Data Name="node_2#height">40.0</Data>
+      <Data Name="node_0#name">node_0</Data>
+      <Data Name="node_2#width">126.0</Data>
+      <Data Name="node_1#name">node_1</Data>
+      <Data Name="node_2#label">契約消滅檢查表</Data>
+      <Data Name="node_2#name">node_2</Data>
+      <Data Name="node_0#x">-473.2803</Data>
+      <Data Name="node_0#y">-141.16667</Data>
+      <Data Name="node_1#x">-473.2803</Data>
+      <Data Name="node_1#y">8.833328</Data>
+      <Data Name="node_2#x">-524.9394</Data>
+      <Data Name="node_2#y">-71.16667</Data>
+    </ResourceSet>
+  </Resources>
+  <Properties/>
+</Ruleflow>
+</rfModel>
+</ilog.rules.studio.model.ruleflow:RuleFlow>
