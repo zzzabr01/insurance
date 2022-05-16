@@ -17,6 +17,10 @@
       <Property Name="tmpCheck.edit.Check.Overlap" Type="xs:boolean"><![CDATA[true]]></Property>
       <Property Name="tmpCheck.edit.Check.Symmetry" Type="xs:boolean"><![CDATA[false]]></Property>
     </Properties>
+    <Preconditions>
+      <Text><![CDATA[ 如果
+	 '申請項目' 是 "身故保險金" 或是 '申請項目' 是 "意外身故保險金"]]></Text>
+    </Preconditions>
     <Structure>
       <ConditionDefinitions>
         <ConditionDefinition Id="C0">
@@ -24849,55 +24853,55 @@
       <Data Name="/84/0/0/1/0/A#Height"><![CDATA[20]]></Data>
       <Data Name="/99/0/0/1/0/0/A#Height"><![CDATA[20]]></Data>
       <Data Name="Definitions(A0)#HeaderText"><![CDATA[繳費期滿利率]]></Data>
-      <Data Name="Definitions(A0)#Width"><![CDATA[62]]></Data>
+      <Data Name="Definitions(A0)#Width"><![CDATA[51]]></Data>
       <Data Name="Definitions(A1)#HeaderText"><![CDATA[給付項目]]></Data>
-      <Data Name="Definitions(A1)#Width"><![CDATA[65]]></Data>
+      <Data Name="Definitions(A1)#Width"><![CDATA[52]]></Data>
       <Data Name="Definitions(A2)#HeaderText"><![CDATA[保額倍數]]></Data>
-      <Data Name="Definitions(A2)#Width"><![CDATA[63]]></Data>
+      <Data Name="Definitions(A2)#Width"><![CDATA[51]]></Data>
       <Data Name="Definitions(A3)#HeaderText"><![CDATA[所繳保險費總額 (倍數)]]></Data>
-      <Data Name="Definitions(A3)#Width"><![CDATA[61]]></Data>
+      <Data Name="Definitions(A3)#Width"><![CDATA[50]]></Data>
       <Data Name="Definitions(A4)#HeaderText"><![CDATA[繳費年期利率]]></Data>
-      <Data Name="Definitions(A4)#Width"><![CDATA[57]]></Data>
+      <Data Name="Definitions(A4)#Width"><![CDATA[47]]></Data>
       <Data Name="Definitions(A5)#HeaderText"><![CDATA[規則編碼]]></Data>
-      <Data Name="Definitions(A5)#Width"><![CDATA[136]]></Data>
+      <Data Name="Definitions(A5)#Width"><![CDATA[97]]></Data>
       <Data Name="Definitions(A6)#HeaderText"><![CDATA[躉繳保險費倍數]]></Data>
-      <Data Name="Definitions(A6)#Width"><![CDATA[60]]></Data>
+      <Data Name="Definitions(A6)#Width"><![CDATA[49]]></Data>
       <Data Name="Definitions(A7)#HeaderText"><![CDATA[計算類別]]></Data>
-      <Data Name="Definitions(A7)#Width"><![CDATA[55]]></Data>
+      <Data Name="Definitions(A7)#Width"><![CDATA[46]]></Data>
       <Data Name="Definitions(A8)#HeaderText"><![CDATA[計算編號]]></Data>
-      <Data Name="Definitions(A8)#Width"><![CDATA[55]]></Data>
+      <Data Name="Definitions(A8)#Width"><![CDATA[46]]></Data>
       <Data Name="Definitions(A9)#HeaderText"><![CDATA[年繳保險費總額倍數]]></Data>
-      <Data Name="Definitions(A9)#Width"><![CDATA[62]]></Data>
+      <Data Name="Definitions(A9)#Width"><![CDATA[50]]></Data>
       <Data Name="Definitions(C0)#HeaderText"><![CDATA[商品代號]]></Data>
-      <Data Name="Definitions(C0)#Width"><![CDATA[93]]></Data>
+      <Data Name="Definitions(C0)#Width"><![CDATA[70]]></Data>
       <Data Name="Definitions(C1)#HeaderText"><![CDATA[死亡]]></Data>
-      <Data Name="Definitions(C1)#Width"><![CDATA[67]]></Data>
+      <Data Name="Definitions(C1)#Width"><![CDATA[53]]></Data>
       <Data Name="Definitions(C10)#HeaderText"><![CDATA[死亡日期-保單生效日]]></Data>
-      <Data Name="Definitions(C10)#Width"><![CDATA[67]]></Data>
+      <Data Name="Definitions(C10)#Width"><![CDATA[53]]></Data>
       <Data Name="Definitions(C11)#HeaderText"><![CDATA[受監護宣告尚未撤銷者]]></Data>
-      <Data Name="Definitions(C11)#Width"><![CDATA[65]]></Data>
+      <Data Name="Definitions(C11)#Width"><![CDATA[52]]></Data>
       <Data Name="Definitions(C12)#HeaderText"><![CDATA[保單年度]]></Data>
-      <Data Name="Definitions(C12)#Width"><![CDATA[67]]></Data>
+      <Data Name="Definitions(C12)#Width"><![CDATA[53]]></Data>
       <Data Name="Definitions(C13)#HeaderText"><![CDATA[保險年齡]]></Data>
-      <Data Name="Definitions(C13)#Width"><![CDATA[69]]></Data>
+      <Data Name="Definitions(C13)#Width"><![CDATA[55]]></Data>
       <Data Name="Definitions(C2)#HeaderText"><![CDATA[死亡原因]]></Data>
-      <Data Name="Definitions(C2)#Width"><![CDATA[68]]></Data>
+      <Data Name="Definitions(C2)#Width"><![CDATA[54]]></Data>
       <Data Name="Definitions(C3)#HeaderText"><![CDATA[商品生效日]]></Data>
-      <Data Name="Definitions(C3)#Width"><![CDATA[69]]></Data>
+      <Data Name="Definitions(C3)#Width"><![CDATA[55]]></Data>
       <Data Name="Definitions(C3)[0]#HeaderText"><![CDATA[商品生效起日]]></Data>
       <Data Name="Definitions(C3)[1]#HeaderText"><![CDATA[商品生肖迄日]]></Data>
       <Data Name="Definitions(C4)#HeaderText"><![CDATA[實際年齡]]></Data>
-      <Data Name="Definitions(C4)#Width"><![CDATA[69]]></Data>
+      <Data Name="Definitions(C4)#Width"><![CDATA[55]]></Data>
       <Data Name="Definitions(C5)#HeaderText"><![CDATA[契況]]></Data>
-      <Data Name="Definitions(C5)#Width"><![CDATA[69]]></Data>
+      <Data Name="Definitions(C5)#Width"><![CDATA[55]]></Data>
       <Data Name="Definitions(C6)#HeaderText"><![CDATA[繳費狀態]]></Data>
-      <Data Name="Definitions(C6)#Width"><![CDATA[68]]></Data>
+      <Data Name="Definitions(C6)#Width"><![CDATA[54]]></Data>
       <Data Name="Definitions(C7)#HeaderText"><![CDATA[領取重大疾病保險金]]></Data>
-      <Data Name="Definitions(C7)#Width"><![CDATA[67]]></Data>
+      <Data Name="Definitions(C7)#Width"><![CDATA[53]]></Data>
       <Data Name="Definitions(C8)#HeaderText"><![CDATA[復效日起保險年度]]></Data>
-      <Data Name="Definitions(C8)#Width"><![CDATA[67]]></Data>
+      <Data Name="Definitions(C8)#Width"><![CDATA[53]]></Data>
       <Data Name="Definitions(C9)#HeaderText"><![CDATA[除外責任]]></Data>
-      <Data Name="Definitions(C9)#Width"><![CDATA[68]]></Data>
+      <Data Name="Definitions(C9)#Width"><![CDATA[54]]></Data>
     </ResourceSet>
   </Resources>
 </DT>

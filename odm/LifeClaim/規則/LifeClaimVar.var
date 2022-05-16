@@ -15,4 +15,5 @@
   <variables name="addUpForProductNo10" type="main.model.sit.AddUpForProductNo10" initialValue="" verbalization="壽險代號10所需給付金額計算參數"/>
   <variables name="insuranceInfo" type="main.model.sit.InsuranceInfo" initialValue="" verbalization="使用者保單資訊"/>
   <variables name="lifeInsurance" type="main.model.LifeInsurance" initialValue="" verbalization="壽險"/>
+  <variables name="applyItem" type="java.lang.String" initialValue="" verbalization="申請項目"/>
 </ilog.rules.studio.model.base:VariableSet>

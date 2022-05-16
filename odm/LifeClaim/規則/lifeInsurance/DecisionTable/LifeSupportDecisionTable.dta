@@ -546,33 +546,33 @@
   <Resources DefaultLocale="zh_TW">
     <ResourceSet Locale="zh_TW">
       <Data Name="Definitions(A0)#HeaderText"><![CDATA[規則編碼]]></Data>
-      <Data Name="Definitions(A0)#Width"><![CDATA[149]]></Data>
+      <Data Name="Definitions(A0)#Width"><![CDATA[117]]></Data>
       <Data Name="Definitions(A1)#HeaderText"><![CDATA[給付項目]]></Data>
-      <Data Name="Definitions(A1)#Width"><![CDATA[116]]></Data>
+      <Data Name="Definitions(A1)#Width"><![CDATA[93]]></Data>
       <Data Name="Definitions(A2)#HeaderText"><![CDATA[計算編號]]></Data>
-      <Data Name="Definitions(A2)#Width"><![CDATA[93]]></Data>
+      <Data Name="Definitions(A2)#Width"><![CDATA[76]]></Data>
       <Data Name="Definitions(A3)#HeaderText"><![CDATA[計算類別]]></Data>
-      <Data Name="Definitions(A3)#Width"><![CDATA[93]]></Data>
+      <Data Name="Definitions(A3)#Width"><![CDATA[76]]></Data>
       <Data Name="Definitions(C0)#HeaderText"><![CDATA[商品代號]]></Data>
-      <Data Name="Definitions(C0)#Width"><![CDATA[161]]></Data>
+      <Data Name="Definitions(C0)#Width"><![CDATA[126]]></Data>
       <Data Name="Definitions(C1)#HeaderText"><![CDATA[商品生效起迄日]]></Data>
-      <Data Name="Definitions(C1)#Width"><![CDATA[161]]></Data>
+      <Data Name="Definitions(C1)#Width"><![CDATA[125]]></Data>
       <Data Name="Definitions(C1)[0]#HeaderText"><![CDATA[商品生效起日]]></Data>
       <Data Name="Definitions(C1)[1]#HeaderText"><![CDATA[商品生效迄日]]></Data>
       <Data Name="Definitions(C11)#HeaderText"><![CDATA[領取生活扶助保險金]]></Data>
-      <Data Name="Definitions(C11)#Width"><![CDATA[111]]></Data>
+      <Data Name="Definitions(C11)#Width"><![CDATA[89]]></Data>
       <Data Name="Definitions(C2)#HeaderText"><![CDATA[符合全殘廢附表]]></Data>
-      <Data Name="Definitions(C2)#Width"><![CDATA[158]]></Data>
+      <Data Name="Definitions(C2)#Width"><![CDATA[123]]></Data>
       <Data Name="Definitions(C4)#HeaderText"><![CDATA[事故原因]]></Data>
-      <Data Name="Definitions(C4)#Width"><![CDATA[151]]></Data>
+      <Data Name="Definitions(C4)#Width"><![CDATA[118]]></Data>
       <Data Name="Definitions(C5)#HeaderText"><![CDATA[除外責任]]></Data>
-      <Data Name="Definitions(C5)#Width"><![CDATA[111]]></Data>
+      <Data Name="Definitions(C5)#Width"><![CDATA[89]]></Data>
       <Data Name="Definitions(C6)#HeaderText"><![CDATA[殘廢等級]]></Data>
-      <Data Name="Definitions(C6)#Width"><![CDATA[123]]></Data>
+      <Data Name="Definitions(C6)#Width"><![CDATA[98]]></Data>
       <Data Name="Definitions(C7)#HeaderText"><![CDATA[實際年齡]]></Data>
-      <Data Name="Definitions(C7)#Width"><![CDATA[111]]></Data>
+      <Data Name="Definitions(C7)#Width"><![CDATA[89]]></Data>
       <Data Name="Definitions(C8)#HeaderText"><![CDATA[保險年齡]]></Data>
-      <Data Name="Definitions(C8)#Width"><![CDATA[111]]></Data>
+      <Data Name="Definitions(C8)#Width"><![CDATA[89]]></Data>
     </ResourceSet>
   </Resources>
 </DT>

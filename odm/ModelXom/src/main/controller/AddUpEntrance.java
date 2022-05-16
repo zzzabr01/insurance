@@ -13,4 +13,11 @@ public class AddUpEntrance {
 		 + addUpObject.getCAS1_CHECK_AMT() + addUpObject.getCAS1_PREM_DISCOUNT() + addUpObject.getCAS1_LI_LO_BAL();
 		return sum;
 	}
+	
+	public static Integer AddUpAllValuesForProductNoAM(Integer currentPaymentAmount, AddUpForProductNo10 addUpObject) {
+		Integer sum = currentPaymentAmount + addUpObject.getCAS1_DELA_PREM() + addUpObject.getCAS1_DELA_INT()
+		+ addUpObject.getCAS1_CHECK_AMT() + addUpObject.getTML_TAX() + addUpObject.getTML_2_HI();
+		return sum;
+	}
+	
 }

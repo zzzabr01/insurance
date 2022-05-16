@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>檢查保額倍數是否為空</name>
+  <uuid>62de4a2f-1798-4ebe-975d-be0e117beb2b</uuid>
+  <locale>zh_TW</locale>
+  <definition><![CDATA[ 如果
+	 '壽險給付金額參數' 的保額倍數 等於 0.0
+則 
+  設定 '壽險給付金額參數' 的這保額倍數為 1.0; ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

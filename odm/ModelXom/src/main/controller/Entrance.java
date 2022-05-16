@@ -59,12 +59,12 @@ public class Entrance {
       Date deathDate = dateFormat.parse("2020/1/1");
       Date lastDate = dateFormat.parse("2019/7/1");
       Date nextDate = dateFormat.parse("2021/7/1");
-      paymentAmountModel.setInsuranceAmount(10000.0);
+      paymentAmountModel.setInsuranceAmount(100000.0);
 		paymentAmountModel.setMultiple(1.0);
 		paymentAmountModel.setDateOfDeath(deathDate);
 		paymentAmountModel.setLastSurvivalPaymentDate(lastDate);
 		paymentAmountModel.setNextSurvivalPaymentDate(nextDate);
-      receivceFromIBM(paymentAmountModel, "01", ""); 
+      receivceFromIBM(paymentAmountModel, "01", "AP1"); 
 //      PensionInsurance p = new PensionInsurance("", false, "", "", "");
     }
 

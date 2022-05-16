@@ -8,6 +8,7 @@ package main.controller;
 public class AddUpEntrance
 {
     public AddUpEntrance();
+    public static java.lang.Integer AddUpAllValuesForProductNoAM(java.lang.Integer arg1, main.model.sit.AddUpForProductNo10 arg2);
     public static java.lang.Integer addUpAllValues(java.lang.Integer arg1, main.model.sit.AddUpForProductNo10 arg2);
 }
 
@@ -648,8 +649,8 @@ public class InsuranceInfo
     public string LIPI_INSU_END_DATE;
     public string LIPI_INSU_NO;
     public string LIPI_LO_MK;
-    public string LIPI_MAIN_AMT;
-    public string LIPI_PREM_YEAR;
+    public java.lang.Integer LIPI_MAIN_AMT;
+    public java.lang.Integer LIPI_PREM_YEAR;
     public string LIPI_ST;
     public string LIPI_ST_DATE;
     public InsuranceInfo();
@@ -1019,7 +1020,7 @@ public class DateUtils
     public static java.lang.Integer getTotalDayOfYear(java.util.Date arg);
     public static java.lang.Integer getYear(java.util.Date arg);
     public static java.util.Date parse(string arg);
-    public static long periodOfDay(java.util.Date arg1, java.util.Date arg2);
-    public static long periodOfYear(java.util.Date arg1, java.util.Date arg2);
+    public static java.lang.Long periodOfDay(java.util.Date arg1, java.util.Date arg2);
+    public static java.lang.Integer periodOfYear(java.util.Date arg1, java.util.Date arg2);
 }
 

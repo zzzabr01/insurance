@@ -2,7 +2,7 @@ package main.utils;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
+import java.time.Period;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -84,7 +84,7 @@ public class DateUtils {
 	 * @param Date second
 	 * @return
 	 */
-	public static long periodOfDay(Date first, Date second) {
+	public static Long periodOfDay(Date first, Date second) {
 		long s = first.getTime() - second.getTime();
         TimeUnit unit = TimeUnit.DAYS;
         long day = unit.convert(s, TimeUnit.MILLISECONDS);
@@ -98,10 +98,11 @@ public class DateUtils {
 	 * @param Date second
 	 * @return
 	 */
-	public static long periodOfYear(Date first, Date second) {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-		LocalDate date1 = LocalDate.parse(dateFormat.format(first));
+	public static Integer periodOfYear(Date first, Date second) {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		LocalDate date2 = LocalDate.parse(dateFormat.format(second));
-		return ChronoUnit.YEARS.between(date1, date2);
+		LocalDate date1 = LocalDate.parse(dateFormat.format(first));
+		Period period = date1.until(date2);
+		return period.getYears();
 	}
 }

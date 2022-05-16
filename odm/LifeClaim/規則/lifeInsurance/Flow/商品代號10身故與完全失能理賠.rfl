@@ -14,78 +14,90 @@
 設定 '壽險給付金額參數' 為 壽險給付金額參數. 初始受險給付金額參數 ; 
 ]]></Actions>
       </StartTask>
-      <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="task_1" Ordering="Default">
+      <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="決策表檢查" Ordering="Default">
         <InitialActions Language="bal"><![CDATA[ 列印 "決策表前";]]></InitialActions>
-        <FinalActions/>
+        <FinalActions Language="bal"><![CDATA[ 設定 '壽險給付金額參數' 的這已給付老年住院醫療提前給付保險金為 0;
+ 設定 '壽險給付金額參數' 的這生存保險金為 0;
+  設定 '壽險給付金額參數' 的這未到期保費為 0;]]></FinalActions>
         <RuleList>
           <Rule Uuid="b0e0603f-3a8a-41b3-8986-75bdf456296a"/>
+          <Rule Uuid="8a705c60-ad6e-45a9-8046-2b798be48664"/>
         </RuleList>
       </RuleTask>
-      <ActionTask Identifier="計算金額">
-        <Actions Language="bal"><![CDATA[ 設定 '壽險給付金額參數' 的這保險金額為 '壽險代號10所需給付金額計算參數' 的PAY AMT RTN ; 
-設定 '壽險給付金額參數' 的這保單價值準備金為 0;
-設定 '壽險給付金額參數' 的這展期保額為 '壽險代號10所需給付金額計算參數' 的PAY AMT RTN ;
-設定 '給付金額' 為 entrance.receivceFromIBM ( '壽險給付金額參數', '計算類別' ,'計算編號' ) ;
-設定 '給付金額' 為 up entrance.addUpAllValues ( '給付金額' , '壽險代號10所需給付金額計算參數' ) ; ]]></Actions>
-      </ActionTask>
       <ActionTask Identifier="沒有符合規則">
-        <Actions Language="bal"><![CDATA[ 設定 '給付金額' 為 0;]]></Actions>
+        <Actions Language="bal"><![CDATA[ 設定 '給付金額' 為 0;
+ 設定 '規則編碼' 為 "沒有相符的規則";
+ 設定 '計算編號' 為 "";
+ 設定 '計算類別' 為 "";]]></Actions>
       </ActionTask>
+      <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="計算金額" Ordering="Default">
+        <InitialActions Language="bal"><![CDATA[設定 '壽險給付金額參數' 的這保險金額為 '使用者保單資訊' 的 LIPI MAIN AMT ;
+
+設定 '壽險給付金額參數' 的這保單價值準備金為 0;
+
+設定 '壽險給付金額參數' 的這展期保額為 '使用者保單資訊' 的LIPI MAIN AMT ;
+
+設定 '給付金額' 為 entrance.receivceFromIBM ( '壽險給付金額參數', '計算類別' ,'計算編號' ) ;]]></InitialActions>
+        <RuleList>
+          <Rule Uuid="88f70870-d7af-460e-bc4a-a6ba44b08371"/>
+        </RuleList>
+      </RuleTask>
       <StopTask Identifier="task_2"/>
     </TaskList>
     <NodeList>
       <BranchNode Identifier="node_5"/>
       <TaskNode Identifier="node_2" Task="task_2"/>
       <TaskNode Identifier="node_0" Task="task_0"/>
-      <TaskNode Identifier="node_1" Task="task_1"/>
-      <TaskNode Identifier="node_8" Task="計算金額"/>
+      <TaskNode Identifier="node_1" Task="決策表檢查"/>
       <TaskNode Identifier="node_9" Task="沒有符合規則"/>
+      <TaskNode Identifier="node_3" Task="計算金額"/>
     </NodeList>
     <TransitionList>
-      <Transition Identifier="transition_3" Source="node_5" Target="node_8">
-        <Conditions Language="bal"><![CDATA[  下列的所有條件都成立： 
-     
-		- '規則編碼' 不為空 ]]></Conditions>
+      <Transition Identifier="transition_3" Source="node_5" Target="node_3">
+        <Conditions Language="bal"><![CDATA[  下列的所有條件都成立： 
+
+		- '規則編碼' 不為空 
+		-  '申請項目' 是  '給付項目' ]]></Conditions>
       </Transition>
       <Transition Identifier="transition_2" Source="node_1" Target="node_5"/>
       <Transition Identifier="transition_0" Source="node_0" Target="node_1"/>
-      <Transition Identifier="transition_6" Source="node_8" Target="node_2"/>
       <Transition Identifier="transition_7" Source="node_5" Target="node_9"/>
       <Transition Identifier="transition_8" Source="node_9" Target="node_2"/>
+      <Transition Identifier="transition_1" Source="node_3" Target="node_2"/>
     </TransitionList>
   </Body>
   <Resources>
     <ResourceSet Locale="zh_TW">
       <Data Name="node_2#height">22.0</Data>
       <Data Name="node_1#height">40.849426</Data>
+      <Data Name="node_3#height">40.0</Data>
       <Data Name="node_0#height">21.0</Data>
-      <Data Name="node_8#x">-30.0</Data>
-      <Data Name="node_8#y">-11.0</Data>
-      <Data Name="node_9#x">-369.0</Data>
+      <Data Name="node_9#x">-368.0</Data>
       <Data Name="node_5#name">node_6</Data>
       <Data Name="node_9#width">114.0</Data>
       <Data Name="node_9#y">-13.0</Data>
       <Data Name="node_2#name">node_2</Data>
       <Data Name="node_5#height">36.4142</Data>
-      <Data Name="node_8#height">40.0</Data>
       <Data Name="node_9#height">40.0</Data>
       <Data Name="node_2#width">22.0</Data>
       <Data Name="node_0#width">21.0</Data>
-      <Data Name="node_5#x">-132.0</Data>
-      <Data Name="node_5#y">-76.99999</Data>
+      <Data Name="node_3#y">-11.0</Data>
+      <Data Name="node_5#x">-173.0</Data>
+      <Data Name="node_5#y">-78.99999</Data>
       <Data Name="node_5#width">36.414185</Data>
       <Data Name="node_0#x">-151.0</Data>
       <Data Name="node_0#y">-269.0</Data>
       <Data Name="node_1#x">-151.0</Data>
-      <Data Name="node_8#name">node_3</Data>
       <Data Name="node_2#x">-123.0</Data>
       <Data Name="node_1#y">-199.57529</Data>
-      <Data Name="node_2#y">74.0</Data>
+      <Data Name="node_2#y">100.0</Data>
+      <Data Name="node_3#x">120.0</Data>
       <Data Name="node_1#name">node_1</Data>
-      <Data Name="node_8#width">102.0</Data>
+      <Data Name="node_3#width">102.0</Data>
       <Data Name="node_1#width">102.0</Data>
       <Data Name="node_9#name">node_3</Data>
       <Data Name="node_0#name">node_0</Data>
+      <Data Name="node_3#name">node_1</Data>
     </ResourceSet>
   </Resources>
   <Properties/>

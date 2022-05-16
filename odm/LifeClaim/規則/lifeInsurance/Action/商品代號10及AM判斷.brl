@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>商品代號10及AM判斷</name>
+  <uuid>88f70870-d7af-460e-bc4a-a6ba44b08371</uuid>
+  <locale>zh_TW</locale>
+  <definition><![CDATA[ 如果
+	 '商品代號' 是 "10"   
+則 
+    設定 '給付金額' 為 up entrance.addUpAllValues ( '給付金額' , '壽險代號10所需給付金額計算參數' ) ; 
+ 
+否則  
+  設定 '給付金額' 為 up entrance.AddUpAllValuesForProductNoAM ( '給付金額' , '壽險代號10所需給付金額計算參數' ) ;  
+ ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

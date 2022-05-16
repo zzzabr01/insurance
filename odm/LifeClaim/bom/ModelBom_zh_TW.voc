@@ -37,6 +37,7 @@ uuid = 2505cdc2-3223-40a0-8040-768a8bb4bbb9
 
 # main.controller.AddUpEntrance
 main.controller.AddUpEntrance#concept.label = up entrance
+main.controller.AddUpEntrance.AddUpAllValuesForProductNoAM(java.lang.Integer,main.model.sit.AddUpForProductNo10)#phrase.navigation = up entrance.AddUpAllValuesForProductNoAM({0}, {1})
 main.controller.AddUpEntrance.addUpAllValues(java.lang.Integer,main.model.sit.AddUpForProductNo10)#phrase.navigation = up entrance.addUpAllValues({0}, {1})
 
 # main.controller.AdditionalEntrance

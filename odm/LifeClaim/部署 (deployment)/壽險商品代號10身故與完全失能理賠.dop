@@ -29,6 +29,9 @@
   <referencedVariables variableName="insuranceInfo" variableSetName="LifeClaimVar">
     <variableSet href="../規則/LifeClaimVar.var#478a3bc5-b3a4-487a-be8a-abd7c0a78a7d"/>
   </referencedVariables>
+  <referencedVariables variableName="applyItem" variableSetName="LifeClaimVar">
+    <variableSet href="../規則/LifeClaimVar.var#478a3bc5-b3a4-487a-be8a-abd7c0a78a7d"/>
+  </referencedVariables>
   <ruleflow href="../規則/lifeInsurance/Flow/商品代號10身故與完全失能理賠.rfl#f5e7e215-7dd6-4094-aad1-9267802783f3"/>
   <extractor xsi:type="ilog.rules.studio.model.query.extractor:QueryExtractor" name="壽險商品代號10身故與完全失能理賠_extractor" validator="預設驗證器"/>
   <targetRuleProject href="../../LifeClaim#ceb82f07-c460-42f2-8539-a36ef6775de0"/>

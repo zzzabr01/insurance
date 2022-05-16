@@ -41,12 +41,12 @@ public class InsuranceInfo {
 	        /**
 			 * 繳費年期
 			 */
-	        private String LIPI_PREM_YEAR;
+	        private Integer LIPI_PREM_YEAR;
 
 	        /**
 			 * 主契約保額
 			 */
-	        private String LIPI_MAIN_AMT;
+	        private Integer LIPI_MAIN_AMT;
 
 			public String getLIPI_INSU_NO() {
 				return LIPI_INSU_NO;
@@ -104,19 +104,21 @@ public class InsuranceInfo {
 				LIPI_ST_DATE = lIPI_ST_DATE;
 			}
 
-			public String getLIPI_PREM_YEAR() {
+			public Integer getLIPI_PREM_YEAR() {
 				return LIPI_PREM_YEAR;
 			}
 
-			public void setLIPI_PREM_YEAR(String lIPI_PREM_YEAR) {
+			public void setLIPI_PREM_YEAR(Integer lIPI_PREM_YEAR) {
 				LIPI_PREM_YEAR = lIPI_PREM_YEAR;
 			}
 
-			public String getLIPI_MAIN_AMT() {
+			public Integer getLIPI_MAIN_AMT() {
 				return LIPI_MAIN_AMT;
 			}
 
-			public void setLIPI_MAIN_AMT(String lIPI_MAIN_AMT) {
+			public void setLIPI_MAIN_AMT(Integer lIPI_MAIN_AMT) {
 				LIPI_MAIN_AMT = lIPI_MAIN_AMT;
 			}
+
+		
 }
