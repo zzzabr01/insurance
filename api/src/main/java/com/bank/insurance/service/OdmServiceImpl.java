@@ -24,7 +24,7 @@ import java.util.List;
 @Service
 public class OdmServiceImpl {
     private static final String ODM＿URL =
-            "http://nanchan.myds.me:9060/DecisionService/rest/LifeInsuranceProductNo10/1.0/ProductNo10WithDeathAndTotallyDisabilityBenefit/1.9";
+            "http://nanchan.myds.me:9060/DecisionService/rest/LifeInsuranceProductNo10/1.0/ProductNo10WithDeathAndTotallyDisabilityBenefit/1.11";
     private RestTemplate restTemplate;
     private HttpHeaders headers;
 
