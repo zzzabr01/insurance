@@ -48,10 +48,12 @@ public class OdmServiceImpl {
             StringEntity stringEntity = new StringEntity(new ObjectMapper().writeValueAsString(lifeInsuranceProduct10Request),
                     ContentType.APPLICATION_JSON);
 
+
             HttpPost requestPost = new HttpPost(ODM＿URL);
             requestPost.setHeader("Content-Type", "application/json");
             requestPost.setEntity(stringEntity);
-
+            ObjectMapper objectMapper = new ObjectMapper();
+            System.out.println("JSON:  " + objectMapper.writeValueAsString(lifeInsuranceProduct10Request));
             CloseableHttpClient httpClient = HttpClients.createDefault();
             CloseableHttpResponse response;
             response = httpClient.execute(requestPost);
