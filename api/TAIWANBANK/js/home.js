@@ -30,12 +30,8 @@ if (!window.Promise) {
         if (!response.ok) {
           throw new Error(response.statusText);
         }
-        //u31_input 使用的規則編碼
-        //u44_input 計算類別
-        console.log("1: " + response);
         return response.json();
       }).then(function (data) {
-        console.log("2: " + data);
         document.getElementById('u13_input').value = data.ruleCode;
         document.getElementById('u26_input').value = data.calculationType;
         document.getElementById('u16_input').value = data.calculationCode;
