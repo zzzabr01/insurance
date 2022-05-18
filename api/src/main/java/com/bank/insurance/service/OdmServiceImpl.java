@@ -32,9 +32,8 @@ public class OdmServiceImpl {
 
         String id = insuranceType.getId();
         Date caseAccidentDate = insuranceType.getDieDate();
-        String accidentReason = insuranceType.getReason();
-        List<String> application = insuranceType.getApplication();
-        String applyItem = application.get(0);
+        String accidentReason = insuranceType.getAccidentReason();
+        String applyItem = insuranceType.getApplyItem();
         List<InsuranceInfo> insuranceInfo = userInsuranceInfo().getINSU_LIST();
         InsuranceInfo insuranceInfoParam = insuranceInfo.get(0);
         // 取得保單號碼的前兩碼作為商品代號

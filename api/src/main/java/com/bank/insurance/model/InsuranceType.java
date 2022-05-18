@@ -15,8 +15,8 @@ public class InsuranceType {
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone="GMT+8")
     private Date dieDate;
-    private String reason;
-    private List<String> application;
+    private String accidentReason;
+    private String applyItem;
 
 
 }
