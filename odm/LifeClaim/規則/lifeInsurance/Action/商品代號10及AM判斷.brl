@@ -6,9 +6,9 @@
   <definition><![CDATA[ 如果
 	 '商品代號' 是 "10"   
 則 
-    設定 '給付金額' 為 up entrance.addUpAllValues ( '給付金額' , '壽險代號10所需給付金額計算參數' ) ; 
+    設定 '實際給付金額'  為 up entrance.addUpAllValues ( '給付金額' , '壽險代號10所需給付金額計算參數' ) ; 
  
 否則  
-  設定 '給付金額' 為 up entrance.AddUpAllValuesForProductNoAM ( '給付金額' , '壽險代號10所需給付金額計算參數' ) ;  
+  設定 '實際給付金額'  為 up entrance.AddUpAllValuesForProductNoAM ( '給付金額' , '壽險代號10所需給付金額計算參數' ) ;  
  ]]></definition>
 </ilog.rules.studio.model.brl:ActionRule>

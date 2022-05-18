@@ -27,8 +27,9 @@
       <ActionTask Identifier="沒有符合規則">
         <Actions Language="bal"><![CDATA[ 設定 '給付金額' 為 0;
  設定 '規則編碼' 為 "沒有相符的規則";
- 設定 '計算編號' 為 "";
- 設定 '計算類別' 為 "";]]></Actions>
+ 設定 '計算編號' 為 "沒有相符的公式編碼";
+ 設定 '計算類別' 為 "";
+  設定 '實際給付金額' 為 0;]]></Actions>
       </ActionTask>
       <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="計算金額" Ordering="Default">
         <InitialActions Language="bal"><![CDATA[設定 '壽險給付金額參數' 的這保險金額為 '使用者保單資訊' 的 LIPI MAIN AMT ;

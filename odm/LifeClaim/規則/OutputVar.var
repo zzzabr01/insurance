@@ -11,8 +11,6 @@
   <variables name="injuryInsuranceLimitMultiple" type="java.lang.Double" initialValue="" verbalization="傷害醫療保險金限額倍數"/>
   <variables name="actualMedicalExpenseMultiple" type="java.lang.Double" initialValue="" verbalization="實際醫療費倍數"/>
   <variables name="multiple" type="java.lang.Double" initialValue="" verbalization="保額倍數"/>
-  <variables name="calculationType" type="java.lang.String" initialValue="" verbalization="計算類別"/>
-  <variables name="calculationCode" type="java.lang.String" initialValue="" verbalization="計算編號"/>
   <variables name="multipleOfFractureDay" type="java.lang.Double" initialValue="" verbalization="骨折別所定日數倍數"/>
   <variables name="paymentName" type="java.lang.String" initialValue="" verbalization="給付名稱"/>
   <variables name="annualInterestRate" type="java.lang.Double" initialValue="" verbalization="年利率"/>
@@ -24,7 +22,10 @@
   <variables name="totalDisabiltySupportAmt" type="java.lang.Double" initialValue="" verbalization="完全失能扶助保險金倍數"/>
   <variables name="inHospitanMultiple" type="java.lang.Double" initialValue="" verbalization="住院日額倍數"/>
   <variables name="dailyUnitMultiple" type="java.lang.Double" initialValue="" verbalization="單位日額倍數"/>
-  <variables name="paymentAmount" type="java.math.BigDecimal" initialValue="" verbalization="給付金額"/>
-  <variables name="ruleCode" type="java.lang.String" initialValue="" verbalization="規則編碼"/>
   <variables name="paymentItem" type="java.lang.String" initialValue="" verbalization="給付項目"/>
+  <variables name="calculationType" type="java.lang.String" initialValue="" verbalization="計算類別"/>
+  <variables name="calculationCode" type="java.lang.String" initialValue="" verbalization="計算編號"/>
+  <variables name="ruleCode" type="java.lang.String" initialValue="" verbalization="規則編碼"/>
+  <variables name="paymentAmount" type="java.math.BigDecimal" initialValue="" verbalization="給付金額"/>
+  <variables name="actualPaymentAmount" type="java.lang.Double" initialValue="" verbalization="實際給付金額"/>
 </ilog.rules.studio.model.base:VariableSet>
