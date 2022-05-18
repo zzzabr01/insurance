@@ -1,3 +1,22 @@
+const calculationType = [
+    {
+        code: "AP1",
+        label: "保額 - 已給付老年住院醫療提前給付保險金 + 未到期保費 + 生存保險金"
+    },
+    {
+      code: "IA1",
+      label: "展期保額"
+    },
+    {
+        code:"IC1",
+        label: "展期保額 - 已給付老年住院醫療提前給付保險金"
+    },
+    {
+        code:"AA1CA1",
+        label:"保額* 保額倍數 與 身故日之保單價值準備金 取其大"
+    },
+]
+
 if (!window.Promise) {
     window.Promise = Promise;
   }
@@ -32,11 +51,30 @@ if (!window.Promise) {
         }
         return response.json();
       }).then(function (data) {
+      const calculationCode = data.calculationCode;
+      //  找到公式編碼代表的中文
+      const codeLabel = calculationType.find(type => type.code === calculationCode).label;
+      // 經過公式算出來的金額
+      const paymentAmount = data.paymentAmount
+      // 實際給付金額(算出的金額再去做加減)
+      const actualPaymentAmount = data.actualPaymentAmount;
+      const otherPayment = actualPaymentAmount - paymentAmount;
+        // 規則編碼
         document.getElementById('u13_input').value = data.ruleCode;
+        // 計算類別
         document.getElementById('u26_input').value = data.calculationType;
-        document.getElementById('u16_input').value = data.calculationCode;
-        document.getElementById('u32_input').value = data.paymentAmount;
-
+        // 公式編碼
+        document.getElementById('u16_input').value = calculationCode;
+        // 公式編碼中文
+        document.getElementById("u17_input").value = codeLabel;
+        // 算出的值
+        document.getElementById("u18_input").value = paymentAmount;
+        // 實際給付金額
+        document.getElementById('u32_input').value = actualPaymentAmount;
+        // 生活扶助金/理賠金額
+        document.getElementById("u34_input").value = paymentAmount;
+        // 其他金額
+        document.getElementById("u36_input").value = otherPayment;
       }).catch(function (err) {
         console.log("err: " + err);
       });
