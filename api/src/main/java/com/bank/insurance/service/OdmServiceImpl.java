@@ -34,12 +34,12 @@ public class OdmServiceImpl {
     private RestTemplate restTemplate;
     private HttpHeaders headers;
 
-    public ResponseEntity<?> process(InsuranceType insuranceType) throws IOException {
+    public ResponseEntity<?> process(InsuranceClaimForm insuranceClaimForm) throws IOException {
 
-        String id = insuranceType.getId();
-        Date caseAccidentDate = insuranceType.getDieDate();
-        String accidentReason = insuranceType.getAccidentReason();
-        String applyItem = insuranceType.getApplyItem();
+        String id = insuranceClaimForm.getId();
+        Date caseAccidentDate = insuranceClaimForm.getDieDate();
+        String accidentReason = insuranceClaimForm.getAccidentReason();
+        String applyItem = insuranceClaimForm.getApplyItem();
         // 取的insu_list 資訊
         InsuranceData insuranceData = userInsuranceInfo();
         List<UserInsuranceInfo> userInsuranceInfoList = insuranceData.getCUST();
@@ -70,7 +70,7 @@ public class OdmServiceImpl {
         String responseBody = null;
 
         try {
-            LifeInsuranceProduct10Request lifeInsuranceProduct10Request = LifeInsuranceProduct10Request.builder()
+            LifeInsuranceClaimToOdmRequest lifeInsuranceProduct10Request = LifeInsuranceClaimToOdmRequest.builder()
                     .productNo(productNo).caseAccidentDate(caseAccidentDate).applyItem(applyItem)
                     .accidentReason(accidentReason).addUpForProductNo10(addUpDetail).insuranceInfo(insuranceDetailParam).build();
             StringEntity stringEntity = new StringEntity(new ObjectMapper().writeValueAsString(lifeInsuranceProduct10Request),

@@ -98,11 +98,9 @@ function analyze() {
           document.getElementById('amCalculationLabel').style.display = 'none';
           document.getElementById('10CalculationLabel').style.display = 'block';
         }
-        // }
       })
       .catch(err => {
         alert(err);
-        console.log("err",err)
       })
   }
 }

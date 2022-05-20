@@ -12,7 +12,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
- public class LifeInsuranceProduct10Request {
+ public class LifeInsuranceClaimToOdmRequest {
 
     private AddUpDetail addUpForProductNo10;
 

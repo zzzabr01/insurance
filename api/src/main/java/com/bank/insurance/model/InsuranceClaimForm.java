@@ -4,12 +4,11 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import java.util.Date;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class InsuranceType {
+public class InsuranceClaimForm {
 
     private String id;
 
