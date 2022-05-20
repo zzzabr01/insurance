@@ -1,7 +1,7 @@
 package com.bank.insurance.controller;
 
-import com.bank.insurance.model.AddUpForProductNo10;
-import com.bank.insurance.model.UserInsuranceInfo;
+import com.bank.insurance.model.addup.AddUpData;
+import com.bank.insurance.model.insuranceinfo.InsuranceData;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,17 +13,17 @@ import java.nio.file.Paths;
 public class TestController {
 
     @RequestMapping("/productNo10")
-    public AddUpForProductNo10 productNo10() throws IOException {
+    public AddUpData getAddUpData() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        AddUpForProductNo10 productNo10 = objectMapper.readValue(Paths.get("src/main/resources/addup.json").toFile(), AddUpForProductNo10.class);
-        return productNo10;
+        AddUpData addUpData = objectMapper.readValue(Paths.get("src/main/resources/addup.json").toFile(), AddUpData.class);
+        return addUpData;
     }
 
 
     @RequestMapping("/userInsuranceInfo")
-    public UserInsuranceInfo userInsuranceInfo() throws IOException {
+    public InsuranceData userInsuranceInfo() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        UserInsuranceInfo userInsuranceInfo = objectMapper.readValue(Paths.get("src/main/resources/insu_list_sample.json").toFile(), UserInsuranceInfo.class);
+        InsuranceData userInsuranceInfo = objectMapper.readValue(Paths.get("src/main/resources/insu_list_sample.json").toFile(), InsuranceData.class);
         return userInsuranceInfo;
     }
 

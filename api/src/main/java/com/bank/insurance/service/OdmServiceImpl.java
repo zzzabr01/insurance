@@ -1,6 +1,12 @@
 package com.bank.insurance.service;
 
 import com.bank.insurance.model.*;
+import com.bank.insurance.model.addup.AddUpData;
+import com.bank.insurance.model.addup.AddUpDetail;
+import com.bank.insurance.model.addup.AddUpInfo;
+import com.bank.insurance.model.insuranceinfo.InsuranceData;
+import com.bank.insurance.model.insuranceinfo.InsuranceDetail;
+import com.bank.insurance.model.insuranceinfo.UserInsuranceInfo;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -34,16 +40,39 @@ public class OdmServiceImpl {
         Date caseAccidentDate = insuranceType.getDieDate();
         String accidentReason = insuranceType.getAccidentReason();
         String applyItem = insuranceType.getApplyItem();
-        List<InsuranceInfo> insuranceInfo = userInsuranceInfo().getINSU_LIST();
-        InsuranceInfo insuranceInfoParam = insuranceInfo.get(0);
+        // 取的insu_list 資訊
+        InsuranceData insuranceData = userInsuranceInfo();
+        List<UserInsuranceInfo> userInsuranceInfoList = insuranceData.getCUST();
+        // 取得對應的id資訊
+        UserInsuranceInfo userInsuranceInfo = userInsuranceInfoList.stream()
+                .filter(insuranceInfo -> insuranceInfo.getID().equals(id))
+                .findFirst()
+                .orElse(null);
+        if(userInsuranceInfo == null){
+            throw new RuntimeException("ID NOT FOUND!");
+        }
+        InsuranceDetail insuranceDetailParam = userInsuranceInfo.getINSU_LIST().get(0);
         // 取得保單號碼的前兩碼作為商品代號
-        String productNo = insuranceInfoParam.getLipi_INSU_NO().substring(0, 2);
+        String productNo = insuranceDetailParam.getLipi_INSU_NO().substring(0, 2);
+
+        // 計算資訊
+        AddUpData addUpData = getAddUpData();
+        List<AddUpInfo> addUpInfoList = addUpData.getAddUps();
+        AddUpInfo addUpInfo = addUpInfoList.stream()
+                .filter(info -> info.getItemName().equals(productNo))
+                .findFirst()
+                .orElse(null);
+        if(addUpInfo == null) {
+            throw new RuntimeException("PRODUCT_NO NOT FOUND!");
+        }
+        AddUpDetail addUpDetail = addUpInfo.getAddUp();
+
         String responseBody = null;
 
         try {
             LifeInsuranceProduct10Request lifeInsuranceProduct10Request = LifeInsuranceProduct10Request.builder()
                     .productNo(productNo).caseAccidentDate(caseAccidentDate).applyItem(applyItem)
-                    .accidentReason(accidentReason).addUpForProductNo10(addUpForProductNo10()).insuranceInfo(insuranceInfoParam).build();
+                    .accidentReason(accidentReason).addUpForProductNo10(addUpDetail).insuranceInfo(insuranceDetailParam).build();
             StringEntity stringEntity = new StringEntity(new ObjectMapper().writeValueAsString(lifeInsuranceProduct10Request),
                     ContentType.APPLICATION_JSON);
 
@@ -65,17 +94,17 @@ public class OdmServiceImpl {
     }
 
 
-    public AddUpForProductNo10 addUpForProductNo10() throws IOException {
+    public AddUpData getAddUpData() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        AddUpForProductNo10 productNo10 = objectMapper.readValue(Paths.get("src/main/resources/addup.json").toFile(), AddUpForProductNo10.class);
-        return productNo10;
+        AddUpData addUpData = objectMapper.readValue(Paths.get("src/main/resources/addup.json").toFile(), AddUpData.class);
+        return addUpData;
     }
 
 
-    public UserInsuranceInfo userInsuranceInfo() throws IOException {
+    public InsuranceData userInsuranceInfo() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        UserInsuranceInfo userInsuranceInfo = objectMapper.readValue(Paths.get("src/main/resources/insu_list_sample.json").toFile(), UserInsuranceInfo.class);
-        return userInsuranceInfo;
+        InsuranceData insuranceData = objectMapper.readValue(Paths.get("src/main/resources/insu_list_sample.json").toFile(), InsuranceData.class);
+        return insuranceData;
     }
 
 }

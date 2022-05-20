@@ -1,6 +1,7 @@
 package com.bank.insurance.model;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.bank.insurance.model.addup.AddUpDetail;
+import com.bank.insurance.model.insuranceinfo.InsuranceDetail;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,9 +14,9 @@ import java.util.Date;
 @AllArgsConstructor
  public class LifeInsuranceProduct10Request {
 
-    private AddUpForProductNo10 addUpForProductNo10;
+    private AddUpDetail addUpForProductNo10;
 
-    private InsuranceInfo insuranceInfo;
+    private InsuranceDetail insuranceInfo;
 
     private String accidentReason;
 

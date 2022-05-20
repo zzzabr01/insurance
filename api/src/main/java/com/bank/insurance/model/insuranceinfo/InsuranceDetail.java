@@ -1,4 +1,4 @@
-package com.bank.insurance.model;
+package com.bank.insurance.model.insuranceinfo;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class InsuranceInfo {
+public class InsuranceDetail {
 
     @JsonProperty("lipi_INSU_NO")
     private String lipi_INSU_NO;

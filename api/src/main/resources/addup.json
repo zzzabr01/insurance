@@ -1,8 +1,38 @@
 {
-    "pay_AMT_RTN":1000,
-    "cas1_DELA_PREM": -1000,
-    "cas1_DELA_INT": -1000,
-    "cas1_CHECK_AMT": -6666,
-    "tml_TAX": -1000,
-    "tml_2_HI": -1000
+  "add_ups": [
+    {
+      "item_name": "10",
+      "add_up": {
+        "pay_AMT_RTN": 1000,
+        "cas1_BONF_AMT": 1000,
+        "cas1_DTPE_AMT": 1000,
+        "cas1_RIPD_AMT": -1000,
+        "cas2_4_OVER_PREM": 1000,
+        "cas2_4_OVER_INT": 1000,
+        "cas2_4_DELA_INT": 1000,
+        "cas1_LI12_AMT_2": -1000,
+        "tml_TAX": -1000,
+        "tml_2_HI": -1000,
+        "cas1_INVE_PREM": -2000,
+        "cas1_DELA_PREM": 1000,
+        "cas1_DELA_INT": 1000,
+        "cas1_PAIN_INT_AMT": 1000,
+        "cas1_LOMS_AMT": 1000,
+        "cas1_CHECK_AMT": 6666,
+        "cas1_PREM_DISCOUNT": 6666,
+        "cas1_LI_LO_BAL": 888
+      }
+    },
+    {
+      "item_name": "AM",
+      "add_up": {
+        "pay_AMT_RTN": 1000,
+        "cas1_DELA_PREM": -1000,
+        "cas1_DELA_INT": -1000,
+        "cas1_CHECK_AMT": -6666,
+        "tml_TAX": -1000,
+        "tml_2_HI": -1000
+      }
+    }
+  ]
 }

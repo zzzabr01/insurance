@@ -1,4 +1,4 @@
-package com.bank.insurance.model;
+package com.bank.insurance.model.addup;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AddUpForProductNo10 {
+public class AddUpDetail {
 
     @JsonProperty("pay_AMT_RTN")
     private Integer pay_AMT_RTN;
