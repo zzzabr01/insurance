@@ -49,7 +49,7 @@ public class OdmServiceImpl {
                 .findFirst()
                 .orElse(null);
         if(userInsuranceInfo == null){
-            throw new RuntimeException("ID NOT FOUND!");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("身分證字號不存在");
         }
         InsuranceDetail insuranceDetailParam = userInsuranceInfo.getINSU_LIST().get(0);
         // 取得保單號碼的前兩碼作為商品代號
@@ -63,7 +63,7 @@ public class OdmServiceImpl {
                 .findFirst()
                 .orElse(null);
         if(addUpInfo == null) {
-            throw new RuntimeException("PRODUCT_NO NOT FOUND!");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("商品代號-" + productNo + "不存在");
         }
         AddUpDetail addUpDetail = addUpInfo.getAddUp();
 

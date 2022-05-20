@@ -52,7 +52,9 @@ function analyze() {
     })
       .then(function (response) {
         if (!response.ok) {
-          throw new Error(response.statusText);
+         return response.text().then(text => {
+             throw new Error(text);
+         })
         }
         return response.json();
       })
@@ -98,8 +100,9 @@ function analyze() {
         }
         // }
       })
-      .catch(function (err) {
-        console.log('err: ' + err);
-      });
+      .catch(err => {
+        alert(err);
+        console.log("err",err)
+      })
   }
 }
